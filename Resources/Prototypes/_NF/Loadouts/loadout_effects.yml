@@ -1,6 +1,6 @@
 # Species
 - type: loadoutEffectGroup
-  id: NFNitrogenBreather
+  id: NitrogenBreatherNF
   effects:
   - !type:SpeciesLoadoutEffect
     species:
@@ -8,64 +8,72 @@
     - Vox
 
 - type: loadoutEffectGroup
-  id: NFOxygenBreather
+  id: OxygenBreatherNF
   effects:
   - !type:SpeciesLoadoutEffect
     species:
-    - SlimePerson
-    - Vox
-    - Sheleg # Different meds
-    inverted: true
+    - Arachnid
+    - Diona
+    - Dwarf
+    - Human
+    - Moth
+    - Reptilian
+    - Goblin
+    - Oni
+    - Felinid
+    - Vulpkanin
+    - Harpy
+    - Rodentia
 
 - type: loadoutEffectGroup
-  id: NFSheleg
+  id: PantsCapableNF
   effects:
   - !type:SpeciesLoadoutEffect
     species:
-    - Sheleg
+    - Arachnid
+    - Diona
+    - Dwarf
+    - Human
+    - Moth
+    - Reptilian
+    - SlimePerson
+    - Vox
+    - Goblin
+    - Oni
+    - Felinid
+    - Vulpkanin
+    - Rodentia
 
 - type: loadoutEffectGroup
   id: ShoesCapableNF
   effects:
   - !type:SpeciesLoadoutEffect
     species:
-    - Diona
-    inverted: true
+    - Arachnid
+    - Dwarf
+    - Human
+    - Moth
+    - Reptilian
+    - SlimePerson
+    - Vox
+    - Goblin
+    - Oni
+    - Felinid
+    - Vulpkanin
+    - Harpy
+    - Rodentia
 
 - type: loadoutEffectGroup
-  id: NFHeadwearCapable
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Sheleg
-    inverted: true
-
-- type: loadoutEffectGroup
-  id: NFCoatCapable
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Sheleg
-    inverted: true
-
-- type: loadoutEffectGroup
-  id: NFOuterSuitRequired
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Sheleg
-
-- type: loadoutEffectGroup
-  id: NFNotDocOrStc
+  id: NotStcNF
   effects:
   - !type:RoleBlacklistLoadoutEffect
     blacklist:
-    - JobStationTrafficController
-    - JobDirectorOfCare
+      - JobStationTrafficController
 
 - type: loadoutEffectGroup
-  id: NFNotDoc
+  id: NotFemaleNF
   effects:
-  - !type:RoleBlacklistLoadoutEffect
-    blacklist:
-    - JobDirectorOfCare
+  - !type:SexLoadoutEffect
+    sex:
+      - Male
+      - Unsexed
