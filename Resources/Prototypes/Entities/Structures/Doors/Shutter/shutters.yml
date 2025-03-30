@@ -14,8 +14,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -36,9 +34,6 @@
     containers:
       board: !type:Container
   - type: NavMapDoor
-  - type: Tag
-    tags:
-    - ForceNoFixRotations # Don't want the fixrotations command to target these
   - type: Door
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
@@ -54,9 +49,9 @@
       types:
         Blunt: 5 # getting shutters closed on you probably doesn't hurt that much
     openSound:
-      path: /Audio/Machines/shutter.ogg
+      path: /Audio/Machines/blastdoor.ogg
     closeSound:
-      path: /Audio/Machines/shutter.ogg
+      path: /Audio/Machines/blastdoor.ogg
   - type: Weldable
     time: 3
   - type: Appearance
@@ -97,12 +92,11 @@
     - DoorStatus
     lastSignals:
       DoorStatus: false
-  - type: InteractionPopup
-    interactSuccessString: shutter-rattle
-    messagePerceivedByOthers: shutter-rattle
-    interactSuccessSound:
-      collection: FenceRattle
   - type: BlockWeather
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+
 
 - type: entity
   id: ShuttersNormal
@@ -142,8 +136,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: Occluder
   - type: Construction
     graph: Shutters
@@ -180,8 +172,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: Construction
     graph: Shutters
     node: ShuttersWindow
@@ -246,4 +236,4 @@
         layer:
         - HighImpassable
   - type: Transform
-    noRot: false # Frontier: true<false
+    noRot: true
