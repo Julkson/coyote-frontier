@@ -22,16 +22,21 @@ chat-manager-server-wrap-message = [bold]{$message}[/bold]
 chat-manager-sender-announcement = Central Command
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{$sender} Announcement:[/font][font size=12]
                                                 {$message}[/bold][/font]
-chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{$entityName}[/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]"[BubbleContent]{$message}[/BubbleContent]"[/font]
-chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{$entityName}[/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]"[BubbleContent][bold]{$message}[/bold][/BubbleContent]"[/font]
+chat-manager-entity-say-wrap-message = [font size={$fontSize}][BubbleHeader][bold][Name][color={$chatColor}]{$entityName}[/color][/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType}]"[BubbleContent]{$message}[/BubbleContent]"[/font][/font]
+chat-manager-entity-say-bold-wrap-message = [font size={$fontSize}][BubbleHeader][bold][Name][color={$chatColor}]{$entityName}[/color][/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType}]"[BubbleContent][bold]{$message}[/bold][/BubbleContent]"[/font][/font]
 
-chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] whispers,"[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
-chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Someone[/BubbleHeader] whispers, "[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
+chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name][color={$chatColor}]{$entityName}[/color][/Name][/BubbleHeader] whispers,"[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
+chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader][color={$chatColor}]Someone[/color][/BubbleHeader] whispers, "[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
 chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
-    *[false] The {$entityName} {$message}[/italic]
-     [true] {CAPITALIZE($entityName)} {$message}[/italic]
+    *[false] The [color={$chatColor}]{$entityName}[/color] {$message}[/italic]
+     [true] [color={$chatColor}]{CAPITALIZE($entityName)}[/color] {$message}[/italic]
+    }
+
+chat-manager-entity-subtle-wrap-message = [italic]{ PROPER($entity) ->
+    *[false] the [color={$chatColor}]{$entityName}[/color] subtly {$message}[/italic]
+     [true] [color={$chatColor}]{$entityName}[/color] subtly {$message}[/italic]
     }
 
 chat-manager-entity-looc-wrap-message = LOOC: [bold]{$entityName}:[/bold] {$message}
@@ -50,6 +55,8 @@ chat-manager-admin-channel-name = ADMIN
 
 chat-manager-rate-limited = You are sending messages too quickly!
 chat-manager-rate-limit-admin-announcement = Rate limit warning: { $player }
+
+chat-manager-entity-say-ensmallened = [font size=10]{$text}[/font]
 
 ## Speech verbs for chat
 
