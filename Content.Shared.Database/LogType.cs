@@ -515,7 +515,4 @@ public enum LogType
     /// </summary>
     ObjectiveSummary = 422,
     #endregion DeltaV Values
-
-    AtmosDirectionChanged = 204,
-    Consent = 12489, // Floofstation - random high number to avoid conflict when upstream adds new log types
 }
