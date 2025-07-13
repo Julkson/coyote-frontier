@@ -248,6 +248,7 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.Species,
+                profile.Customspeciesname,
                 profile.Age,
                 sex,
                 gender,

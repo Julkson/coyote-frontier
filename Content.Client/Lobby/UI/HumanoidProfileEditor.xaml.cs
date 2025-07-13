@@ -448,6 +448,11 @@ namespace Content.Client.Lobby.UI
 
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
+
+            #region CustomSpecieName
+            CCustomSpecieNameEdit.OnTextChanged += args => { SetCustomSpecieName(args.Text); };
+            #endregion CustomSpecieName
+
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;
         }
@@ -1250,6 +1255,13 @@ namespace Content.Client.Lobby.UI
 
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
+
+        private void SetCustomSpecieName(string customname)
+        {
+            Profile = Profile?.WithCustomSpeciesName(customname);
+            IsDirty = true;
+        }
+
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
