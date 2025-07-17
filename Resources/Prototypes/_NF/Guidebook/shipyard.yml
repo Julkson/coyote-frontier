@@ -49,6 +49,7 @@
   - ShipyardNook
   - ShipyardPathfinder
   - ShipyardPhoenix
+  - ShipyardPioneer
   - ShipyardPlacebo
   - ShipyardProspector
   - ShipyardPulsar
@@ -286,6 +287,11 @@
   id: ShipyardPhoenix
   name: guide-entry-shipyard-phoenix
   text: "/ServerInfo/_NF/Guidebook/Shipyard/Phoenix.xml"
+
+- type: guideEntry
+  id: ShipyardPioneer
+  name: guide-entry-shipyard-pioneer
+  text: "/ServerInfo/_NF/Guidebook/Shipyard/Pioneer.xml"
 
 - type: guideEntry
   id: ShipyardPlacebo
