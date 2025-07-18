@@ -48,6 +48,9 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     private const int TaxBracket3Flat = 20;
     private const int TaxBracketRest = 10;
 
+    private const float ExpeditionIncentiveMultSuccess = 1.25f;
+    private const float ExpeditionIncentiveMultFailure = 1.10f;
+
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -186,6 +189,69 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     }
 
     /// <summary>
+    /// This is when the player got an expedition incentive event.
+    /// </summary>
+    private void OnGotExpeditionIncentiveEvent(
+        EntityUid uid,
+        RoleplayIncentiveComponent rpic,
+        ExpeditionIncentiveEvent args)
+    {
+        // first, check if the uid has the component
+        if (!TryComp<RoleplayIncentiveComponent>(uid, out var incentive))
+        {
+            Log.Warning($"ExpeditionIncentiveComponent not found on entity {uid}!");
+            return;
+        }
+
+        var threePaywardsFromNow = _timing.CurTime
+            + (incentive.PaywardInterval * 3)
+            // plus the time from now to the next payward, plus a minute
+            + (incentive.NextPayward - _timing.CurTime)
+            + TimeSpan.FromMinutes(1);
+        incentive.ExpeditionIncentives.Add(new ExpeditionIncentive(
+            args.Bonus,
+            _timing.CurTime,
+            _timing.CurTime + threePaywardsFromNow
+        ));
+        // and cus im a good person, set all their still-valid exped incentives to the new time
+        // nerding spree!
+        foreach (var expedIncentive in incentive.ExpeditionIncentives)
+        {
+            if (expedIncentive.TimeExpires > _timing.CurTime)
+            {
+                expedIncentive.TimeExpires = threePaywardsFromNow;
+            }
+        }
+        // then tell the player they're a good boi
+        if (_playerManager.TryGetSessionByEntity(uid, out var session))
+        {
+            var currentExpedMult = GetCurrentExpeditionIncentiveMultiplier();
+            // round the multiplier to 1 decimal place
+            currentExpedMult = MathF.Round(currentExpedMult, 1);
+            var success = args.Bonus == ExpedIncentiveBonus.Success;
+            var duration = (int) threePaywardsFromNow.TotalMinutes;
+            var message = Loc.GetString("coyote-rp-incentive-expedition-incentive-message",
+                ("success", success),
+                ("multiplier", currentExpedMult),
+                ("time", duration)
+            );
+            _popupSystem.PopupEntity(
+                message,
+                uid,
+                uid
+            );
+            _chatManager.ChatMessageToOne(
+                ChatChannel.Notifications,
+                message,
+                message,
+                default,
+                false,
+                session.Channel
+            );
+        }
+    }
+
+    /// <summary>
     /// Goes through all the relevant actions taken and stored, judges them,
     /// And gives the player a payward if they did something good.
     /// It also checks for things like duplicate actions, if theres people around, etc.
@@ -277,6 +343,14 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             _ => TaxBracketRest,
         };
         var payAmount = Math.Clamp(judgeAmount * payFlat, 20, int.MaxValue); // at least 20 bucks, bui
+        // then apply the expedition incentive multiplier
+        var currMult = GetCurrentExpeditionIncentiveMultiplier();
+        var hasExpedMult = currMult > 1f;
+        var preExpedPayAmount = payAmount;
+        if (hasExpedMult)
+        {
+            payAmount = (int) Math.Round(payAmount * currMult);
+        }
         // pay the player
         if (!_bank.TryBankDeposit(uid, payAmount))
         {
@@ -290,7 +364,10 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         }
         // tell the player they got paid!
         var message = Loc.GetString("coyote-rp-incentive-payward-message",
-            ("amount", payAmount)
+            ("amount", payAmount),
+            ("preExpedAmount", preExpedPayAmount),
+            ("hasExpedMult", hasExpedMult),
+            ("multiplier", currMult)
         );
         _popupSystem.PopupEntity(
             message,
@@ -389,5 +466,41 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
 
         // otherwise, return the message length divided by the good length
         return Math.Clamp(messageLength / goodlen, 1f, 5f);
+    }
+
+    /// <summary>
+    /// Gets the current expedition incentive multiplier
+    /// </summary>
+    private float GetCurrentExpeditionIncentiveMultiplier()
+    {
+        // get the current expedition incentive multiplier
+        var multiplier = 1f;
+        var query = EntityQueryEnumerator<RoleplayIncentiveComponent>();
+        while (query.MoveNext(out var uid, out var rpic))
+        {
+            // go through all the incentives and get the multiplier
+            foreach (var expedIncentive in rpic.ExpeditionIncentives)
+            {
+                if (expedIncentive.TimeExpires > _timing.CurTime)
+                {
+                    multiplier *= GetMultiplier(expedIncentive.Bonus);
+                }
+            }
+        }
+        return multiplier;
+    }
+
+    /// <summary>
+    /// Gets the multiplier for the expedition incentive bonus
+    /// </summary>
+    private float GetMultiplier(ExpedIncentiveBonus bonus)
+    {
+        // get the multiplier for the bonus
+        return bonus switch
+        {
+            ExpedIncentiveBonus.Success => ExpeditionIncentiveMultSuccess,
+            ExpedIncentiveBonus.Failure => ExpeditionIncentiveMultFailure,
+            _ => 1f, // no bonus, no multiplier
+        };
     }
 }

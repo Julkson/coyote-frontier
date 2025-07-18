@@ -10,6 +10,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared.Humanoid;
 using Content.Shared.Maps;
 using Content.Shared.Parallax;
 using Content.Shared.Shuttles.Components;
@@ -18,6 +19,7 @@ using Content.Shared.StatusEffect;
 using Content.Shared.Timing;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
+using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Collections;
@@ -53,6 +55,7 @@ public sealed partial class ShuttleSystem
     private float FTLCooldown;
     public float FTLMassLimit;
     private TimeSpan _hyperspaceKnockdownTime = TimeSpan.FromSeconds(5);
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     /// <summary>
     /// Left-side of the station we're allowed to use
@@ -391,6 +394,7 @@ public sealed partial class ShuttleSystem
         var uid = entity.Owner;
         var comp = entity.Comp1;
         var xform = _xformQuery.GetComponent(entity);
+        UpdatePassengersPresent(xform, entity.Comp2);
         DoTheDinosaur(xform);
 
         comp.State = FTLState.Travelling;
@@ -450,6 +454,26 @@ public sealed partial class ShuttleSystem
         var wowdio = _audio.PlayPvs(comp.TravelSound, uid);
         comp.TravelStream = wowdio?.Entity;
         _audio.SetGridAudio(wowdio);
+    }
+
+    /// <summary>
+    /// Updates the passengers present on the shuttle.
+    /// </summary>
+    private void UpdatePassengersPresent(TransformComponent xform, ShuttleComponent shuttle)
+    {
+        shuttle.FTLOccupants.Clear();
+        var childEnumerator = xform.ChildEnumerator;
+        while (childEnumerator.MoveNext(out var child))
+        {
+            // only include connected players
+            if (_playerManager.TryGetSessionByEntity(child, out var session) &&
+                session.AttachedEntity == child &&
+                !HasComp<GhostComponent>(child))
+            {
+                shuttle.FTLOccupants.Add(child);
+                continue;
+            }
+        }
     }
 
     /// <summary>

@@ -74,5 +74,11 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField]
         public float DampingModifier;
+
+        /// <summary>
+        /// UIDs present on the shuttle at time of FTL activation.
+        /// </summary>
+        [DataField]
+        public HashSet<EntityUid> FTLOccupants = [];
     }
 }

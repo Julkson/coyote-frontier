@@ -20,7 +20,15 @@ using Content.Shared._NF.CCVar; // Frontier
 using Content.Shared.Shuttles.Components; // Frontier
 using Robust.Shared.Configuration;
 using Content.Shared.Ghost;
-using System.Numerics; // Frontier
+using System.Numerics;
+using Content.Server._Coyote;
+using Content.Server.Chat.Managers;
+using Content.Server.Shuttles.Components;
+using Content.Shared.Chat;
+using Robust.Server.Player;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Network;
+using Robust.Shared.Player; // Frontier
 
 namespace Content.Server.Salvage;
 
@@ -38,6 +46,8 @@ public sealed partial class SalvageSystem
     private readonly List<(ProtoId<SalvageDifficultyPrototype> id, int value)> _missionDifficulties = [("NFModerate", 0), ("NFHazardous", 1), ("NFExtreme", 2)]; // Frontier: mission difficulties with order
 
     [Dependency] private readonly IConfigurationManager _cfgManager = default!; // Frontier
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     private float _cooldown;
     private float _failedCooldown; // Frontier
@@ -179,23 +189,94 @@ public sealed partial class SalvageSystem
     private void FinishExpedition(Entity<SalvageExpeditionDataComponent> expedition, SalvageExpeditionComponent expeditionComp, EntityUid uid)
     {
         var component = expedition.Comp;
+        var query = EntityQueryEnumerator<ShuttleComponent>();
+        HashSet<EntityUid> salvagers = []; // everyone on the shuttle
+        while (query.MoveNext(out var shuttle))
+        {
+            if (shuttle.Owner == expedition.Owner) // this is the shuttle we are looking for
+            {
+                salvagers.Clear();
+                salvagers.UnionWith(shuttle.FTLOccupants); // everyone on the shuttle
+            }
+        }
+
+        // everyone on the shuttle (expedition.Owner)
         // Frontier: separate timeout/announcement for success/failures
         if (expeditionComp.Completed)
         {
             component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_cooldown);
             component.CooldownTime = TimeSpan.FromSeconds(_cooldown);
-            Announce(uid, Loc.GetString("salvage-expedition-completed"));
+            AnnounceToUids(salvagers, Loc.GetString("salvage-expedition-completed"));
+            GiveIncentiveBonus(salvagers, ExpedIncentiveBonus.Success); // Frontier: give incentive bonus on success
         }
         else
         {
             component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_failedCooldown);
             component.CooldownTime = TimeSpan.FromSeconds(_failedCooldown);
-            Announce(uid, Loc.GetString("salvage-expedition-failed"));
+            AnnounceToUids(salvagers, Loc.GetString("salvage-expedition-failed"));
+            GiveIncentiveBonus(salvagers, ExpedIncentiveBonus.Failure); // Frontier: give lesser incentive bonus on failure
         }
         // End Frontier: separate timeout/announcement for success/failures
         component.ActiveMission = 0;
         component.Cooldown = true;
         UpdateConsoles(expedition);
+    }
+    /// <summary>
+    /// Gives all the salvagers a bonus to their RP incentive thingy for completing a salvage mission.
+    /// </summary>
+    private void GiveIncentiveBonus(
+        HashSet<EntityUid> salvagers,
+        ExpedIncentiveBonus bonus = ExpedIncentiveBonus.None // Frontier: incentive bonus type
+        )
+    {
+        foreach (var svg in salvagers)
+        {
+            var ev = new ExpeditionIncentiveEvent(bonus);
+            RaiseLocalEvent(svg, ev, true);
+        }
+    }
+
+    // /// <summary>
+    // ///  Gets all players on the shuttle.
+    // /// </summary>
+    // private List<EntityUid> GetEveryoneOnShuttle(EntityUid shuttle)
+    // {
+    //     var uidsOnShuttle = new List<EntityUid>();
+    //     var xform = _xformQuery.GetComponent(shuttle);
+    //     var childEnumerator = xform.ChildEnumerator;
+    //     while (childEnumerator.MoveNext(out var child))
+    //     {
+    //         // check if it is a mob with a player attached
+    //         if (!_playerManager.TryGetSessionByEntity(child, out var _))
+    //         {
+    //             continue;
+    //         }
+    //         // is it a ghost?
+    //         if (HasComp<GhostComponent>(child))
+    //         {
+    //             continue;
+    //         }
+    //         uidsOnShuttle.Add(child);
+    //     }
+    //     return uidsOnShuttle;
+    // }
+
+    // Announce to all players on the shuttle.
+    private void AnnounceToUids(HashSet<EntityUid> uids, string message)
+    {
+        foreach (var uid in uids)
+        {
+            if (_playerManager.TryGetSessionByEntity(uid, out var session))
+            {
+                _chatManager.ChatMessageToOne(
+                    ChatChannel.Notifications,
+                    message,
+                    message,
+                    default,
+                    false,
+                    session.Channel);
+            }
+        }
     }
 
     private void GenerateMissions(SalvageExpeditionDataComponent component)

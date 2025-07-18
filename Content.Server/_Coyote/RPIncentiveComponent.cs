@@ -15,6 +15,12 @@ public sealed partial class RoleplayIncentiveComponent : Component
     public List<RoleplayAction> ActionsTaken = new();
 
     /// <summary>
+    /// The Expedition incentives that have been given to the player.
+    /// </summary>
+    [DataField]
+    public List<ExpeditionIncentive> ExpeditionIncentives = new();
+
+    /// <summary>
     /// The last time the system checked for actions, for paywards.
     /// </summary>
     [DataField]
