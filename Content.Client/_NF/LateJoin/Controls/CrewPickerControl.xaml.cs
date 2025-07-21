@@ -28,7 +28,7 @@ public sealed partial class CrewPickerControl : PickerControl
     private Dictionary<NetEntity, StationJobInformation> _lobbyJobs = new();
     private CrewListItem.ViewState? _lastSelectedStation;
     public Action<NetEntity, string>? OnJobJoined;
-    private bool _hideJoblessShips = true;
+    private bool _hideJoblessShips = false;
 
     public CrewPickerControl()
     {
@@ -73,6 +73,9 @@ public sealed partial class CrewPickerControl : PickerControl
 
         StationName.Text = _lastSelectedStation?.StationName ?? "";
         StationDescription.SetMessage(BuildDescription(_lastSelectedStation));
+        // and the ping button!
+        // extract the stationjobscomponent from the station entity
+
     }
 
     private void ToggleHideJoblessShips()

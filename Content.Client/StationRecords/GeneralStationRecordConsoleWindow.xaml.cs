@@ -22,6 +22,7 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
     public event Action<ProtoId<JobPrototype>>? OnJobAdd; // Frontier
     public event Action<ProtoId<JobPrototype>>? OnJobSubtract; // Frontier
     public event Action<string>? OnAdvertisementChanged; // Frontier
+    public event Action<bool>? ToggleStationConsolePingable; // Frontier
     private string? _lastAdvertisement; // Frontier
     private bool _advertisementEdited; // Frontier
     public const int MaxAdvertisementLength = 500; // Frontier
@@ -106,6 +107,10 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
             AdUnsavedChanges.Visible = false;
             AdSubmitButton.Disabled = true;
         };
+        TogglePingable.OnPressed += _ =>
+        {
+            ToggleStationConsolePingable?.Invoke(true); // doesnt matter what the current state is, it'll be toggled
+        };
         // End Frontier: station/ship advertisements
     }
 
@@ -132,6 +137,10 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
             JobListing.Visible = true;
             PopulateJobsContainer(state.JobList);
         }
+
+        TogglePingable.Text = state.Pingable
+            ? "Job Opening Requests: Enabled"
+            : "Job Opening Requests: Disabled";
 
         if (state.Advertisement != null)
         {

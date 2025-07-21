@@ -17,6 +17,14 @@
                 <ScrollContainer VerticalExpand="True">
                     <ItemList Name="RecordListing" />
                 </ScrollContainer>
+                <BoxContainer Orientation="Horizontal"
+                              HorizontalExpand="True">
+                    <Button Name="TogglePingable"
+                        Access="Public"
+                        ToolTip="If your job slots are set to 0, and someone from the lobby wants to join your ship, when this is enabled, they will be able to ping you to request a job slot. Turn it off if you don't want them to do that."
+                        Text=""
+                        StyleClasses="OptionLeft" />
+                </BoxContainer>
                 <ScrollContainer VerticalExpand="True">
                     <BoxContainer Name="JobListing"
                                   Orientation="Vertical"

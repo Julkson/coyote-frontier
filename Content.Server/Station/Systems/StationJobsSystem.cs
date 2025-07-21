@@ -122,7 +122,12 @@ public sealed partial class StationJobsSystem : EntitySystem
     /// <param name="createSlot">Whether or not it should create the slot if it doesn't exist.</param>
     /// <param name="clamp">Whether or not to clamp to zero if you'd remove more jobs than are available.</param>
     /// <param name="stationJobs">Resolve pattern, station jobs component of the station.</param>
-    public bool TryAdjustJobSlot(EntityUid station, JobPrototype job, int amount, bool createSlot = false, bool clamp = false,
+    public bool TryAdjustJobSlot(
+        EntityUid station,
+        JobPrototype job,
+        int amount,
+        bool createSlot = false,
+        bool clamp = false,
         StationJobsComponent? stationJobs = null)
     {
         return TryAdjustJobSlot(station, job.ID, amount, createSlot, clamp, stationJobs);
@@ -187,6 +192,16 @@ public sealed partial class StationJobsSystem : EntitySystem
                 UpdateJobsAvailable();
                 return true;
         }
+    }
+
+    public bool TryTogglePingable(EntityUid station, StationJobsComponent? jobsComponent = null)
+    {
+        if (!Resolve(station, ref jobsComponent, false))
+            return false;
+
+        jobsComponent.PingableByGhosts = !jobsComponent.PingableByGhosts;
+        UpdateJobsAvailable();
+        return jobsComponent.PingableByGhosts;
     }
 
     public bool TryGetPlayerJobs(EntityUid station,

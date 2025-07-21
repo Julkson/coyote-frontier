@@ -25,3 +25,14 @@ public sealed class SetStationAdvertisementMsg : BoundUserInterfaceMessage
         Advertisement = advertisement;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class ToggleStationConsolePingable : BoundUserInterfaceMessage
+{
+    public bool Pingable { get; }
+
+    public ToggleStationConsolePingable(bool pingable)
+    {
+        Pingable = pingable;
+    }
+}

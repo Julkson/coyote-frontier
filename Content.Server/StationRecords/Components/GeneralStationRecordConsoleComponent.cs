@@ -24,4 +24,10 @@ public sealed partial class GeneralStationRecordConsoleComponent : Component
     /// </summary>
     [DataField]
     public bool CanDeleteEntries;
+
+    /// <summary>
+    /// Whether this Records Console can be pinged by lobby clients.
+    /// </summary>
+    [DataField]
+    public bool Pingable = true;
 }

@@ -28,6 +28,7 @@ public sealed class GeneralStationRecordConsoleBoundUserInterface : BoundUserInt
         _window.OnJobSubtract += OnJobsSubtract; // Frontier: job modification buttons
         _window.OnDeleted += id => SendMessage(new DeleteStationRecord(id));
         _window.OnAdvertisementChanged += OnAdvertisementChanged; // Frontier: job modification buttons
+        _window.ToggleStationConsolePingable += OnTogglePingable; // Frontier: pingable console
     }
 
     // Frontier: job modification buttons, ship advertisements
@@ -42,6 +43,11 @@ public sealed class GeneralStationRecordConsoleBoundUserInterface : BoundUserInt
     private void OnAdvertisementChanged(string text)
     {
         SendMessage(new SetStationAdvertisementMsg(text));
+    }
+
+    private void OnTogglePingable(bool pingable)
+    {
+        SendMessage(new ToggleStationConsolePingable(pingable));
     }
     // End Frontier
     protected override void UpdateState(BoundUserInterfaceState state)

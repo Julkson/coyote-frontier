@@ -88,4 +88,6 @@ public sealed partial class StationJobsComponent : Component
     [DataField]
     public List<ProtoId<AccessLevelPrototype>> Tags = new();
     // End Frontier
+
+    public bool PingableByGhosts = true;
 }

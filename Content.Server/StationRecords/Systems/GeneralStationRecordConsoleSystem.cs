@@ -38,6 +38,7 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
             subs.Event<DeleteStationRecord>(OnRecordDelete);
             subs.Event<AdjustStationJobMsg>(OnAdjustJob); // Frontier
             subs.Event<SetStationAdvertisementMsg>(OnAdvertisementChanged); // Frontier
+            subs.Event<ToggleStationConsolePingable>(OnTogglePingable);
         });
     }
 
@@ -130,11 +131,19 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
     }
     // End Frontier: job counts, advertisements
 
+    private void OnTogglePingable(Entity<GeneralStationRecordConsoleComponent> ent, ref ToggleStationConsolePingable msg)
+    {
+        var stationUid = _station.GetOwningStation(ent);
+        if (stationUid is EntityUid station)
+            _stationJobsSystem.TryTogglePingable(station);
+        UpdateUserInterface(ent); // Frontier: add as many args as we can
+    }
+
     private void UpdateUserInterface(Entity<GeneralStationRecordConsoleComponent> ent)
     {
         var (uid, console) = ent;
         var owningStation = _station.GetOwningStation(uid);
-
+        TryComp(owningStation, out StationJobsComponent? stationJobs);
         // Frontier: jobs, advertisements
         IReadOnlyDictionary<ProtoId<JobPrototype>, int?>? jobList = null;
         string? advertisement = null;
@@ -147,7 +156,18 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
 
         if (!TryComp<StationRecordsComponent>(owningStation, out var stationRecords))
         {
-            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement)); // Frontier: add as many args as we can
+            _ui.SetUiState(
+                uid,
+                GeneralStationRecordConsoleKey.Key,
+                new GeneralStationRecordConsoleState(null,
+                    null,
+                    null,
+                    jobList,
+                    console.Filter,
+                    ent.Comp.CanDeleteEntries,
+                    advertisement,
+                    stationJobs?.PingableByGhosts ?? false)
+                ); // Frontier: add as many args as we can
             return;
         }
 
@@ -156,7 +176,15 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
         switch (listing.Count)
         {
             case 0:
-                var consoleState = new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement); // Frontier: add as many args as we can
+                var consoleState = new GeneralStationRecordConsoleState(
+                    null,
+                    null,
+                    null,
+                    jobList,
+                    console.Filter,
+                    ent.Comp.CanDeleteEntries,
+                    advertisement,
+                    stationJobs?.PingableByGhosts ?? false); // Frontier: add as many args as we can
                 _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, consoleState);
                 return;
             default:
@@ -167,14 +195,30 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
 
         if (console.ActiveKey is not { } id)
         {
-            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement)); // Frontier: add as many args as we can
+            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(
+                null,
+                null,
+                listing,
+                jobList,
+                console.Filter,
+                ent.Comp.CanDeleteEntries,
+                advertisement,
+                stationJobs?.PingableByGhosts ?? false)); // Frontier: add as many args as we can
             return;
         }
 
         var key = new StationRecordKey(id, owningStation.Value);
         _stationRecords.TryGetRecord<GeneralStationRecord>(key, out var record, stationRecords);
 
-        GeneralStationRecordConsoleState newState = new(id, record, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement);
+        GeneralStationRecordConsoleState newState = new(
+            id,
+            record,
+            listing,
+            jobList,
+            console.Filter,
+            ent.Comp.CanDeleteEntries,
+            advertisement,
+            stationJobs?.PingableByGhosts ?? false);
         _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, newState);
     }
 }

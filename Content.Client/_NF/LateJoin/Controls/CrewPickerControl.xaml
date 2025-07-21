@@ -52,6 +52,14 @@
                         <RichTextLabel Name="StationDescription" />
                     </ScrollContainer>
                 </BoxContainer>
+                <!-- <BoxContainer Orientation="Vertical" -->
+                <!--               HorizontalExpand="True"> -->
+                <!--     <Button Name="PingThisShipButton" -->
+                <!--             Access="Public" -->
+                <!--             ToolTip="Send a ping to this ship, indicating that you want them to open a slot for you to join their crew!" -->
+                <!--             Text="Pungus" -->
+                <!--             StyleClasses="OptionLeft" /> -->
+                <!-- </BoxContainer> -->
 
                 <Label Text="{Loc 'frontier-lobby-available-jobs'}"
                        Margin="20 0 0 4"
