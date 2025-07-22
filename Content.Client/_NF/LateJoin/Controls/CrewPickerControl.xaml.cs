@@ -3,8 +3,8 @@ using Content.Client._NF.LateJoin.Interfaces;
 using Content.Client._NF.LateJoin.ListItems;
 using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Server.Station.Components;
-using Content.Server.Station.Systems;
+// using Content.Server.Station.Components;
+// using Content.Server.Station.Systems;
 using Content.Shared._NF.Shipyard.Prototypes;
 using Content.Shared.GameTicking;
 using Content.Shared.Preferences;
@@ -85,12 +85,12 @@ public sealed partial class CrewPickerControl : PickerControl
             }
             // and the ping button!
             // extract the stationjobscomponent from the station entity
-            PingThisShipButton.Visible = false;
-            var stationEntity = _entityManager.GetEntity(_lastSelectedStation.StationEntity);
-            if (_entityManager.TryGetComponent<StationJobsComponent>(stationEntity, out var stationJobsComponent))
-            {
-                PingThisShipButton.Visible = stationJobsComponent.PingableByGhosts;
-            }
+            // PingThisShipButton.Visible = false;
+            // var stationEntity = _entityManager.GetEntity(_lastSelectedStation.StationEntity);
+            // if (_entityManager.TryGetComponent<StationJobsComponent>(stationEntity, out var stationJobsComponent))
+            // {
+            //     PingThisShipButton.Visible = stationJobsComponent.PingableByGhosts;
+            // }
         }
 
         StationName.Text = _lastSelectedStation?.StationName ?? "";
@@ -109,23 +109,23 @@ public sealed partial class CrewPickerControl : PickerControl
             return;
         var stationEntity = _entityManager.GetEntity(_lastSelectedStation.StationEntity);
         var stationName = _lastSelectedStation.StationName;
-        if (_entityManager.TryGetComponent<StationJobsComponent>(stationEntity, out var stationJobsComponent))
-        {
-            var session = _playerManager.LocalSession;
-            var msg = _pingMessage;
-            // check if the ping message is empty, if so, use the default ping message.
-            if (string.IsNullOrWhiteSpace(msg))
-            {
-                msg = "Hi! I would like to join your ship! Please open a slot for me, or turn off the ping button if you don't want to be bothered. Peace!";
-            }
-            // send a PingStationEvent to the component.
-            var ev = new PingStationEvent(stationEntity, session, msg, stationName);
-            _entityManager.EventBus.RaiseLocalEvent(stationEntity, ev);
-            // DEBUG: print to the console that we pinged the station.
-            // todo: remove this debug message in production builds.
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n[DEBUG] Pinged station: " + _lastSelectedStation.StationName + " with message: " + msg);
-        }
+        // if (_entityManager.TryGetComponent<StationJobsComponent>(stationEntity, out var stationJobsComponent))
+        // {
+        //     var session = _playerManager.LocalSession;
+        //     var msg = _pingMessage;
+        //     // check if the ping message is empty, if so, use the default ping message.
+        //     if (string.IsNullOrWhiteSpace(msg))
+        //     {
+        //         msg = "Hi! I would like to join your ship! Please open a slot for me, or turn off the ping button if you don't want to be bothered. Peace!";
+        //     }
+        //     // send a PingStationEvent to the component.
+        //     var ev = new PingStationEvent(stationEntity, session, msg, stationName);
+        //     _entityManager.EventBus.RaiseLocalEvent(stationEntity, ev);
+        //     // DEBUG: print to the console that we pinged the station.
+        //     // todo: remove this debug message in production builds.
+        //     Console.ForegroundColor = ConsoleColor.Red;
+        //     Console.WriteLine("\n[DEBUG] Pinged station: " + _lastSelectedStation.StationName + " with message: " + msg);
+        // }
 
     }
 
