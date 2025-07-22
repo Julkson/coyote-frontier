@@ -8,9 +8,11 @@ using Robust.Shared.Prototypes; // Frontier
 using Content.Shared.Access.Systems; // Frontier
 using Content.Server.Station.Components; // Frontier
 using Content.Server._NF.Station.Components; // Frontier
-using Content.Server.Administration.Logs; // Frontier
+using Content.Server.Administration.Logs;
+using Content.Server.Chat.Systems; // Frontier
 using Content.Shared.Database; // Frontier
-using Content.Shared._NF.StationRecords; // Frontier
+using Content.Shared._NF.StationRecords;
+using Robust.Shared.Map.Components; // Frontier
 
 namespace Content.Server.StationRecords.Systems;
 
@@ -23,12 +25,14 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
     [Dependency] private readonly AccessReaderSystem _access = default!; // Frontier
     [Dependency] private readonly IPrototypeManager _proto = default!; // Frontier
     [Dependency] private readonly IAdminLogManager _adminLog = default!; // Frontier
+    [Dependency] private readonly ChatSystem _chat = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<GeneralStationRecordConsoleComponent, RecordModifiedEvent>(UpdateUserInterface);
         SubscribeLocalEvent<GeneralStationRecordConsoleComponent, AfterGeneralRecordCreatedEvent>(UpdateUserInterface);
         SubscribeLocalEvent<GeneralStationRecordConsoleComponent, RecordRemovedEvent>(UpdateUserInterface);
+        SubscribeLocalEvent<GeneralStationRecordConsoleComponent, PingStationEvent>(OnPingStation);
 
         Subs.BuiEvents<GeneralStationRecordConsoleComponent>(GeneralStationRecordConsoleKey.Key, subs =>
         {
@@ -220,5 +224,23 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
             advertisement,
             stationJobs?.PingableByGhosts ?? false);
         _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, newState);
+    }
+
+    private void OnPingStation(Entity<GeneralStationRecordConsoleComponent> ent, ref PingStationEvent args)
+    {
+        var stationUid = _station.GetOwningStation(ent);
+        if (stationUid is not { } station)
+            return;
+        var theConsole = ent.Owner;
+        _chat.TrySendInGameICMessage(
+            theConsole,
+            args.Message ?? "Oh dear, someone wants to join your crew, but something went wrong with the ping! Be a dear and just open your slots!",
+            InGameICChatType.Speak,
+            hideChat: false);
+        // DEBUG PAST THIS POINT, SPAWN IN A XENO
+        var xform = Transform(theConsole);
+        if (!TryComp(xform.GridUid, out MapGridComponent? grid))
+            return;
+        Spawn("FoodBurgerXeno", xform.Coordinates);
     }
 }

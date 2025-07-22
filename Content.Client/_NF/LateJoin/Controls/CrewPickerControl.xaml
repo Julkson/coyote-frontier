@@ -1,80 +1,96 @@
-<controls:CrewPickerControl xmlns="https://spacestation14.io"
-                            xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                            xmlns:controls="clr-namespace:Content.Client._NF.LateJoin.Controls"
-                            Access="Public"
-                            HorizontalExpand="True"
-                            VerticalExpand="True">
-    <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
-                  VerticalExpand="True">
-        <PanelContainer VerticalExpand="True" SetWidth="380">
+<controls:CrewPickerControl
+    Access="Public"
+    HorizontalExpand="True"
+    VerticalExpand="True"
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._NF.LateJoin.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <BoxContainer
+        HorizontalExpand="True"
+        Orientation="Horizontal"
+        VerticalExpand="True">
+        <PanelContainer SetWidth="380" VerticalExpand="True">
             <PanelContainer.PanelOverride>
-                <!-- Using PanelBackgroundLight adds padding left and right, so we manually set background color -->
+                <!--  Using PanelBackgroundLight adds padding left and right, so we manually set background color  -->
                 <graphics:StyleBoxFlat BackgroundColor="#2F2F3B" />
             </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Vertical"
-                          VerticalExpand="True"
-                          HorizontalExpand="True">
-                <ScrollContainer HorizontalExpand="True"
-                                 VerticalExpand="True"
-                                 VScrollEnabled="True">
-                    <BoxContainer Name="StationItemList"
-                                  Orientation="Vertical"
-                                  HorizontalExpand="True"
-                                  MinSize="50 50"/>
+            <BoxContainer
+                HorizontalExpand="True"
+                Orientation="Vertical"
+                VerticalExpand="True">
+                <ScrollContainer
+                    HorizontalExpand="True"
+                    VScrollEnabled="True"
+                    VerticalExpand="True">
+                    <BoxContainer
+                        HorizontalExpand="True"
+                        MinSize="50 50"
+                        Name="StationItemList"
+                        Orientation="Vertical" />
                 </ScrollContainer>
 
-                <CheckBox Name="HideJoblessShipsCheckbox"
-                          Text="{Loc 'frontier-lobby-crew-only-hide-jobless'}"
-                          Margin="10 5 0 5"/>
+                <CheckBox
+                    Margin="10,5,0,5"
+                    Name="HideJoblessShipsCheckbox"
+                    Text="{Loc 'frontier-lobby-crew-only-hide-jobless'}" />
             </BoxContainer>
         </PanelContainer>
 
-        <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+        <PanelContainer HorizontalExpand="True" VerticalExpand="True">
             <PanelContainer.PanelOverride>
                 <graphics:StyleBoxFlat BackgroundColor="#25252a" />
             </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Vertical"
-                          VerticalExpand="True"
-                          HorizontalExpand="True">
-                <BoxContainer Orientation="Vertical"
-                              VerticalExpand="True"
-                              HorizontalExpand="True"
-                              Margin="20"
-                              SizeFlagsStretchRatio="2">
-                    <Label Name="StationName"
-                           HorizontalExpand="True"
-                           StyleClasses="FancyWindowTitle" />
+            <BoxContainer
+                HorizontalExpand="True"
+                Orientation="Vertical"
+                VerticalExpand="True">
+                <BoxContainer
+                    HorizontalExpand="True"
+                    Margin="20"
+                    Orientation="Vertical"
+                    SizeFlagsStretchRatio="2"
+                    VerticalExpand="True">
+                    <Label
+                        HorizontalExpand="True"
+                        Name="StationName"
+                        StyleClasses="FancyWindowTitle" />
 
-                    <ScrollContainer VerticalExpand="True"
-                                     HorizontalExpand="True"
-                                     VScrollEnabled="True"
-                                     HScrollEnabled="False">
+                    <ScrollContainer
+                        HScrollEnabled="False"
+                        HorizontalExpand="True"
+                        VScrollEnabled="True"
+                        VerticalExpand="True">
                         <RichTextLabel Name="StationDescription" />
                     </ScrollContainer>
                 </BoxContainer>
-                <!-- <BoxContainer Orientation="Vertical" -->
-                <!--               HorizontalExpand="True"> -->
-                <!--     <Button Name="PingThisShipButton" -->
-                <!--             Access="Public" -->
-                <!--             ToolTip="Send a ping to this ship, indicating that you want them to open a slot for you to join their crew!" -->
-                <!--             Text="Pungus" -->
-                <!--             StyleClasses="OptionLeft" /> -->
-                <!-- </BoxContainer> -->
+                <!--  the ping thing  -->
+                <BoxContainer Align="Center">
+                    <LineEdit Name="PingMessageEdit" />
+                    <Button
+                        Access="Public"
+                        Name="PingThisShipButton"
+                        StyleClasses="OptionLeft"
+                        Text="Send Message"
+                        ToolTip="Send a ping to this ship, indicating that you want them to open a slot for you to join their crew!" />
+                </BoxContainer>
+                <!--  the ping thing end  -->
+                <Label
+                    Margin="20,0,0,4"
+                    StyleClasses="FancyWindowTitle"
+                    Text="{Loc 'frontier-lobby-available-jobs'}" />
 
-                <Label Text="{Loc 'frontier-lobby-available-jobs'}"
-                       Margin="20 0 0 4"
-                       StyleClasses="FancyWindowTitle" />
-
-                <ScrollContainer VerticalExpand="True"
-                                 HorizontalExpand="True"
-                                 VScrollEnabled="True"
-                                 SizeFlagsStretchRatio="1">
-                    <BoxContainer Name="StationJobItemList"
-                                  Orientation="Vertical"
-                                  HorizontalExpand="True"
-                                  VerticalExpand="True"
-                                  MinSize="50 50"
-                                  Margin="4"/>
+                <ScrollContainer
+                    HorizontalExpand="True"
+                    SizeFlagsStretchRatio="1"
+                    VScrollEnabled="True"
+                    VerticalExpand="True">
+                    <BoxContainer
+                        HorizontalExpand="True"
+                        Margin="4"
+                        MinSize="50 50"
+                        Name="StationJobItemList"
+                        Orientation="Vertical"
+                        VerticalExpand="True" />
                 </ScrollContainer>
             </BoxContainer>
         </PanelContainer>

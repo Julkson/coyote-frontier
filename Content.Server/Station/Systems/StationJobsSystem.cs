@@ -1,9 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server._NF.Station.Components;
+using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
+using Content.Server.StationRecords.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Chat;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
 using Content.Shared.Preferences;
@@ -15,6 +19,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Station.Systems;
 
@@ -28,6 +33,9 @@ public sealed partial class StationJobsSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -36,6 +44,7 @@ public sealed partial class StationJobsSystem : EntitySystem
         SubscribeLocalEvent<StationJobsComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<StationJobsComponent, StationRenamedEvent>(OnStationRenamed);
         SubscribeLocalEvent<StationJobsComponent, ComponentShutdown>(OnStationDeletion);
+        SubscribeLocalEvent<StationJobsComponent, PingStationEvent>(OnStationPingConsoles);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
         Subs.CVar(_configurationManager, CCVars.GameDisallowLateJoins, _ => UpdateJobsAvailable(), true);
     }
@@ -79,6 +88,57 @@ public sealed partial class StationJobsSystem : EntitySystem
         stationJobs.TotalJobs = stationJobs.JobList.Values.Select(x => x ?? 0).Sum();
 
         UpdateJobsAvailable();
+    }
+
+    private void OnStationPingConsoles(EntityUid uid, StationJobsComponent component, ref PingStationEvent args)
+    {
+        // check if the cooldown has passed
+        if (_timing.CurTime < component.NextPingTime)
+        {
+            if (args.Player == null)
+                return;
+            var cantMessage = Loc.GetString("station-jobs-system-ping-cooldown",
+                ("time", (int) (component.NextPingTime - _timing.CurTime).TotalSeconds));
+            _chatManager.ChatMessageToOne(
+                ChatChannel.Notifications,
+                cantMessage,
+                cantMessage,
+                default,
+                false,
+                args.Player.Channel);
+            return;
+        }
+        // set the next ping time
+        component.NextPingTime = _timing.CurTime + component.PingCooldown;
+        var targetStation = _station.GetOwningStation(args.Station);
+        // find all the station record consoles!
+        List<EntityUid> consoles = new();
+        consoles.Clear();
+        var spawnPointQuery = EntityManager.EntityQueryEnumerator<GeneralStationRecordConsoleComponent>();
+        while (spawnPointQuery.MoveNext(out var consoleUid, out var genRecComp))
+        {
+            var station = _station.GetOwningStation(consoleUid);
+            if (station != targetStation)
+                continue;
+            consoles.Add(consoleUid);
+        }
+        if (consoles.Count == 0)
+            return;
+        foreach (var console in consoles)
+        {
+            RaiseLocalEvent(console, args);
+        }
+        if (args.Player == null)
+            return;
+        var yayMessage = Loc.GetString("station-jobs-system-ping-message",
+            ("station", args.StationName ?? "That Station over there!"));
+        _chatManager.ChatMessageToOne(
+            ChatChannel.Notifications,
+            yayMessage,
+            yayMessage,
+            default,
+            false,
+            args.Player.Channel);
     }
 
     #region Public API

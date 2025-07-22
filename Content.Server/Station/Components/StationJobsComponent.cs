@@ -90,4 +90,6 @@ public sealed partial class StationJobsComponent : Component
     // End Frontier
 
     public bool PingableByGhosts = true;
+    public TimeSpan NextPingTime = TimeSpan.Zero;
+    public TimeSpan PingCooldown = TimeSpan.FromSeconds(30);
 }
