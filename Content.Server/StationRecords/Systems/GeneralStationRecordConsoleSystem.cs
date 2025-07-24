@@ -9,7 +9,8 @@ using Content.Shared.Access.Systems; // Frontier
 using Content.Server.Station.Components; // Frontier
 using Content.Server._NF.Station.Components; // Frontier
 using Content.Server.Administration.Logs;
-using Content.Server.Chat.Systems; // Frontier
+using Content.Server.Chat.Systems;
+using Content.Shared._Coyote; // Frontier
 using Content.Shared.Database; // Frontier
 using Content.Shared._NF.StationRecords;
 using Robust.Shared.Map.Components; // Frontier

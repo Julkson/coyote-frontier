@@ -6,6 +6,7 @@ using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Server.StationRecords.Components;
+using Content.Shared._Coyote;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.FixedPoint;
@@ -45,6 +46,7 @@ public sealed partial class StationJobsSystem : EntitySystem
         SubscribeLocalEvent<StationJobsComponent, StationRenamedEvent>(OnStationRenamed);
         SubscribeLocalEvent<StationJobsComponent, ComponentShutdown>(OnStationDeletion);
         SubscribeLocalEvent<StationJobsComponent, PingStationEvent>(OnStationPingConsoles);
+        SubscribeLocalEvent<StationJobsComponent, CanPingStationEvent>(OnCanPingConsoles);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
         Subs.CVar(_configurationManager, CCVars.GameDisallowLateJoins, _ => UpdateJobsAvailable(), true);
     }
@@ -139,6 +141,18 @@ public sealed partial class StationJobsSystem : EntitySystem
             default,
             false,
             args.Player.Channel);
+    }
+
+    /// <summary>
+    /// Spomething is asking if it can ping the consoles.
+    /// set args.CanPingByGhosts to true if it can ping the consoles.
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
+    private void OnCanPingConsoles(EntityUid uid, StationJobsComponent component, ref CanPingStationEvent args)
+    {
+        args.CanPingByGhosts = component.PingableByGhosts; // screw off
     }
 
     #region Public API
