@@ -137,8 +137,23 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         }
         if (message.PlaySound && localPlayer.UserId != message.TrueSender)
         {
-            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
-                _audio.PlayGlobal(_aHelpSound, Filter.Local(), false);
+            if (_adminManager.IsActive())
+            {
+                if(_aHelpSound != null && _bwoinkSoundEnabled)
+                {
+                    _audio.PlayGlobal(
+                        _aHelpSound,
+                        Filter.Local(),
+                        false);
+                }
+                else
+                {
+                    _audio.PlayGlobal(
+                        "/Audio/Items/pop.ogg",
+                        Filter.Local(),
+                        false);
+                }
+            }
             _clyde.RequestWindowAttention();
         }
 

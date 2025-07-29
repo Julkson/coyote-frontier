@@ -1,15 +1,9 @@
-using Content.Shared.DoAfter;
-using Content.Shared.FloofStation;
-using Content.Shared.Humanoid;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.Radio.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Coyote.RadioNoises;
 
@@ -18,14 +12,21 @@ namespace Content.Shared._Coyote.RadioNoises;
 /// </summary>
 public sealed class RadioStaticSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-
-    private static float _defaultVolume = 2f;
+    [Dependency] private readonly IPrototypeManager _prototype = null!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = null!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = null!;
 
     public static readonly VerbCategory RadioSquelchCat =
         new("verb-categories-radiosquelch", null);
+
+    public static readonly VerbCategory RadioVolumeCat =
+        new("verb-categories-radiovolume", null);
+
+    public readonly List<float> RadioVolumeList =
+        new()
+        {
+            0f, -1f, -2f, -3f, -4f, -5f, -6f, -7f, -8f, -9f,
+        }; // suckit
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -38,9 +39,12 @@ public sealed class RadioStaticSystem : EntitySystem
         EntityUid uid,
         RadioStaticComponent component,
         RadioReceivedEvent args
-        )
+    )
     {
-        if (IsSquelched(component, args.Channel, true))
+        if (IsSquelched(
+                component,
+                args.Channel,
+                true))
             return;
 
         // First, get the correct sound pack based on the channel.
@@ -48,15 +52,18 @@ public sealed class RadioStaticSystem : EntitySystem
         // check if THIS one is a valid prototype.
         if (!_prototype.HasIndex(soundPack))
         {
-            Logger.Warning($"RadioStaticComponent on {ToPrettyString(uid)} has an invalid DEFAULT sound pack: {soundPack}");
+            Logger.Warning(
+                $"RadioStaticComponent on {ToPrettyString(uid)} has an invalid DEFAULT sound pack: {soundPack}");
             return;
         }
+
         if (component.DepartmentSoundPacks.TryGetValue(args.Channel, out var departmentSoundPack))
         {
             // is this a valid prototype?
             if (!_prototype.HasIndex(departmentSoundPack))
             {
-                Logger.Warning($"RadioStaticComponent on {ToPrettyString(uid)} has an invalid department sound pack: {departmentSoundPack}");
+                Logger.Warning(
+                    $"RadioStaticComponent on {ToPrettyString(uid)} has an invalid department sound pack: {departmentSoundPack}");
             }
             else
             {
@@ -69,14 +76,20 @@ public sealed class RadioStaticSystem : EntitySystem
         // See if its a stutterslut, a yell, exclamation, etc.
         var intent = GetIntentFromMessage(args.Message);
 
-        PlaySound(uid, args.Receiver, soundPack, intent);
+        PlaySound(
+            uid,
+            args.Receiver,
+            soundPack,
+            intent,
+            component);
     }
 
     private void PlaySound(EntityUid uid,
         EntityUid? receiver,
         ProtoId<RadioStaticPrototype> soundPack,
-        RadioStaticIntent intent
-        )
+        RadioStaticIntent intent,
+        RadioStaticComponent component
+    )
     {
         // First, turn proto ID into somthing we can reference.
         if (!_prototype.TryIndex(soundPack, out RadioStaticPrototype? radProt))
@@ -109,6 +122,7 @@ public sealed class RadioStaticSystem : EntitySystem
                 sound = radProt.SaySound;
                 break;
         }
+
         // radProt's sound intent entry may be null, so we need to check that.
         sound ??= radProt.SaySound;
 
@@ -120,14 +134,14 @@ public sealed class RadioStaticSystem : EntitySystem
             {
                 return;
             }
+
             var hearer = receiver.Value;
             // Play the sound for the owner.
             _audioSystem.PlayEntity(
                 sound,
                 hearer,
                 hearer,
-                AudioParams.Default.WithVolume(_defaultVolume)
-            );
+                AudioParams.Default.WithVolume(component.Volume));
             return;
         }
 
@@ -136,12 +150,12 @@ public sealed class RadioStaticSystem : EntitySystem
             sound,
             uid,
             null,
-            AudioParams.Default.WithVolume(_defaultVolume)
-        );
+            AudioParams.Default.WithVolume(component.Volume));
     }
 
     /// <summary>
-    /// Gets the intent of the radio message based on its cuntent. See <see cref="RadioStaticIntent"/> for the intents.
+    /// Gets the intent of the radio message based on its cuntent.
+    /// See <see cref="RadioStaticIntent"/> for the intents.
     /// </summary>
     private static RadioStaticIntent GetIntentFromMessage(string message)
     {
@@ -150,46 +164,56 @@ public sealed class RadioStaticSystem : EntitySystem
         {
             return RadioStaticIntent.Ask;
         }
+
         // If the message ends with an exclamation mark, its an exclamation.
         // THOUGh if it ends with MORE than one exclamation mark, its a yell.
         if (message.EndsWith("!!"))
         {
             return RadioStaticIntent.Yell;
         }
+
         if (message.EndsWith("!"))
         {
             return RadioStaticIntent.Exclamation;
         }
+
         // If the message ends with a --, its a stutter.
         if (message.EndsWith("--"))
         {
             return RadioStaticIntent.Stutter;
         }
+
         // If the message ends with ... its a mumble.
         if (message.EndsWith("..."))
         {
             return RadioStaticIntent.Mumble;
         }
+
         // If it doesn't match any of the above, its a normal say.
         return RadioStaticIntent.Say;
     }
 
     /// <summary>
     /// makes a list of verbs that allow you to squelch the radio noise for a specific channel.
+    /// </summary>
     private void AddRadioSquelchListVerb(EntityUid uid, RadioStaticComponent component, GetVerbsEvent<Verb> args)
     {
         // at the top, add a verb to toggle squelch for all channels.
         Verb toggleAllVerb = new()
         {
-            Text = Loc.GetString($"radio-squelch-verb-toggle-all-{(
-                component.OmniSquelch
-                ? "squelch"
-                : "unsquelch"
+            Text = Loc.GetString(
+                $"radio-squelch-verb-toggle-all-{(
+                    component.OmniSquelch
+                        ? "squelch"
+                        : "unsquelch"
                 )}"),
             Category = RadioSquelchCat,
             Act = () =>
             {
-                ToggleOmniSquelch(uid, component, args.User);
+                ToggleOmniSquelch(
+                    uid,
+                    component,
+                    args.User);
             },
             Disabled = false,
             Message = null
@@ -199,10 +223,11 @@ public sealed class RadioStaticSystem : EntitySystem
         if (!TryComp<EncryptionKeyHolderComponent>(uid, out var encHolder))
             return;
         // first, get a list of all the channels that this radio can hear.
-        HashSet<string> channels = new();
         foreach (var chammel in encHolder.Channels)
         {
-            bool quelched = IsSquelched(component, chammel, false);
+            bool quelched = IsSquelched(
+                component,
+                chammel);
             // add the verb
             Verb verb = new()
             {
@@ -210,18 +235,46 @@ public sealed class RadioStaticSystem : EntitySystem
                     $"radio-squelch-verb-{(quelched
                         ? "unsquelch"
                         : "squelch")}",
-                    ("channel", chammel)
-                    ),
+                    ("channel", chammel)),
                 // Icon = undieOrBra,
                 Category = RadioSquelchCat,
                 Act = () =>
                 {
-                    ToggleSquelch(uid, component, chammel, args.User);
+                    ToggleSquelch(
+                        uid,
+                        component,
+                        chammel,
+                        args.User);
                 },
                 Disabled = false,
                 Message = null
             };
             args.Verbs.Add(verb);
+        }
+        // and now, add a verb to change the volume of the radio! from 1 to 20.
+        foreach (var volume in RadioVolumeList)
+        {
+            // turn the volume into a string, formatted of 01, 02... 10, 11, 12... 20.
+            var adjVolume = (int) (10f + volume);
+            var volumeString = adjVolume.ToString("00");
+            Verb volumeVerb = new()
+            {
+                Text = Loc.GetString(
+                    "radio-volume-verb",
+                    ("volume", volumeString)),
+                Category = RadioVolumeCat,
+                Disabled = Math.Abs(volume - component.Volume) < 0.1f,
+                Act = () =>
+                {
+                    SetVolume(
+                        uid,
+                        component,
+                        volume,
+                        args);
+                },
+                Message = $"Set how loud the radio goes KSHHT to {(int)(10f + volume)} / 10",
+            };
+            args.Verbs.Add(volumeVerb);
         }
     }
 
@@ -233,9 +286,11 @@ public sealed class RadioStaticSystem : EntitySystem
         RadioStaticComponent component,
         string channel,
         EntityUid? user = null
-        )
+    )
     {
-        var isAlreadySquelched = IsSquelched(component, channel, false);
+        var isAlreadySquelched = IsSquelched(
+            component,
+            channel);
         // if the channel is already squelched, unsquelch it.
         if (isAlreadySquelched)
         {
@@ -246,6 +301,7 @@ public sealed class RadioStaticSystem : EntitySystem
             // otherwise, squelch it.
             component.SquelchedChannels.Add(channel);
         }
+
         if (user != null)
             return;
         var trueUser = user ?? EntityUid.Invalid;
@@ -253,12 +309,26 @@ public sealed class RadioStaticSystem : EntitySystem
         _popupSystem.PopupEntity(
             Loc.GetString(
                 $"radio-squelch-{(isAlreadySquelched ? "unsquelched" : "squelched")}",
-                ("channel", channel)
-            ),
+                ("channel", channel)),
             trueUser,
-            trueUser,
-            PopupType.Small
-        );
+            trueUser);
+    }
+
+    /// <summary>
+    /// Sets the volume of a radio.
+    /// </summary>
+    private void SetVolume(
+        EntityUid uid,
+        RadioStaticComponent component,
+        float volume,
+        GetVerbsEvent<Verb> args)
+    {
+        // set the volume of the radio.
+        component.Volume = volume;
+        _popupSystem.PopupEntity(
+            Loc.GetString("radio-volume-verb-popup", ("volume", volume)),
+            args.User,
+            args.User);
     }
 
     /// <summary>
@@ -268,7 +338,7 @@ public sealed class RadioStaticSystem : EntitySystem
         EntityUid uid,
         RadioStaticComponent component,
         EntityUid? user = null
-        )
+    )
     {
         // if the omni-squelch is already on, turn it off.
         if (component.OmniSquelch)
@@ -289,9 +359,7 @@ public sealed class RadioStaticSystem : EntitySystem
         _popupSystem.PopupEntity(
             Loc.GetString($"radio-squelch-omni-{(component.OmniSquelch ? "enabled" : "disabled")}"),
             trueUser,
-            trueUser,
-            PopupType.Small
-        );
+            trueUser);
     }
 
     /// <summary>
@@ -307,12 +375,10 @@ public sealed class RadioStaticSystem : EntitySystem
             // if the omni-squelch is on, return true.
             return true;
         }
+
         // if the channel is in the squelched channels, return true.
         return component.SquelchedChannels.Contains(channel);
     }
-
-
-
 }
 
 /// <summary>

@@ -38,4 +38,17 @@ public sealed partial class RoleplayIncentiveComponent : Component
     [DataField]
     public TimeSpan PaywardIntervalOffline = TimeSpan.FromMinutes(30); // TimeSpan.FromMinutes(15);
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int TaxBracket1Payout = 50;
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int TaxBracket2Payout = 50;
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int TaxBracket3Payout = 50;
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int TaxBracketRestPayout = 50;
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int TaxBracketPayoutOverride = -1; // -1 means no override, use the default payouts
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string TaxZZZCurrentActiveBracket = "TaxBracket1";
+
 }

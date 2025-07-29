@@ -5,9 +5,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
-using Content.Shared.Popups;
 using Robust.Server.Player;
-using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Coyote;
@@ -21,13 +19,13 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     [Dependency] private readonly BankSystem _bank = null!;
     [Dependency] private readonly PopupSystem _popupSystem = null!;
     [Dependency] private readonly ChatSystem _chatsys = null!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IChatManager _chatManager = null!;
+    [Dependency] private readonly IPlayerManager _playerManager = null!;
 
     private const float GoodlenSpeaking = 75;
     private const float GoodlenWhispering = 75;
     private const float GoodlenEmoting = 50;
-    private const float GoodlenQuickEmoting = 0;
+    // private const float GoodlenQuickEmoting = 0;
     private const float GoodlenSubtling = 100;
     private const float GoodlenRadio = 50; // idk
 
@@ -43,10 +41,6 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     private const int TaxBracket1 = 15000;
     private const int TaxBracket2 = 40000;
     private const int TaxBracket3 = 100000;
-    private const int TaxBracket1Flat = 50;
-    private const int TaxBracket2Flat = 40;
-    private const int TaxBracket3Flat = 20;
-    private const int TaxBracketRest = 10;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -117,8 +111,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         {
             actOut = DoffgerentiateEmotingAndQuickEmoting(
                 args.Source,
-                args.Message
-            );
+                args.Message);
         }
 
         // make the thing
@@ -126,8 +119,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             actOut,
             _timing.CurTime,
             args.Message,
-            args.PeoplePresent
-        );
+            args.PeoplePresent);
         // add it to the actions taken
         incentive.ActionsTaken.Add(action);
         // and we're good
@@ -174,13 +166,12 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         string message
     )
     {
-        if (_chatsys.TryEmoteChatInput(source, message, false))
-        {
-            // if the message is a valid emote, then its a quick emote
-            return RoleplayActs.QuickEmoting;
-        }
-
-        return RoleplayActs.Emoting;
+        return _chatsys.TryEmoteChatInput(
+            source,
+            message,
+            false)
+            ? RoleplayActs.QuickEmoting  // if the message is a valid emote, then its a quick emote
+            : RoleplayActs.Emoting;
 
         // well i cant figure out how the system does it, so im just gonnasay if theres
         // no spaces, its a quick emote
@@ -262,6 +253,8 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     }
 
                     break;
+                case RoleplayActs.EmotingOrQuickEmoting:
+                case RoleplayActs.None:
                 default:
                     Log.Warning($"Unknown roleplay action {action.Action} on entity {uid}!");
                     break;
@@ -270,33 +263,62 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             action.Judgement = judgement; // set the judgement on the action
             actionsToRemove.Add(action); // add the action to the removal list
         }
-
         foreach (var action in actionsToRemove)
         {
             incentive.ActionsTaken.Remove(action); // remove actions after iteration
         }
 
-        var judgeAmount = (int)(bestSay + bestWhisper + bestEmote + bestQuickEmote + bestSubtle + bestRadio);
-        var payFlat = judgeAmount switch
+        var judgeAmount = (int) MathF.Ceiling(
+            bestSay
+            + bestWhisper
+            + bestEmote
+            + bestQuickEmote
+            + bestSubtle
+            + bestRadio);
+        _bank.TryGetBalance(uid, out var hasThisMuchMoney);
+        int payFlat;
+        // if the player has a payout override, use that
+        if (rpic.TaxBracketPayoutOverride > 0) // mainly for admemes
+            payFlat = rpic.TaxBracketPayoutOverride;
+        else
         {
-            < TaxBracket1 => TaxBracket1Flat,
-            < TaxBracket2 => TaxBracket2Flat,
-            < TaxBracket3 => TaxBracket3Flat,
-            _ => TaxBracketRest,
-        };
-        var payAmount = Math.Clamp(judgeAmount * payFlat, 20, int.MaxValue); // at least 20 bucks, bui
+            payFlat = hasThisMuchMoney switch
+            {
+                < TaxBracket1 => rpic.TaxBracket1Payout,
+                < TaxBracket2 => rpic.TaxBracket2Payout,
+                < TaxBracket3 => rpic.TaxBracket3Payout,
+                _ => rpic.TaxBracketRestPayout,
+            };
+        }
+        UpdateComponentTaxBracketIndicator(
+            ref rpic,
+            hasThisMuchMoney);
+
+        var payAmount = Math.Clamp(
+            judgeAmount * payFlat,
+            20,
+            int.MaxValue); // at least 20 bucks, bui
         // poll for player's components for multiplier and additive
         // create the event
         var basePay = payAmount;
-        var modifyEvent = new GetRoleplayIncentiveModifier(uid, 1f, 0f);
+        var modifyEvent = new GetRoleplayIncentiveModifier(
+            uid,
+            1f,
+            0f);
         // raise the event
-        RaiseLocalEvent(uid, modifyEvent, true);
+        RaiseLocalEvent(
+            uid,
+            modifyEvent,
+            true);
         // apply the add first
         payAmount += (int) modifyEvent.Additive;
         // then apply the multiplier
         payAmount = (int) (payAmount * modifyEvent.Multiplier);
         // clamp the pay amount to a minimum of 20 and a maximum of int.MaxValue
-        payAmount = Math.Clamp(payAmount, 20, int.MaxValue);
+        payAmount = Math.Clamp(
+            payAmount,
+            20,
+            int.MaxValue);
         var addedPay = (int) modifyEvent.Additive;
         var multiplier = modifyEvent.Multiplier;
         var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
@@ -313,8 +335,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         var message = "Hi mom~";
         var messageOverhead = Loc.GetString(
             "coyote-rp-incentive-payward-message",
-            ("amount", payAmount)
-        );
+            ("amount", payAmount));
         if (hasModifier)
         {
             if (hasMultiplier && hasAdditive)
@@ -324,8 +345,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     ("amount", payAmount),
                     ("basePay", basePay),
                     ("multiplier", multiplier),
-                    ("additive", addedPay)
-                );
+                    ("additive", addedPay));
             }
             else if (hasMultiplier)
             {
@@ -333,8 +353,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     "coyote-rp-incentive-payward-message-multiplier",
                     ("amount", payAmount),
                     ("basePay", basePay),
-                    ("multiplier", multiplier)
-                );
+                    ("multiplier", multiplier));
             }
             else if (hasAdditive)
             {
@@ -342,22 +361,19 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     "coyote-rp-incentive-payward-message-additive",
                     ("amount", payAmount),
                     ("basePay", basePay),
-                    ("additive", addedPay)
-                );
+                    ("additive", addedPay));
             }
         }
         else
         {
             message = Loc.GetString(
                 "coyote-rp-incentive-payward-message",
-                ("amount", payAmount)
-            );
+                ("amount", payAmount));
         }
         _popupSystem.PopupEntity(
             messageOverhead,
             uid,
-            uid
-        );
+            uid);
         // cum it to chat
         if (_playerManager.TryGetSessionByEntity(uid, out var session))
         {
@@ -392,7 +408,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     /// </summary>
     /// <param name="action">The action being performed</param>
     /// <param name="listeners">The number of listeners present</param>
-    private float GetListenerMultiplier(RoleplayActs action, int listeners)
+    private static float GetListenerMultiplier(RoleplayActs action, int listeners)
     {
         // if there are no listeners, return 0
         if (listeners <= 0)
@@ -407,6 +423,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             RoleplayActs.Radio => ListenerMultRadio,
             _ => false,
         };
+        // ReSharper disable once ConvertIfStatementToReturnStatement
         if (!shouldMult)
         {
             // if the action does not have a multiplier, return 1
@@ -414,7 +431,10 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         }
 
         // clamp the multiplier to a maximum of MaxListenerMult
-        return Math.Clamp(listeners * listeners, 0f, MaxListenerMult);
+        return Math.Clamp(
+            listeners * listeners,
+            0f,
+            MaxListenerMult);
     }
 
     /// <summary>
@@ -422,7 +442,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     /// </summary>
     /// <param name="action">The action being performed</param>
     /// <param name="messageLength">The length of the message</param>
-    private float GetMessageLengthMultiplier(RoleplayActs action, int messageLength)
+    private static float GetMessageLengthMultiplier(RoleplayActs action, int messageLength)
     {
         // if the message length is 0, return 1
         if (messageLength <= 0)
@@ -446,10 +466,36 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         };
 
         // if the message length is less than the good length, return 1
+        // ReSharper disable once ConvertIfStatementToReturnStatement
         if (messageLength < goodlen)
             return 1f;
 
         // otherwise, return the message length divided by the good length
-        return Math.Clamp(messageLength / goodlen, 1f, 5f);
+        return Math.Clamp(
+            messageLength / goodlen,
+            1f,
+            5f);
+    }
+
+    /// <summary>
+    /// Updates the tax bracket indicator on the component
+    /// Mainly for feedback in view variables
+    /// </summary>
+    private static void UpdateComponentTaxBracketIndicator(
+        ref RoleplayIncentiveComponent rpic,
+        int balance)
+    {
+        if (rpic.TaxBracketPayoutOverride > 0)
+        {
+            rpic.TaxZZZCurrentActiveBracket = "TaxBracketOverride";
+            return;
+        }
+        rpic.TaxZZZCurrentActiveBracket = balance switch
+        {
+            < TaxBracket1 => "TaxBracket1",
+            < TaxBracket2 => "TaxBracket2",
+            < TaxBracket3 => "TaxBracket3",
+            _ => "TaxBracketRest",
+        };
     }
 }

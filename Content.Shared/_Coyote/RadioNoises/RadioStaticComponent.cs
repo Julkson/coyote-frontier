@@ -37,10 +37,18 @@ public sealed partial class RadioStaticComponent : Component
     /// might get tiring!
     /// Default is "Default" which is the default radio channel, by default.
     /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
     public HashSet<string> SquelchedChannels = [];
 
     /// <summary>
     /// If this is true, the radio will not play any static noise at all.
     /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
     public bool OmniSquelch = false;
+
+    /// <summary>
+    /// How loud the volume be!
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float Volume = 0f;
 }

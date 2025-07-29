@@ -1,6 +1,6 @@
 <DefaultWindow
     MinSize="450 450"
-    SetSize="450 550"
+    SetSize="600 550"
     Title="{Loc 'ghost-target-window-title'}"
     xmlns="https://spacestation14.io">
     <BoxContainer

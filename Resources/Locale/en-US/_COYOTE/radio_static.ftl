@@ -10,3 +10,7 @@ radio-squelch-omni-disabled = Radio Static Suppression Disabled!
 
 radio-squelch-verb-unsquelch = Unsquelch {$channel}
 radio-squelch-verb-squelch = Squelch {$channel}
+
+verb-categories-radiovolume = Radio Volume
+radio-volume-verb = VOL: {$volume}
+radio-volume-verb-popup = Radio Volume: {$volume}
