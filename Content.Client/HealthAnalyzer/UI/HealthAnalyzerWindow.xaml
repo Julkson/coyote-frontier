@@ -1,39 +1,199 @@
 <controls:FancyWindow
-    xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     MaxHeight="525"
-    MinWidth="300">
+    MinWidth="350"
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <!--  Shitmed Change  -->
     <ScrollContainer
-        Margin="5 5 5 5"
+        Margin="5,5,5,5"
         ReturnMeasure="True"
         VerticalExpand="True">
         <BoxContainer
             Name="RootContainer"
-            VerticalExpand="True"
-            Orientation="Vertical">
-            <Label
-                Name="NoPatientDataText"
-                Text="{Loc health-analyzer-window-no-patient-data-text}" />
-
+            Orientation="Vertical"
+            VerticalExpand="True">
+            <Label Name="NoPatientDataText" Text="{Loc health-analyzer-window-no-patient-data-text}" />
+            <!--  Shitmed Change Start  -->
+            <Button
+                HorizontalExpand="False"
+                Margin="0,0,0,10"
+                Name="ReturnButton"
+                Text="{Loc 'health-analyzer-window-return-button-text'}" />
+            <!--  Shitmed Change End  -->
             <BoxContainer
+                Margin="0,0,0,5"
                 Name="PatientDataContainer"
-                Margin="0 0 0 5"
                 Orientation="Vertical">
-                <BoxContainer Orientation="Horizontal" Margin="0 0 0 5">
-                    <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64" />
-                    <TextureRect Name="NoDataTex" Access="Public" SetSize="64 64" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
-                    <BoxContainer Margin="5 0 0 0" Orientation="Vertical" VerticalAlignment="Top">
+                <!--  Shitmed Change Start  -->
+                <BoxContainer Margin="0,0,0,5" Orientation="Horizontal">
+                    <PanelContainer>
+                        <SpriteView
+                            Access="Public"
+                            Name="SpriteView"
+                            OverrideDirection="South"
+                            Scale="1.0 1.0"
+                            SetSize="96 96" />
+                        <PanelContainer
+                            HorizontalAlignment="Left"
+                            Margin="18,0,0,0"
+                            Name="PartView"
+                            SetSize="57 96"
+                            VerticalAlignment="Center">
+                            <PanelContainer
+                                HorizontalAlignment="Left"
+                                Margin="4,0,0,0"
+                                SetSize="15 33">
+                                <TextureButton
+                                    MinSize="15 25"
+                                    Name="RightArmButton"
+                                    StyleClasses="TargetDollButtonRightArm"
+                                    VerticalAlignment="Top" />
+                                <TextureButton
+                                    MinSize="15 15"
+                                    Name="RightHandButton"
+                                    StyleClasses="TargetDollButtonRightHand"
+                                    VerticalAlignment="Bottom" />
+                            </PanelContainer>
+                            <PanelContainer
+                                HorizontalAlignment="Center"
+                                Margin="0,0,0,0"
+                                SetSize="43 75"
+                                VerticalAlignment="Center">
+                                <TextureButton
+                                    HorizontalAlignment="Center"
+                                    MinSize="28 23"
+                                    Name="HeadButton"
+                                    StyleClasses="TargetDollButtonHead"
+                                    VerticalAlignment="Top">
+                                    <!--<PanelContainer
+                            SetSize="15 15"
+                            Margin="0 9 0 0"
+                            HorizontalAlignment="Center">
+                            <TextureButton
+                                Name="EyesButton"
+                                MinSize="15 9"
+                                VerticalAlignment="Top"
+                                StyleClasses="TargetDollButtonEyes">
+                                <TextureRect
+                                    TexturePath="/Textures/Interface/Targeting/Doll/eyes.png"
+                                    Stretch="KeepAspectCentered"
+                                    SetSize="15 9"/>
+                            </TextureButton>
+                            <TextureButton
+                                Name="MouthButton"
+                                SetSize="9 6"
+                                VerticalAlignment="Bottom"
+                                StyleClasses="TargetDollButtonMouth">
+                                <TextureRect
+                                    TexturePath="/Textures/Interface/Targeting/Doll/mouth.png"
+                                    Stretch="KeepAspectCentered"
+                                    SetSize="9 6"/>
+                            </TextureButton>
+                        </PanelContainer>-->
+                                </TextureButton>
+                                <TextureButton
+                                    HorizontalAlignment="Center"
+                                    Margin="0,18,0,0"
+                                    Name="ChestButton"
+                                    SetSize="28 30"
+                                    StyleClasses="TargetDollButtonChest"
+                                    VerticalAlignment="Top" />
+                                <PanelContainer
+                                    HorizontalAlignment="Center"
+                                    MinSize="38 35"
+                                    VerticalAlignment="Bottom">
+                                    <TextureButton
+                                        HorizontalAlignment="Center"
+                                        MinSize="28 15"
+                                        Name="GroinButton"
+                                        StyleClasses="TargetDollButtonGroin"
+                                        VerticalAlignment="Top" />
+                                    <PanelContainer
+                                        HorizontalAlignment="Right"
+                                        MinSize="20 30"
+                                        VerticalAlignment="Bottom">
+                                        <TextureButton
+                                            HorizontalAlignment="Left"
+                                            MinSize="15 28"
+                                            Name="LeftLegButton"
+                                            StyleClasses="TargetDollButtonLeftLeg"
+                                            VerticalAlignment="Top" />
+                                        <TextureButton
+                                            MinSize="20 10"
+                                            Name="LeftFootButton"
+                                            StyleClasses="TargetDollButtonLeftFoot"
+                                            VerticalAlignment="Bottom" />
+                                    </PanelContainer>
+                                    <PanelContainer
+                                        HorizontalAlignment="Left"
+                                        MinSize="20 30"
+                                        VerticalAlignment="Bottom">
+                                        <TextureButton
+                                            HorizontalAlignment="Right"
+                                            MinSize="15 28"
+                                            Name="RightLegButton"
+                                            StyleClasses="TargetDollButtonRightLeg"
+                                            VerticalAlignment="Top" />
+                                        <TextureButton
+                                            HorizontalAlignment="Center"
+                                            MinSize="20 10"
+                                            Name="RightFootButton"
+                                            StyleClasses="TargetDollButtonRightFoot"
+                                            VerticalAlignment="Bottom" />
+                                    </PanelContainer>
+                                </PanelContainer>
+                            </PanelContainer>
+                            <PanelContainer
+                                HorizontalAlignment="Right"
+                                Margin="0,0,4,0"
+                                SetSize="15 33">
+                                <TextureButton
+                                    MinSize="15 25"
+                                    Name="LeftArmButton"
+                                    StyleClasses="TargetDollButtonLeftArm"
+                                    VerticalAlignment="Top" />
+                                <TextureButton
+                                    MinSize="15 15"
+                                    Name="LeftHandButton"
+                                    StyleClasses="TargetDollButtonLeftHand"
+                                    VerticalAlignment="Bottom" />
+                            </PanelContainer>
+                        </PanelContainer>
+                    </PanelContainer>
+                    <TextureRect
+                        Access="Public"
+                        Name="NoDataTex"
+                        SetSize="64 64"
+                        Stretch="KeepAspectCentered"
+                        TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"
+                        Visible="false" />
+                    <BoxContainer
+                        Margin="5,0,0,0"
+                        Orientation="Vertical"
+                        VerticalAlignment="Top">
                         <RichTextLabel Name="NameLabel" SetWidth="150" />
-                        <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
+                        <Label
+                            Name="SpeciesLabel"
+                            StyleClasses="LabelSubText"
+                            VerticalAlignment="Top" />
+                        <Label
+                            Name="PartNameLabel"
+                            StyleClasses="LabelSubText"
+                            VerticalAlignment="Bottom" />
                     </BoxContainer>
-                    <Label Margin="0 0 5 0" HorizontalExpand="True" HorizontalAlignment="Right" VerticalExpand="True"
-                           VerticalAlignment="Top" Name="ScanModeLabel"
-                           Text="{Loc 'health-analyzer-window-entity-unknown-text'}" />
+                    <Label
+                        HorizontalAlignment="Right"
+                        HorizontalExpand="True"
+                        Margin="0,0,5,0"
+                        Name="ScanModeLabel"
+                        Text="{Loc 'health-analyzer-window-entity-unknown-text'}"
+                        VerticalAlignment="Top"
+                        VerticalExpand="True" />
                 </BoxContainer>
 
                 <PanelContainer StyleClasses="LowDivider" />
 
-                <GridContainer Margin="0 5 0 0" Columns="2">
+                <GridContainer Columns="2" Margin="0,5,0,0">
                     <Label Text="{Loc 'health-analyzer-window-entity-status-text'}" />
                     <Label Name="StatusLabel" />
                     <Label Text="{Loc 'health-analyzer-window-entity-temperature-text'}" />
@@ -45,19 +205,25 @@
                 </GridContainer>
             </BoxContainer>
 
-            <PanelContainer Name="AlertsDivider" Visible="False" StyleClasses="LowDivider" />
-
-            <BoxContainer Name="AlertsContainer" Visible="False" Margin="0 5" Orientation="Vertical" HorizontalAlignment="Center">
-
-            </BoxContainer>
-
-            <PanelContainer StyleClasses="LowDivider" />
+            <PanelContainer
+                Name="AlertsDivider"
+                StyleClasses="LowDivider"
+                Visible="False" />
 
             <BoxContainer
+                HorizontalAlignment="Center"
+                Margin="0,5"
+                Name="AlertsContainer"
+                Orientation="Vertical"
+                Visible="False" />
+
+            <PanelContainer StyleClasses="LowDivider" />
+            <!--  Shitmed Change End  -->
+
+            <BoxContainer
+                Margin="0,5,0,5"
                 Name="GroupsContainer"
-                Margin="0 5 0 5"
-                Orientation="Vertical">
-            </BoxContainer>
+                Orientation="Vertical" />
 
         </BoxContainer>
     </ScrollContainer>

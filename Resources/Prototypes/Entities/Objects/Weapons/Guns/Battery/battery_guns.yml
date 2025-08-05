@@ -26,6 +26,11 @@
     startingCharge: 1000
   - type: StaticPrice
     price: 500
+  - type: Cautery # Shitmed
+    speed: 0.9
+  - type: SurgeryTool # Shitmed
+    endSound:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -62,6 +67,11 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Cautery # Shitmed
+    speed: 0.9
+  - type: SurgeryTool # Shitmed
+    endSound:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
@@ -187,11 +197,11 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/tesla_gun.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-4
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Gun
     projectileSpeed: 10
     soundGunshot:
@@ -311,8 +321,8 @@
     selectedMode: SemiAuto
     fireRate: 3
     availableModes:
-      - SemiAuto
-      - FullAuto
+    - SemiAuto
+    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
@@ -499,17 +509,17 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-0
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
     quickEquip: false
     slots:
-      - suitStorage
-      - Belt
+    - suitStorage
+    - Belt
   - type: ProjectileBatteryAmmoProvider
     proto: NFBulletDisabler # Frontier
     fireCost: 50
@@ -528,21 +538,21 @@
     size: Large
   - type: Tag
     tags:
-      - Taser
+    - Taser
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-0
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Gun
     selectedMode: FullAuto
     fireRate: 4.5
     availableModes:
-      - SemiAuto
-      - FullAuto
+    - SemiAuto
+    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: ProjectileBatteryAmmoProvider

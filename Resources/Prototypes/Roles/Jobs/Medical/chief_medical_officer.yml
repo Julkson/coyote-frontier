@@ -35,9 +35,16 @@
   # - !type:AddComponentSpecial
   #   components:
   #     - type: CommandStaff
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: SurgerySpeedModifier
+      SpeedModifier: 2.5
   ## Frontier: commented everything above out
   accessGroups: # Frontier
   - GeneralAccess # Frontier
+  # Shitmed Change
+
 
 - type: startingGear
   id: CMOGear

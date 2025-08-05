@@ -146,6 +146,12 @@
             "name": "icon-xenoborg-tools"
         },
         {
+            "name": "icon-surgery"
+        },
+        {
+            "name": "icon-advanced-surgery"
+        },
+        {
             "name": "icon-syndicate"
         },
         {
@@ -174,10 +180,10 @@
         },
         {
             "name": "xenoborg_engi"
-        }, 
+        },
         {
             "name": "xenoborg_generic"
-        }, 
+        },
         {
             "name": "xenoborg_heavy"
         },

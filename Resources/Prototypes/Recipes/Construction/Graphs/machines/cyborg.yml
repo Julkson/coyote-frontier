@@ -33,7 +33,7 @@
         doAfter: 0.5
 
   - node: cyborg
-    entity: BorgChassisSelectable
+    entity: BorgChassisGeneric
 
   - node: derelictcyborg
     entity: BorgChassisDerelict

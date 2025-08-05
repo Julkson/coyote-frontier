@@ -1,13 +1,12 @@
 using Content.Client.Rotation;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Movement.Systems;
 using Content.Shared.Rotation;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
+
 
 namespace Content.Client.Buckle;
 
@@ -22,10 +21,8 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     {
         base.Initialize();
 
-        // SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
-
-        // Floof - brought those two back after upstream removed them for unknown reasons
         SubscribeLocalEvent<BuckleComponent, BuckledEvent>(OnBuckledEvent);
         SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
     }
@@ -40,6 +37,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         }
         query.Dispose();
     }
+    // Floof section end
 
     /// <summary>
     /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
@@ -57,7 +55,6 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         }
     }
 
-    // Floof - those methods were evidently removed from the original code. They are still necessary to update the entity's draw depth.
     /// <summary>
     /// Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
     /// </summary>
@@ -73,8 +70,6 @@ internal sealed class BuckleSystem : SharedBuckleSystem
             // ent.Comp.OriginalDrawDepth = null;
         }
     }
-    // Floof section end
-
 
     private void OnStrapMoveEvent(EntityUid uid, StrapComponent component, ref MoveEvent args)
     {
@@ -93,9 +88,6 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     }
 
     private void UpdateBucklesDrawDepth(EntityUid uid, StrapComponent component) {
-        //if (HasComp<VehicleComponent>(component.LastEntityBuckledTo)) // Umbra
-        //    return; // Umbra
-
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
             return;
 
@@ -106,7 +98,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         var isNorth = GetEntityOrientation(uid) == Direction.North; // Floof - replaced with a method call
         foreach (var buckledEntity in component.BuckledEntities)
         {
-            if (!TryComp<BuckleComponent>(buckledEntity, out var buckle))
+            if (!TryComp<BuckleComponent>(buckledEntity, out var buckle) || buckle.BuckledTo != uid)
                 continue;
 
             if (!TryComp<SpriteComponent>(buckledEntity, out var buckledSprite))
@@ -127,7 +119,6 @@ internal sealed class BuckleSystem : SharedBuckleSystem
 
     private void OnAppearanceChange(EntityUid uid, BuckleComponent component, ref AppearanceChangeEvent args)
     {
-        // EE changes
         if (!TryComp<RotationVisualsComponent>(uid, out var rotVisuals)
             || !Appearance.TryGetData<bool>(uid, BuckleVisuals.Buckled, out var buckled, args.Component)
             || !buckled || args.Sprite == null)

@@ -1,0 +1,56 @@
+<controls:SurgeryWindow
+    MinSize="400 400"
+    xmlns="https://spacestation14.io"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:controls="clr-namespace:Content.Client._Shitmed.Medical.Surgery"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <BoxContainer
+        HorizontalExpand="True"
+        Orientation="Vertical"
+        VerticalExpand="True">
+        <BoxContainer
+            HorizontalExpand="True"
+            Margin="0,0,0,10"
+            Orientation="Horizontal">
+            <Button
+                Access="Public"
+                HorizontalExpand="True"
+                Name="PartsButton"
+                StyleClasses="OpenBoth"
+                Text="{Loc 'surgery-ui-window-parts'}" />
+            <Button
+                Access="Public"
+                HorizontalExpand="True"
+                Name="SurgeriesButton"
+                StyleClasses="OpenBoth"
+                Text="{Loc 'surgery-ui-window-surgeries'}" />
+            <Button
+                Access="Public"
+                HorizontalExpand="True"
+                Name="StepsButton"
+                StyleClasses="OpenBoth"
+                Text="{Loc 'surgery-ui-window-steps'}" />
+        </BoxContainer>
+        <cc:HSeparator />
+        <ScrollContainer
+            HorizontalExpand="True"
+            VScrollEnabled="True"
+            VerticalExpand="True">
+            <BoxContainer
+                Access="Public"
+                Name="Parts"
+                Orientation="Vertical"
+                Visible="False" />
+            <BoxContainer
+                Access="Public"
+                Name="Surgeries"
+                Orientation="Vertical"
+                Visible="False" />
+            <BoxContainer
+                Access="Public"
+                Name="Steps"
+                Orientation="Vertical"
+                Visible="False" />
+        </ScrollContainer>
+    </BoxContainer>
+</controls:SurgeryWindow>

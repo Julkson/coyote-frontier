@@ -1,0 +1,57 @@
+<widgets:PartStatusControl
+    HorizontalAlignment="Center"
+    Name="PartStatusIndicator"
+    VerticalAlignment="Center"
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:widgets="clr-namespace:Content.Client._Shitmed.UserInterface.Systems.PartStatus.Widgets">
+    <Control>
+        <PanelContainer>
+            <TextureRect
+                Name="DollHead"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollTorso"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollGroin"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollLeftArm"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollLeftHand"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollRightArm"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollRightHand"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollLeftLeg"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollLeftFoot"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollRightLeg"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+            <TextureRect
+                Name="DollRightFoot"
+                SetSize="64 64"
+                Stretch="KeepAspectCentered" />
+        </PanelContainer>
+    </Control>
+</widgets:PartStatusControl>

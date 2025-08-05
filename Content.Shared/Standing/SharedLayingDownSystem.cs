@@ -1,13 +1,13 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
+using Content.Shared.Floofstation;
 using Content.Shared.DoAfter;
 using Content.Shared.Gravity;
 using Content.Shared.Input;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Organ;
-using Content.Shared.Floofstation;
+using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Standing;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
@@ -146,6 +146,8 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || standingState.CurrentState is not StandingState.Lying
             || !_mobState.IsAlive(uid)
             || TerminatingOrDeleted(uid)
+            // || !TryComp<BodyComponent>(uid, out var body)
+            // || body.LegEntities.Count == 0 // Floof - whoever wrote this, I hate you.
             || !_actionBlocker.CanConsciouslyPerformAction(uid)) // Floof - check for consciousness instead of a no-brain DeBrainedComponent check (pun intended)
             return false;
 
@@ -182,7 +184,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return false;
         }
 
-        _standing.Down(uid, true, behavior != DropHeldItemsBehavior.NoDrop, standingState: standingState);
+        _standing.Down(uid, true, behavior != DropHeldItemsBehavior.NoDrop, standingState);
         return true;
     }
 }

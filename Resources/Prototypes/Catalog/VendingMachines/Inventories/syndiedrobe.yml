@@ -19,6 +19,8 @@
     ClothingHandsCoderValidWarmers: 2
     ClothingUnderSocksCoderValid: 2
     ClothingUniformCoderValidThong: 2
+    ClothingNeckCollarSyndi: 2 # Floofstation - Collar addition
+
   contrabandInventory:
     ToyFigurineFootsoldier: 1
     ToyFigurineNukieElite: 1

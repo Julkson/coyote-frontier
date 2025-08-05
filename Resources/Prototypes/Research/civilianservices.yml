@@ -11,9 +11,15 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  # - PlantBagOfHolding #DeltaV
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
+  - PlantAnalyzer # Frontier
+  - NFBlueprintPlantAnalyzerEmpty # Frontier
+  # - NFBlueprintPlantBagOfHolding # Frontier
 
 - type: technology
   id: CritterMechs
@@ -64,11 +70,27 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-    - ComputerTelevisionCircuitboard
-    - SynthesizerInstrument
-    - DawInstrumentMachineCircuitboard
-    - MassMediaCircuitboard
-    - JukeboxCircuitBoard
+  - ComputerTelevisionCircuitboard
+  - SynthesizerInstrument
+  - BorgModuleMusique
+  - BorgModuleClowning
+  - DawInstrumentMachineCircuitboard
+  - MassMediaCircuitboard
+  - JukeboxCircuitBoard
+
+- type: technology
+  id: RoboticCleanliness
+  name: research-technology-robotic-cleanliness
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: janitor
+  discipline: CivilianServices
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - BorgModuleLightReplacer
+  - BorgModuleAdvancedCleaning
+  - PortablePumpMachineCircuitBoard # Frontier
 
 - type: technology
   id: MeatManipulation
@@ -81,7 +103,7 @@
   cost: 7500
   recipeUnlocks:
   - FatExtractorMachineCircuitboard
-  - BiofabricatorMachineCircuitboard
+  - BiogeneratorMachineCircuitboard # Frontier BiofabricatorMachineCircuitboard<BiogeneratorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
 
 # Tier 2
@@ -118,17 +140,44 @@
   - CryostasisBeaker
   - SyringeCryostasis
 
-- type: technology # Merge with other T2 medical research if possible!
-  id: MechanizedTreatment
-  name: research-technology-mechanized-treatment
+# Shitmed Change Start
+- type: technology
+  id: AdvancedTreatment
+  name: research-technology-advanced-treatment
   icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: medical
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    state: e-scalpel-on
   discipline: CivilianServices
   tier: 2
   cost: 5000
   recipeUnlocks:
-  - BorgModuleAdvancedChemical
+  # - BorgModuleAdvancedTreatment # Frontier
+  # - BorgModuleDefibrillator # Frontier
+  - BorgModuleAdvancedParamedic # Frontier
+  - MedicalTechFabCircuitboard
+  - EnergyScalpel
+  - EnergyCautery
+  - AdvancedRetractor
+  - BorgModuleAdvancedSurgery
+
+- type: technology
+  id: CyberneticEnhancements
+  name: research-technology-cybernetic-enhancements
+  icon:
+    sprite: _Shitmed/Mobs/Species/IPC/organs.rsi
+    state: eyes
+  discipline: CivilianServices
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - JawsOfLifeLeftArm
+  - JawsOfLifeRightArm
+  - SpeedLeftLeg
+  - SpeedRightLeg
+  - BasicCyberneticEyes
+  - SecurityCyberneticEyes
+  - MedicalCyberneticEyes
+# Shitmed Change End
 
 - type: technology
   id: AdvancedCleaning
@@ -142,7 +191,8 @@
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
-  - BorgModuleAdvancedCleaning
+  - NFBlueprintAdvMopItem # Frontier
+  - ReinforcedJug # Frontier
 
 - type: technology
   id: HONKMech
@@ -177,6 +227,7 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
 
+    # Tier 3
 - type: technology
   id: BluespaceCargoTransport
   name: research-technology-bluespace-cargo-transport
@@ -203,6 +254,18 @@
 
 # Tier 3
 
+    # - type: technology # Frontier
+    # id: BluespaceCargoTransport
+    # name: research-technology-bluespace-cargo-transport
+    # icon:
+    # sprite: Structures/cargo_telepad.rsi
+  # state: display
+  # discipline: CivilianServices
+  # tier: 3
+  # cost: 15000
+  # recipeUnlocks:
+  # - CargoTelepadMachineCircuitboard
+
 - type: technology
   id: QuantumFiberWeaving
   name: research-technology-quantum-fiber-weaving
@@ -211,7 +274,7 @@
     state: icon
   discipline: CivilianServices
   tier: 3
-  cost: 10000
+  cost: 15000 # Frontier - 10000<15000
   recipeUnlocks:
   - ClothingShoesBootsSpeed
 
@@ -227,6 +290,12 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+  - JugBluespace # Frontier
+  - VialBluespace # Frontier
+  - NFBlueprintBluespaceBeaker # Frontier
+  - NFBlueprintSyringeBluespace # Frontier
+  - NFBlueprintJugBluespace # Frontier
+  - NFBlueprintVialBluespace # Frontier
 
 - type: technology
   id: LauncherSyringe

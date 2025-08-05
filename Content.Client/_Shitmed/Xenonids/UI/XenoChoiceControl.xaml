@@ -1,0 +1,25 @@
+<ui:XenoChoiceControl xmlns="https://spacestation14.io" xmlns:ui="clr-namespace:Content.Client._Shitmed.Xenonids.UI">
+    <BoxContainer Orientation="Horizontal">
+        <Button
+            Access="Public"
+            HorizontalExpand="True"
+            Margin="0"
+            Name="Button"
+            StyleClasses="ButtonSquare"
+            VerticalExpand="False">
+            <BoxContainer Margin="0" Orientation="Horizontal">
+                <TextureRect
+                    Access="Public"
+                    HorizontalExpand="False"
+                    Margin="1"
+                    Name="Texture"
+                    VerticalExpand="False" />
+                <Control MinWidth="5" />
+                <RichTextLabel
+                    Access="Public"
+                    Name="NameLabel"
+                    VerticalAlignment="Center" />
+            </BoxContainer>
+        </Button>
+    </BoxContainer>
+</ui:XenoChoiceControl>

@@ -36,19 +36,19 @@
   id: LockerFillCaptainNoLaser
   table: !type:AllSelector
     children:
-#    - id: CaptainIDCard # Frontier
-#    - id: CigarGoldCase # Frontier
-#      prob: 0.25 # Frontier
-#    - id: ClothingBeltSheathFilled # Frontier
-#    - id: ClothingHeadsetAltCommand # Frontier
+    #    - id: CaptainIDCard # Frontier
+    #    - id: CigarGoldCase # Frontier
+    #      prob: 0.25 # Frontier
+    #    - id: ClothingBeltSheathFilled # Frontier
+    #    - id: ClothingHeadsetAltCommand # Frontier
     - id: ClothingOuterArmorCaptainCarapace
-#    - id: CommsComputerCircuitboard # Frontier
-#    - id: DoorRemoteCommand # Frontier
-#    - id: MedalCase # Frontier
-#    - id: NukeDisk # Frontier
-#    - id: PinpointerNuclear # Frontier
-#    - id: PlushieNuke # Frontier
-#      prob: 0.1 # Frontier
+    #    - id: CommsComputerCircuitboard # Frontier
+    #    - id: DoorRemoteCommand # Frontier
+    #    - id: MedalCase # Frontier
+    #    - id: NukeDisk # Frontier
+    #    - id: PinpointerNuclear # Frontier
+    #    - id: PlushieNuke # Frontier
+    #      prob: 0.1 # Frontier
     - id: RubberStampCaptain
     # - id: SpaceCash1000 # Frontier
     # - id: WeaponDisabler # Frontier
@@ -241,6 +241,8 @@
     - id: MedTekCartridge
     - id: ClothingBeltMedicalFilled # Frontier - add more bloat
     - id: RubberStampDoctor # Frontier
+    # Shitmed
+    - id: MedicalBiofabMachineBoard
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

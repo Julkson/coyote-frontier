@@ -7,12 +7,35 @@
   - PositronicBrain
   - SciFlash
   - CyborgEndoskeleton
+  - Quadborgendoskeleton
 
 - type: latheRecipePack
   id: BorgModulesStatic
   recipes:
-  - BorgModuleTool
+  - BorgModuleCable
   - BorgModuleFireExtinguisher
+  - BorgModuleRadiationDetection
+  - BorgModuleTool
+  - BorgModuleStun
+  - BorgModuleKill
+  - BorgModuleInvestigation
+  - BorgModuleSurgery # Shitmed Change
+
+- type: latheRecipePack
+  id: BorgModulesDynamic
+  recipes:
+  - BorgModuleAdvancedSurgery
+
+- type: latheRecipePack
+  id: SMCybernetics
+  recipes:
+  - JawsOfLifeLeftArm
+  - JawsOfLifeRightArm
+  - SpeedLeftLeg
+  - SpeedRightLeg
+  - BasicCyberneticEyes
+  - SecurityCyberneticEyes
+  - MedicalCyberneticEyes
 
 - type: latheRecipePack
   id: BorgLimbsStatic
@@ -23,6 +46,35 @@
   - RightLegBorg
   - LightHeadBorg
   - TorsoBorg
+  - LeftArmBorgEngineer
+  - RightArmBorgEngineer
+  - LeftLegBorgEngineer
+  - RightLegBorgEngineer
+  - HeadBorgEngineer
+  - TorsoBorgEngineer
+  - LeftLegBorgJanitor
+  - RightLegBorgJanitor
+  - HeadBorgJanitor
+  - TorsoBorgJanitor
+  - LeftArmBorgMedical
+  - RightArmBorgMedical
+  - LeftLegBorgMedical
+  - RightLegBorgMedical
+  - HeadBorgMedical
+  - TorsoBorgMedical
+  - LeftArmBorgMining
+  - RightArmBorgMining
+  - LeftLegBorgMining
+  - RightLegBorgMining
+  - HeadBorgMining
+  - TorsoBorgMining
+  - LeftArmBorgService
+  - RightArmBorgService
+  - LeftLegBorgService
+  - RightLegBorgService
+  - HeadBorgService
+  - TorsoBorgService
+
 
 ## Dynamic
 
@@ -36,9 +88,16 @@
   recipes:
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
-  - BorgModuleAdvancedChemical
-  - BorgModuleAdvancedMining
+  # - BorgModuleGPS # Frontier: useless
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  #- BorgModuleDefibrillator # Frontier: base module
+  #- BorgModuleAdvancedTreatment # Frontier: base module
   - BorgModuleAdvancedParamedic # Frontier
+  - BorgModuleAdvancedMining # Frontier
+  - BorgModuleChef # Frontier
   - BorgModuleRCD # Frontier
 
 - type: latheRecipePack

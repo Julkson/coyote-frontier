@@ -31,6 +31,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key: # Shitmed
+        type: SurgeryBui
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -114,7 +116,32 @@
   - type: Speech
     speechSounds: Harpy
     speechVerb: Harpy
-    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl', 'Bark', 'Snarl', 'Whine', 'Howl', 'Awoo', 'HarpyHonk', 'HarpyRing', 'HarpyPew', 'HarpyBang', 'HarpyBeep', 'HarpyRev', 'HarpyCaw', 'Squish', 'Chitter', 'Squeak', 'Click', 'Belch', 'Squish', 'Bubble', 'Pop'] # Frontier: add Belch, Squish, Bubble, Pop
+    # allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl', 'Bark', 'Snarl', 'Whine', 'Howl', 'Awoo', 'HarpyHonk', 'HarpyRing', 'HarpyPew', 'HarpyBang', 'HarpyBeep', 'HarpyRev', 'HarpyCaw', 'Squish', 'Chitter', 'Squeak', 'Click', 'Belch', 'Squish', 'Bubble', 'Pop'] # Frontier: add Belch, Squish, Bubble, Pop
+    allowedEmotes:
+    - Meow
+    - Hiss
+    - Mew
+    - Purr
+    - Growl
+    - Bark
+    - Snarl
+    - Whine
+    - Howl
+    - Awoo
+    - HarpyHonk
+    - HarpyRing
+    - HarpyPew
+    - HarpyBang
+    - HarpyBeep
+    - HarpyRev
+    - HarpyCaw
+    - Squish
+    - Chitter
+    - Squeak
+    - Click
+    - Belch # Frontier
+    - Squish # Frontier
+    - Gnash # Flooftier
   - type: Vocal
     sounds:
       Male: SoundsHarpy
@@ -128,8 +155,8 @@
           False: {visible: false}
           True: {visible: true}
   - type: MovementSpeedModifier
-#    baseWalkSpeed: 2.5 # Frontier
-#    baseSprintSpeed: 5.0 # Frontier
+    #    baseWalkSpeed: 2.5 # Frontier
+    #    baseSprintSpeed: 5.0 # Frontier
     weightlessAcceleration: 2.5
   - type: Inventory
     speciesId: harpy

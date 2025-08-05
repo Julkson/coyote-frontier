@@ -1,8 +1,7 @@
-using System.Linq;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Climbing.Components;
 using Content.Shared.Climbing.Systems;
+using Content.Shared.Climbing.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
@@ -11,7 +10,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
-using Content.Shared._NF.Standing; // Frontier
+using System.Linq;
 
 namespace Content.Shared.Standing;
 
@@ -22,9 +21,8 @@ public sealed class StandingStateSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!; // EE
-    [Dependency] private readonly ClimbSystem _climb = default!; // Ee
-
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly ClimbSystem _climb = default!;
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
     private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
@@ -38,10 +36,10 @@ public sealed class StandingStateSystem : EntitySystem
     }
 
     public bool Down(EntityUid uid, bool playSound = true, bool dropHeldItems = true,
-        bool force = false,
         StandingStateComponent? standingState = null,
         AppearanceComponent? appearance = null,
-        HandsComponent? hands = null)
+        HandsComponent? hands = null,
+        bool setDrawDepth = false)
     {
         // TODO: This should actually log missing comps...
         if (!Resolve(uid, ref standingState, false))
@@ -60,17 +58,15 @@ public sealed class StandingStateSystem : EntitySystem
         if (dropHeldItems && hands != null)
             RaiseLocalEvent(uid, new DropHandItemsEvent(), false);
 
-        // if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
+        // Floof - this is absolutely not necessary
+        // if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled)
         //     return false;
 
-        if (!force)
-        {
-            var msg = new DownAttemptEvent();
-            RaiseLocalEvent(uid, msg, false);
+        var msg = new DownAttemptEvent();
+        RaiseLocalEvent(uid, msg, false);
 
-            if (msg.Cancelled)
-                return false;
-        }
+        if (msg.Cancelled)
+            return false;
 
         standingState.CurrentState = StandingState.Lying;
         Dirty(uid, standingState);
@@ -99,7 +95,9 @@ public sealed class StandingStateSystem : EntitySystem
             _audio.PlayPredicted(standingState.DownSound, uid, null);
 
         _movement.RefreshMovementSpeedModifiers(uid);
+
         Climb(uid);
+
         return true;
     }
 
@@ -115,9 +113,9 @@ public sealed class StandingStateSystem : EntitySystem
         // Optional component.
         Resolve(uid, ref appearance, false);
 
-        if (standingState.CurrentState is StandingState.Standing
-            || TryComp(uid, out BuckleComponent? buckle)
-            && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle))
+        if (standingState.CurrentState is StandingState.Standing)
+            // || TryComp(uid, out BuckleComponent? buckle)
+            // && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle)) // Floof - this is also not necessary
             return true;
 
         if (!force)
@@ -130,6 +128,7 @@ public sealed class StandingStateSystem : EntitySystem
         }
 
         standingState.CurrentState = StandingState.Standing;
+
         Dirty(uid, standingState);
         RaiseLocalEvent(uid, new StoodEvent(), false);
 
@@ -147,10 +146,10 @@ public sealed class StandingStateSystem : EntitySystem
         _movement.RefreshMovementSpeedModifiers(uid);
 
         Climb(uid);
+
         return true;
     }
 
-    // Method belongs to EE
     private void Climb(EntityUid uid)
     {
         _climb.ForciblyStopClimbing(uid);
@@ -165,6 +164,7 @@ public sealed class StandingStateSystem : EntitySystem
             _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
     }
 }
+
 
 public sealed class DropHandItemsEvent : EventArgs { }
 

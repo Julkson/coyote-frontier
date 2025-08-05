@@ -357,7 +357,7 @@
 # Borgs
 - type: entity
   id: PlayerBorgBattery
-  parent: BorgChassisSelectable
+  parent: BorgChassisGeneric
   suffix: Battery
   components:
   - type: ContainerFill
