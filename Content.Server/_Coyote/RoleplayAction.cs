@@ -8,7 +8,7 @@ namespace Content.Server._Coyote
     /// </summary>
     public sealed class RoleplayAction(
         RoleplayActs action,
-        TimeSpan timeTaken,
+        TimeSpan timeTaken, // B==D ~~~
         string? message = null,
         int peoplePresent = 0,
         float judgement = 0
