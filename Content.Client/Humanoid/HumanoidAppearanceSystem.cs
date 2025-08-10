@@ -1,4 +1,5 @@
 using Content.Client.DisplacementMap;
+using Content.Shared._Coyote.GenitalsShared;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -16,6 +17,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly GenitalManager _genitalManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
 
@@ -187,7 +189,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     ///     This should not be used if the entity is owned by the server. The server will otherwise
     ///     override this with the appearance data it sends over.
     /// </remarks>
-    public override void LoadProfile(EntityUid uid, HumanoidCharacterProfile? profile, HumanoidAppearanceComponent? humanoid = null)
+    public override void LoadProfile(EntityUid uid,
+        HumanoidCharacterProfile? profile,
+        HumanoidAppearanceComponent? humanoid = null)
     {
         if (profile == null)
             return;
@@ -289,6 +293,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
+        humanoid.Genitals = profile.Appearance.Genitals;
 
         UpdateSprite(humanoid, Comp<SpriteComponent>(uid));
     }
@@ -319,6 +324,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 }
             }
         }
+
+        // TODO: Add get genitals event here
 
         humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
 
