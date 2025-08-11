@@ -8,6 +8,8 @@
   fallbacks:
   - MailCarrierClothingUniformJumpsuitMailCarrier
   - MailCarrierClothingUniformJumpskirtMailCarrier
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: MailCarrierOuterClothing

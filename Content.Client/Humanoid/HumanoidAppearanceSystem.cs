@@ -1,6 +1,7 @@
 using Content.Client.DisplacementMap;
 using Content.Shared._Coyote.GenitalsShared;
 using Content.Shared.CCVar;
+using System.Numerics;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -48,6 +49,15 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     {
         UpdateLayers(component, sprite);
         ApplyMarkingSet(component, sprite);
+        // TODO: make this thing a more versatulate proc
+        var speciesPrototype = _prototypeManager.Index(component.Species);
+
+        var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+        var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        component.Height = height;
+        component.Width = width;
+
+        sprite.Scale = new Vector2(width, height);
         UpdateLayersAgain(component, sprite); // cool
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
@@ -293,6 +303,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
+        humanoid.Height = profile.Height;
+        humanoid.Width = profile.Width;
         humanoid.Genitals = profile.Appearance.Genitals;
 
         UpdateSprite(humanoid, Comp<SpriteComponent>(uid));

@@ -15,6 +15,7 @@
   subgroups:
   - PilotJumpsuit
   - ContractorJumpsuit
+  - CoyoteJumpsuit
   fallbacks:
   - MercenaryClothingUniformJumpsuitMercenary
   - MercenaryClothingUniformJumpskirtMercenary

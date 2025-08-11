@@ -68,6 +68,7 @@
   effectSuccess:
     popup: Subtle
     sound: {path: /Audio/Floof/Lewd/blush.ogg}
+    soundPerceivedByOthers: false
   action:
     !type:NoOpAction
   hideByRequirement: true

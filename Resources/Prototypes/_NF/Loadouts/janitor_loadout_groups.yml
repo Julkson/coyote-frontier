@@ -7,6 +7,8 @@
   - JanitorNFPlunger
   - JanitorNFClothingHeadHatCone
   - JanitorNFGoldenPlunger
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: JanitorNFJumpsuit

@@ -12,6 +12,7 @@
   - MercenaryJumpsuit
   - PilotJumpsuit
   - ContractorJumpsuit
+  - CoyoteJumpsuit
   fallbacks:
   - NFPirateJumpsuit
   - NFPirateJumpskirt

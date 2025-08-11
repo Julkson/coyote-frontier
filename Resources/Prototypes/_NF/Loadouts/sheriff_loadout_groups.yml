@@ -7,6 +7,8 @@
   fallbacks:
   - SheriffClothingUniformJumpsuitSheriff
   - SheriffClothingUniformJumpskirtSheriff
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: SheriffOuterClothing

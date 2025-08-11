@@ -27,6 +27,8 @@
   fallbacks:
   - SecurityGuardJumpsuit
   - SecurityGuardJumpskirt
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: SecurityGuardBackpack

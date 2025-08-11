@@ -8,6 +8,8 @@
   fallbacks:
   - StationRepClothingUniformJumpsuitSr
   - StationRepClothingUniformJumpskirtSr
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: StationRepOuterClothing

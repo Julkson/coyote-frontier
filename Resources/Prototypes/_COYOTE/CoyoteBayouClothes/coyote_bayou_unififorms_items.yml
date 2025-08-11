@@ -42,8 +42,6 @@
   id: CoolCoyoteClothesAcolyte
   name: acolyte garb
   description: |
-    A trim and breezy skirt and top combo, perfect for the Coyote Bayou's warm climate.
-    Acolytes wear this uniform to show their dedication to the Bayou's warm breeziness.
   components:
   - type: Sprite
     overrideDir: South
@@ -62,8 +60,6 @@
   id: CoolCoyoteClothesAfrMerc
   name: khaki mercenary outfit
   description: |
-    A khaki uniform worn by the mercenaries of the rural bayous of post-apocalyptic Bayous.
-    Comes with free camo pants that will help you blend in if you're ever in a swamp, out in space.
   components:
   - type: Sprite
     overrideDir: South
@@ -82,9 +78,6 @@
   id: CoolCoyoteClothesArtisan
   name: artisan kimono
   description: |
-    A traditional artisanal kimono, worn by the artisans of the Coyote Bayou.
-    Back in the Bayou, scavengers would travel far and wide to get the Old Nash blacksmiths to
-    hammer their adamantine into lawnmower blades to better cut up geckos, who deserved it.
   components:
   - type: Sprite
     overrideDir: South
@@ -103,12 +96,6 @@
   id: CoolCoyoteClothesAssyrian
   name: village tunic
   description: |
-    A traditional tunic styled after the brief Assyrian Empire formed in the Coyote Bayou.
-    Official records state that the Assyrian Empire was formed by a group of
-    Assyrian refugees who fled the Old Nash after the Great War, and that they were
-    able to establish a small empire in the Coyote Bayou, where they lived peacefully for
-    many years until they gave up and rejoined Nash in the Great Merger, shortly before
-    everything fell apart and everyone died.
   components:
   - type: Sprite
     overrideDir: South
@@ -127,10 +114,6 @@
   id: CoolCoyoteClothesBLandschneckt
   name: royal tabard
   description: |
-    A blue and purple tabard styled after the royal bottoms of the Coyote Bayou.
-    For every top, there was a bottom behind them running the show, and this cool tabard
-    is a tribute to those bottoms. Wear it with pride, though it'll probably spend more time
-    on the floor.
   components:
   - type: Sprite
     overrideDir: South
@@ -149,12 +132,6 @@
   id: CoolCoyoteClothesBeggar
   name: beggar rags
   description: |
-    A set of ragged clothes 'inspired' by the beggars of the Coyote Bayou.
-    Back in the Bayou, those who couldn't afford the steep prices of the Nash Workshop's
-    ammo vendors would often trade their sexual services for equipment, protection, and further
-    sexual services. Often by the end of the day, their clothes would be in tatters,
-    and its not uncommon to see a beggar walking around in nothing but their underwear,
-    or a collar and leash.
   components:
   - type: Sprite
     overrideDir: South
@@ -173,9 +150,6 @@
   id: CoolCoyoteClothesBlackTango
   name: tango dress in black
   description: |
-    A sleek black tango dress, perfect for dancing the night away in Coyote Bayou's Heaven's Night
-    'nightclub'. Easy to wear and dance in, and even easier to take off, this dress is a staple of the
-    Coyote Bayou's once-throbbing nightlife.
   components:
   - type: Sprite
     overrideDir: South
@@ -194,10 +168,6 @@
   id: CoolCoyoteClothesBlackDress
   name: sleek black nightgown
   description: |
-    A sleek black nightgown, perfect for winding down after a long day of fighting off geckos and
-    scavenging for supplies in the Coyote Bayou. This nightgown is styled after those worn to bed by
-    the Coyote Bayou's adventurers, either after a long day of pillaging Mass Fusion or after a long night
-    getting railed by your favorite catgirl.
   components:
   - type: Sprite
     overrideDir: South
@@ -216,9 +186,6 @@
   id: CoolCoyoteClothesBlackNGold
   name: black and gold dressrobe
   description: |
-    A luxurious black and gold dressrobe, designed after the popular fashion of the Coyote Bayou's
-    Guild Mistresses. This dressrobe is perfect for lounging around the house, or for impressing your
-    underlings with how much of your blubbery curves this billowy thing can hide.
   components:
   - type: Sprite
     overrideDir: South
@@ -237,11 +204,6 @@
   id: CoolCoyoteClothesBloodshot
   name: bloodshot gunslinger suit
   description: |
-    A rough and tumble gunslinger suit, styled after one of the Coyote Bayou's many immortal
-    wasteland raiders. This suit integrated a loose billowy top that could fit over a layer of
-    ineffective armor, and a pair of pants that could be tucked into your boots to keep out the
-    newts. The Bloodshot Gang were notoriously bad shots, and often relied on the fact that the
-    wasteland would revive them if they died, leading to bleeding more than actually being a threat.
   components:
   - type: Sprite
     overrideDir: South
@@ -260,10 +222,6 @@
   id: CoolCoyoteClothesBlueKimono
   name: kimono in blue
   description: |
-    A cute sexy kimonoid dress, styled after the popular fashion of the Coyote Bayou's
-    Bargoers. Its loose, flowing design combines comfort with eyecatching style, making it
-    a favorite for those who live in the bar, drinking until someone whisks them off their
-    plump rear to go put it to use.
   components:
   - type: Sprite
     overrideDir: South
@@ -282,10 +240,6 @@
   id: CoolCoyoteClothesBlueSari
   name: sari in blue
   description: |
-    A beautiful blue sari, styled after the popular fashion of the Coyote Bayou's
-    Bargoers. Its flowing design and intricate patterns make it a favorite for those who
-    want to show off their curves while still being comfortable enough to dance the night away
-    in someone's bedroom.
   components:
   - type: Sprite
     overrideDir: South
@@ -304,11 +258,6 @@
   id: CoolCoyoteClothesBlueSkirt
   name: skirt in blue
   description: |
-    A poignant black tee and blue skirt, as recorded as a casual style for a couple weeks in the Coyote Bayou.
-    Skirts were a popular fashion choice for Nash and New Boston's townsfolk, and this one is no exception.
-    Archaeologists argue that the skirt's popularity was due to quick access to the wearer's business end,
-    but the truth was that there was a widespread obesity epidemic in the Coyote Bayou, and skirts were simply
-    the most comfortable option for those who were too bottom-heavy to wear pants.
   components:
   - type: Sprite
     overrideDir: South
@@ -327,9 +276,6 @@
   id: CoolCoyoteClothesBlueDress
   name: flowing blue dress
   description: |
-    A flowing blue dress that hugs one's curves in all the right places, styled after the popular fashion
-    of the Coyote Bayou's Bargoers. This dress is perfect for those who want to show off their curves while
-    still being comfortable enough to dance the night away in someone's bedroom.
   components:
   - type: Sprite
     overrideDir: South
@@ -348,10 +294,6 @@
   id: CoolCoyoteClothesBlueRanger
   name: blue ranger uniform
   description: |
-    A blue button-up shirt and khaki pants, styled after the Blue Ranger Team's uniforms in the Coyote Bayou.
-    Not much is known about the Blue Rangers, except that they were a group of rangers who wore blue shirts
-    and spent most of their time digging for clams. Some speculate they were a bunch of yinglets, who were
-    numerous in New Boston at the time of the Great 516.
   components:
   - type: Sprite
     overrideDir: South
@@ -370,11 +312,6 @@
   id: CoolCoyoteClothesBlueSun
   name: blue sun maid dress
   description: |
-    Long ago in the Coyote Bayou, there was a group of power maids who dominated the east side of New Boston
-    with their cleaning prowess. They were known as the Blue Sun Maids, dutifully cleaning out all manner of
-    bodily fluids from the numerous dorm rooms and apartments in the area. Without their noble efforts, the
-    rental market would have collapsed under a literal tide of cum. And now you can wear their cum-resistant
-    maid dress, perfect for bathing in cum like you do every Tuesday.
   components:
   - type: Sprite
     overrideDir: South
@@ -393,12 +330,6 @@
   id: CoolCoyoteClothesBowSun
   name: sun dress with a bow
   description: |
-    Sealed with a bow, don't open until breeding season! This cute sun dress is perfect for those who want to
-    present themselves as a gift to their favorite polycule, this bow will ensure that you are the center of
-    attention at any party, and that you will be the one to get bred first. This dress is styled after the
-    fringe fashion of the Coyote Bayou's Desperate For Breeding subculture, who would often wear provocative
-    outfits to attract attention and get bred by anyone who would take them. This eventually turned into every
-    other person, and the subculture just became culture.
   components:
   - type: Sprite
     overrideDir: South
@@ -417,13 +348,6 @@
   id: CoolCoyoteClothesBridalBlue
   name: bridal gown in blue
   description: |
-    I now pronounce you horny and breedable! Weddings were a common occurrence in the Coyote Bayou, even though
-    monogamy was more or less unheard of. Oftentimes, people would get married just to have a big party,
-    and then either get divorced or just have an excuse for a lusty romp with their friends. There was a whole
-    wing of the Heaven's Night dedicated to wedding-style parties, where people would dress up in their
-    cutest bridal gowns and tuxedos, and then get railed by their friends in one big formal orgy. This one is
-    blue, symbolizing what the skies used to look like before being dicked down by the Event, much like the bride
-    in question.
   components:
   - type: Sprite
     overrideDir: South
@@ -442,12 +366,6 @@
   id: CoolCoyoteClothesBridalOrange
   name: bridal gown in orange
   description: |
-    I now pronounce you horny and breedable! Weddings were a common occurrence in the Coyote Bayou, even though
-    monogamy was more or less unheard of. Oftentimes, people would get married just to have a big party,
-    and then either get divorced or just have an excuse for a lusty romp with their friends. There was a whole
-    wing of the Heaven's Night dedicated to wedding-style parties, where people would dress up in their
-    cutest bridal gowns and tuxedos, and then get railed by their friends in one big formal orgy. This one is
-    orange, symbolizing the fiery passion of the bride to be railed by her friends and family.
   components:
   - type: Sprite
     overrideDir: South
@@ -466,12 +384,6 @@
   id: CoolCoyoteClothesBridalPurple
   name: bridal gown in purple
   description: |
-    I now pronounce you horny and breedable! Weddings were a common occurrence in the Coyote Bayou, even though
-    monogamy was more or less unheard of. Oftentimes, people would get married just to have a big party,
-    and then either get divorced or just have an excuse for a lusty romp with their friends. There was a whole
-    wing of the Heaven's Night dedicated to wedding-style parties, where people would dress up in their
-    cutest bridal gowns and tuxedos, and then get railed by their friends in one big formal orgy. This one is
-    purple, symbolizing the royal nature of the bride, who is often taken down (with a) peg by her friends and family.
   components:
   - type: Sprite
     overrideDir: South
@@ -490,12 +402,6 @@
   id: CoolCoyoteClothesBridalRed
   name: bridal gown in red
   description: |
-    I now pronounce you horny and breedable! Weddings were a common occurrence in the Coyote Bayou, even though
-    monogamy was more or less unheard of. Oftentimes, people would get married just to have a big party,
-    and then either get divorced or just have an excuse for a lusty romp with their friends. There was a whole
-    wing of the Heaven's Night dedicated to wedding-style parties, where people would dress up in their
-    cutest bridal gowns and tuxedos, and then get railed by their friends in one big formal orgy. This one is
-    red, symbolizing the blood tides of the wastes that the ensuing no-holds-barred orgy will help them forget.
   components:
   - type: Sprite
     overrideDir: South
@@ -514,12 +420,6 @@
   id: CoolCoyoteClothesBridalWhite
   name: bridal gown in white
   description: |
-    I now pronounce you horny and breedable! Weddings were a common occurrence in the Coyote Bayou, even though
-    monogamy was more or less unheard of. Oftentimes, people would get married just to have a big party,
-    and then either get divorced or just have an excuse for a lusty romp with their friends. There was a whole
-    wing of the Heaven's Night dedicated to wedding-style parties, where people would dress up in their
-    cutest bridal gowns and tuxedos, and then get railed by their friends in one big formal orgy. This one is
-    white, symbolizing the purity of the bride that they pretend to have before it is thoroughly dicked down.
   components:
   - type: Sprite
     overrideDir: South
@@ -538,11 +438,6 @@
   id: CoolCoyoteClothesBrownPunkPants
   name: brown punk pants
   description: |
-    A pair of brown punk pants, heavily inspired by the punk fashion of the Coyote Bayou's
-    gardening gangs. These pants are made of a durable material that can withstand the rigors of
-    the bayou's disappointing flora, and more importantly, resist the effects of brushing up against
-    Fever Blossoms, a common plant which hosts a potent aphrodisiac that can penetrate skin and fur.
-    While the aphrodisiac is not harmful, it is really annoying when trying to work.
   components:
   - type: Sprite
     overrideDir: South
@@ -561,10 +456,6 @@
   id: CoolCoyoteClothesBunnySuit
   name: sexy bunny suit
   description: |
-    A sexy bunny suit, as was the style of the Coyote Bayou's Heaven's Night waitstaff. Designed to
-    hug every curve and accentuate the wearer's assets, hiding only enough to keep the wearer technically
-    clothed, this suit is perfect for those who want to throw decency to the wind and entice potential
-    partners into bending them over a table and doing what bunnies do best.
   components:
   - type: Sprite
     overrideDir: South
@@ -583,11 +474,6 @@
   id: CoolCoyoteClothesCartel
   name: tropical runner outfit
   description: |
-    A tropical runner outfit, cool and breezy while catching the eye of everyone in the room with
-    its bright colors and patterns. This outfit is styled after the popular fashion of the Coyote Bayou's
-    Crocin Cartel, a group of runners who sold their own brand of Hexacrocin, a potent aphrodisiac
-    that made even the most frigid of hearts melt. While the members acted big, they were actually
-    just a bunch of horny nerds who wanted to get laid through the power of chemnerdery. It kinda worked.
   components:
   - type: Sprite
     overrideDir: South
@@ -606,10 +492,6 @@
   id: CoolCoyoteClothesChad
   name: chad
   description: |
-    Bright, flashy, and confident, this neon day-glo outfit is styled after a subgroup of the Coyote Bayou
-    who were very much not virgins. It looks awful, and that was the point, only a confident person could
-    pull off such a garish outfit, and often that was enough to get them laid. Just watch the panties drop
-    when you walk into a room wearing this.
   components:
   - type: Sprite
     overrideDir: South
@@ -628,11 +510,6 @@
   id: CoolCoyoteClothesCheong
   name: cheong sam
   description: |
-    A traditional cheong sam, styled after a popular fashion of the Coyote Bayou's townsfolk.
-    This cheong sam is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    stylish enough to turn heads. The cheong sam is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -651,13 +528,6 @@
   id: CoolCoyoteClothesCheongRed
   name: cheong sam in red
   description: |
-    A traditional cheong sam, styled after a popular fashion of the Coyote Bayou's townsfolk.
-    This cheong sam is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    stylish enough to turn heads. The cheong sam is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one. This one is red, symbolizing the blood of the
-    wastes that is spilled endlessly through the unending cycle of death and rebirth inherent to the lands
-    for some reason.
   components:
   - type: Sprite
     overrideDir: South
@@ -676,12 +546,6 @@
   id: CoolCoyoteClothesCheongWhite
   name: cheong sam in white
   description: |
-    A traditional cheong sam, styled after a popular fashion of the Coyote Bayou's townsfolk.
-    This cheong sam is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    stylish enough to turn heads. The cheong sam is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one. This one is white, symbolizing the purity of the
-    Coyote Bayou's townsfolk before they were all dicked down by the Event.
   components:
   - type: Sprite
     overrideDir: South
@@ -700,13 +564,6 @@
   id: CoolCoyoteClothesCheongWhiteShort
   name: cheong sam in white (short)
   description: |
-    A traditional cheong sam, styled after a popular fashion of the Coyote Bayou's townsfolk.
-    This cheong sam is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    stylish enough to turn heads. The cheong sam is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one. This one is white, symbolizing the purity of the
-    Coyote Bayou's townsfolk before they were all dicked down by the Event. This one has black shorts,
-    because those are cute as heck.
   components:
   - type: Sprite
     overrideDir: South
@@ -725,11 +582,6 @@
   id: CoolCoyoteClothesConquistador
   name: conquistador standard
   description: |
-    A bright red gambesson and chausses styled after Jerl Brombwondamou, the famous conquistador who
-    led the Coyote Bayou's first expedition to Nash. While the expedition was a failure, and everyone
-    died, it was a great learning experience for everyone involved, since the lands revived them all
-    and showed that this world revives people for some reason. Some say he never wore this outfit,
-    but still the style lives on through dorms room roleplay.
   components:
   - type: Sprite
     overrideDir: South
@@ -748,11 +600,6 @@
   id: CoolCoyoteClothesCorset
   name: corset
   description: |
-    A sexy corset, designed to squish the wearer's fat belly into their chest and rear, thus downplaying the
-    rampant obesity epidemic that throughout the height of Nash and New Boston's history. While the corset
-    did little to hide their blubbery guts, it did help accentuate their fatness, because people really liked
-    fat people back then, especially the two vixens who lived there, Dan and Sam Kelly, who were fat as hell
-    and the sexiest creatures in the Coyote Bayou. The stitches creak in anticipation of your figure.
   components:
   - type: Sprite
     overrideDir: South
@@ -771,12 +618,6 @@
   id: CoolCoyoteClothesCorsetDress
   name: corset dress
   description: |
-    Unrelated to the sexy corset, this dress is a cute townsfolk outfit that combined the comfort of a corset
-    with the revealing nature of a billowing dress. Goes great with a cottagecore aesthetic, and is perfect for
-    those who want to just be left alone from the rampant horniness inherent to the Coyote Bayou. While the
-    populace of the Coyote Bayou were known for their promiscuity, there was no shame in keeping to oneself,
-    or even just being platonically affectionate with friends. This dress is a symbol of that, and is sure to
-    maintain the wearer's modesty while still being comfortable enough to wear all day.
   components:
   - type: Sprite
     overrideDir: South
@@ -795,12 +636,6 @@
   id: CoolCoyoteClothesCountess
   name: countess gown
   description: |
-    A luxurious gown of unrivaled matriarchal splendor, designed to exude an air of authority and
-    sexuality that only a true Head Mistress of the Heaven's Night could pull off. Huge, billowing
-    sleeves and a flowing skirt drape the wearer's body with regal elegance, while the tight bodice
-    and plunging neckline make a very bold statement about the wearer's sexual prowess. Utterly
-    useless for anything other than making a grand entrance, those who wear this gown don't need to
-    do things themselves, they have people to do that for them. Looks great if you're like 10 feet tall.
   components:
   - type: Sprite
     overrideDir: South
@@ -819,11 +654,6 @@
   id: CoolCoyoteClothesCrinoline
   name: crinoline dress
   description: |
-    A frilly crinoline dress, styled after the popular fashion of the Coyote Bayou's
-    Bargoers. This dress is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    stylish enough to turn heads. The crinoline dress is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -842,12 +672,6 @@
   id: CoolCoyoteClothesCustomToga
   name: custom toga
   description: |
-    A custom toga, custom made to fit one certain person from the Coyote Bayou, and not anyone else.
-    This toga is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    able to fit after a long day of eating. While some say that this toga is a symbol of the Coyote Bayou's
-    rich cultural heritage, in all actuality it was just a coincidence, improvised by obese residents who
-    repurposed blankets into clothing that could fit over their blubbery bodies.
   components:
   - type: Sprite
     overrideDir: South
@@ -866,11 +690,6 @@
   id: CoolCoyoteClothesCyberHell
   name: cyber hell
   description: |
-    Slick as night and flashy as a neon sign, this cyber hell outfit is a casualized version of the
-    raider armor worn by the Coyote Bayou's Leather Lashers, a group of raiders who were known for their
-    horrible leatherworking skills and their love of bondage. This outfit strips away the heavy Deathclaw
-    hides and replaces them with a sleek, comfortable carp leather harness and pants, joined with some kind
-    of belt.
   components:
   - type: Sprite
     overrideDir: South
@@ -889,11 +708,6 @@
   id: CoolCoyoteClothesDarkHanfu
   name: dark hanfu
   description: |
-    A dark hanfu, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this hanfu is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The dark color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -912,11 +726,6 @@
   id: CoolCoyoteClothesDivineRobe
   name: divine robe
   description: |
-    A robe that exudes pure righteous divinity, this outfit makes a statement about the wearer's
-    commitment to the Coyote Bayou's religious community. While it made for a popular 'domme' outfit
-    for culturally-insensitive 'demanding priestess' roleplay, this robe is actually a symbol of the
-    devotion to the omnipresent eldritch force that permeates the lands, which grants unendable life
-    to all those who die in the Coyote Bayou.
   components:
   - type: Sprite
     overrideDir: South
@@ -935,13 +744,6 @@
   id: CoolCoyoteClothesDomina
   name: domina latex
   description: |
-    A sexy latex domina outfit, worn to give a commanding sexual presence to the wearer. This outfit
-    was a popular fashion choice for the Coyote Bayou's Heaven's Night waitstaff, who would often
-    wear it to entice potential customers into bending them over a table and doing what dominas do best.
-    It is very stretchy, and designed to accommodate the wearer's enormous curves, while still being
-    form-fitting and flattering to the wearer's obese figure. The seating is reinforced with comfortable
-    breathable padding, to ensure that the wearer can sit on customers for long periods of time without
-    discomfort or asphyxiation.
   components:
   - type: Sprite
     overrideDir: South
@@ -960,11 +762,6 @@
   id: CoolCoyoteClothesDougDimmadome
   name: doug suit
   description: |
-    A suit that is styled after the dubious style of Coyote Bayou's Doug Dimmadome, owner of the
-    Dimmsdale Dimmadome. Dental records indicate that he was a coyote, and that his teeth were
-    extremely sharp, and he loved chewing on things in the Dimmadome, which is why he was
-    often seen wearing a suit that was made of a durable material that could withstand the rigors
-    of chewing on things.
   components:
   - type: Sprite
     overrideDir: South
@@ -983,11 +780,6 @@
   id: CoolCoyoteClothesDraculass
   name: draculass slutskirt
   description: |
-    A sexy draculass slutskirt, designed to make a bold, unmistakable statement about the wearer's
-    sexual power and dominance. While most speculate that this outfit was styled after a popular
-    'Vampire Queen' sexual archetype, closer inspection reveals that this outfit is closer to that of a
-    succubus, as while bloodplay was not an uncommon kink in the Coyote Bayou, it was far more common
-    to vant to suck other kinds of fluids.
   components:
   - type: Sprite
     overrideDir: South
@@ -1006,12 +798,6 @@
   id: CoolCoyoteClothesDress2
   name: dress 'two'
   description: |
-    A demure blue dress with a white skirt, a common style in the Coyote Bayou's bustling
-    townsfolk, between the End of Nash and the Beginning of New Boston. This dress is cute
-    and practical, and can be worn for any occasion, from a casual day out to a formal event.
-    Why it is known as 'two' is a mystery, but it is likely because it was the second dress
-    tailored by the Great Eastern Hiveblob to prove to the other Hiveblobs that it was the
-    best Hiveblob at making cute dresses.
   components:
   - type: Sprite
     overrideDir: South
@@ -1030,12 +816,6 @@
   id: CoolCoyoteClothesDress3
   name: dress 'three'
   description: |
-    A demure brown dress with a white skirt, a common style in the Coyote Bayou's bustling
-    townsfolk, between the End of Nash and the Beginning of New Boston. This dress is cute
-    and practical, and can be worn for any occasion, from a casual day out to a formal event.
-    The 'three' in the name is a reference to the fourth dress tailored by the Great Eastern Hiveblob,
-    which was awful, and was quickly discarded by the townsfolk. The Hiveblob was very sad, but understood
-    that its previous dress was much better, and that it should just try again next time.
   components:
   - type: Sprite
     overrideDir: South
@@ -1054,11 +834,6 @@
   id: CoolCoyoteClothesDressBlack
   name: dress in black
   description: |
-    An understated dark gray dress with a cute comfy bodice, modeled after a souvenir from Coyote Bayou's
-    World's Largest Potato Memorial Train Station, which was a popular tourist destination in the Coyote Bayou.
-    While this dress has little to do with the late World's Largest Potato, it did serve as the flagship
-    style of the clothing outlet mall that popped up around the train station, which sold cute dresses.
-    If you look at the tag, you'll see a huge potato on it.
   components:
   - type: Sprite
     overrideDir: South
@@ -1077,11 +852,6 @@
   id: CoolCoyoteClothesDressSaloon
   name: short saloonkeeper dress
   description: |
-    Back in the frontiers of the Coyote Bayou, rest stops were few and far between, but they existed, and
-    they were run by some of the toughest vixens in the land. This short saloonkeeper dress is designed to
-    be both eyecatching to patrons, and practical for fighting off bandits and wildlife. While sexy, it also
-    layers under bodyarmor with ease, and the short skirt allows for easy movement and access to armament
-    and other equipment.
   components:
   - type: Sprite
     overrideDir: South
@@ -1100,13 +870,6 @@
   id: CoolCoyoteClothesDress5
   name: dress 'five'
   description: |
-    A demure green dress with a white skirt, an odd style in the Coyote Bayou's bustling
-    townsfolk, peaking in the middle of New Boston's history. As opposed to dresses 'two' and 'three',
-    and not counting the failed 'four', this dress was another unpopular dress that was designed by the
-    Great Eastern Hiveblob, which despite being absolutely hideous on most people, became a popular fashion
-    once the populace realized it looked great on obese vixens. The Hiveblob was very happy that its
-    clothing line found a niche, and continued to make plus-size dresses for the Coyote Bayou's
-    burgeoning population of obese vixens.
   components:
   - type: Sprite
     overrideDir: South
@@ -1125,13 +888,6 @@
   id: CoolCoyoteClothesDress6
   name: dress 'six'
   description: |
-    A loose, billowy red dress with a white skirt, a popular style in the height of New Boston's obesity
-    epidemic. This dress is designed to accommodate the wearer's growing figure, while still both looking
-    cute and being comfortable to wear. After the success of the Great Eastern Hiveblob's dress 'five',
-    and the abject failure of 'four', the Hiveblob understood that the New Boston populace was in dire need
-    of cute plus-size clothing, and soon the majority of non-kink-related wear for obese townsfolk was made
-    by the Hiveblob. Some suspect that the Hiveblob had a hand in the obesity epidemic, but that is not true,
-    as the epidemic was likely caused by the background dimensional leakage of the surrounding worlds, somehow.
   components:
   - type: Sprite
     overrideDir: South
@@ -1150,12 +906,6 @@
   id: CoolCoyoteClothesDutch
   name: dutch vestsuit
   description: |
-    A vestsuit styled after the popular fashion of the Coyote Bayou's Dutch, a group of
-    vestsuit-wearing individuals who were known for their love of the outdoors and their
-    rugged, adventurous spirit. This vestsuit is made of a durable material that can withstand
-    the rigors of the Coyote Bayou's harsh environment, while still being as comfortable as it
-    is stylish. The vestsuit is a symbol of the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1174,11 +924,6 @@
   id: CoolCoyoteClothesExplorerStripper
   name: explorer stripper
   description: |
-    A sexy explorer harness, designed to show off as much of the wearer's body as possible while still
-    technically functioning as a survival rig. Often, sexy townsfolk would accompany seasoned explorers
-    on their expeditions into the Coyote Bayou's wilds, largely as companions and morale support, vital
-    to the success of any expedition. While sexy, it also provided anchor points for equipment, and though
-    it offered no protection at all, this was okay cus if they died they'd just come back anyway, lol.
   components:
   - type: Sprite
     overrideDir: South
@@ -1197,11 +942,6 @@
   id: CoolCoyoteClothesFlamenco
   name: flamenco dress
   description: |
-    A flamenco dress, styled after the popular fashion of the Coyote Bayou's
-    flamenco dancers. This dress is made of a light, breathable fabric that is perfect for the Coyote Bayou's
-    warm climate, and its loose, flowing design makes it comfortable to wear while still being
-    stylish enough to turn heads. The flamenco dress is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1220,13 +960,6 @@
   id: CoolCoyoteClothesFloofDress
   name: floofy dress
   description: |
-    A floofy, airy dress, designed for comfort regardless of the wearer's proportions. While obesity was
-    rampant in the Coyote Bayou, just as common was macromastia, a condition that caused the wearer's
-    breasts to grow to enormous proportions, often to the point of being larger than the wearer's head.
-    This dress is designed to accommodate the wearer's enormous breasts, while still being comfortable for
-    any other additional body types. While some attribute this dress to the Great Eastern Hiveblob,
-    it was actually designed by a group of seamstresses trying to keep up with their family's rapidly
-    growing bustlines, and was quickly adopted by Nash's townsfolk.
   components:
   - type: Sprite
     overrideDir: South
@@ -1245,14 +978,6 @@
   id: CoolCoyoteClothesFlashyGreenDress
   name: horrible neon green dress
   description: |
-    A horrible neon green dress, designed in stark opposition to the Coyote Bayou's fashion sense at
-    the time. While most outfits were designed to be comfortable and practical, this dress was designed to
-    make a statement that clothing didn't need to look pleasing, and that bright colors existed. And boy did
-    it stand out, looking absolutely hideous on everyone who wore it, but that was the point, it was a
-    counterculture fashion statement that was meant to be worn ironically. Ironically, it became a popular
-    fashion choice for those who wanted to stand out in a crowd, and soon the Coyote Bayou was filled with
-    fat vixens wearing the worst outfits imaginable, until the Great Eastern Hiveblob stepped in and
-    started making cute dresses again, and the fashion sense of the Coyote Bayou was restored.
   components:
   - type: Sprite
     overrideDir: South
@@ -1271,14 +996,6 @@
   id: CoolCoyoteClothesFlowRed
   name: horrible neon red dress
   description: |
-    A horrible neon red dress, designed in stark opposition to the Coyote Bayou's fashion sense at
-    the time. While most outfits were designed to be comfortable and practical, this dress was designed to
-    make a statement that clothing didn't need to look pleasing, and that bright colors existed too. And boy
-    did it stand out, looking absolutely hideous on everyone who wore it, but that was the point, it was a
-    counterculture fashion statement that was meant to be worn ironically. Ironically, it became a popular
-    fashion choice for those who wanted to look like a walking traffic cone, and soon the Coyote Bayou was
-    filled with fat vixens wearing the worst outfits imaginable, until the Great Eastern Hiveblob stepped in
-    and started making cute dresses again, and the fashion sense of the Coyote Bayou was restored.
   components:
   - type: Sprite
     overrideDir: South
@@ -1297,12 +1014,6 @@
   id: CoolCoyoteClothesFlowerDress
   name: flower dress
   description: |
-    A cute flower dress, designed originally as camouflage for the Coyote Bayou's Floral Mass, but later
-    adopted as a cute fashion statement by the Coyote Bayou's townsfolk. This dress is made of a light,
-    breezy fabric that is infused with a weakened variant of the Floral Mass scentouflage, which while it
-    no longer hides one's aromal signature from the beautiful vicious flora, it does still smell nice and
-    masks the wearer's natural scent, making it a popular choice for those who want to smell good while still
-    looking cute.
   components:
   - type: Sprite
     overrideDir: South
@@ -1321,12 +1032,6 @@
   id: CoolCoyoteClothesFlowerKimono
   name: flower kimono
   description: |
-    A cute flower kimono, designed originally as camouflage for the Coyote Bayou's Floral Mass, but later
-    adopted as a cute fashion statement by the Coyote Bayou's townsfolk. This kimono is made of a light,
-    breezy fabric that is infused with a weakened variant of the Floral Mass scentouflage, which while it
-    no longer hides one's aromal signature from the beautiful vicious flora, it does still smell nice and
-    masks the wearer's natural scent, making it a popular choice for those who want to smell good while still
-    looking cute. Originally worn by Floral Commandos, designed to fit over their bulky armor.
   components:
   - type: Sprite
     overrideDir: South
@@ -1345,12 +1050,6 @@
   id: CoolCoyoteClothesFormalRedDress
   name: blood red formal dress
   description: |
-    Unrelated to modern day Syndicate fashion, this blood red formal dress is a throwback to the
-    Coyote Bayou's early days, when often the townsfolk would be too covered in blood to look good in
-    their formal wear. This dress is designed to be both stylish and practical, with a flowing skirt
-    and a fitted bodice that flatters the wearer's figure. The blood red color would later be adopted
-    by the Coyote Bayou's townsfolk as a symbol of their resilience and strength, and was a popular
-    choice for formal events and gatherings.
   components:
   - type: Sprite
     overrideDir: South
@@ -1369,11 +1068,6 @@
   id: CoolCoyoteClothesFoxFlannel
   name: fox flannel
   description: |
-    A cozy flannel shirt, styled after the popular fashion of the Coyote Bayou's foxes. While the bayou was
-    often hot and humid, the wild dimensional leakage from the surrounding worlds bluespaced into one
-    caused the weather to be unpredictable, and there were often cold snaps that would leave the
-    residents of the Coyote Bayou shivering in their boots. Foxes, being the sexiest creatures in the bayou,
-    were often seen wearing flannel shirts to keep warm, and this shirt is a tribute to that fashion.
   components:
   - type: Sprite
     overrideDir: South
@@ -1392,12 +1086,6 @@
   id: CoolCoyoteClothesGoldDress
   name: golden dress
   description: |
-    A luxurious golden dress, designed to exude an air of wealth and opulence that only the richest
-    townsfolk of the Coyote Bayou could afford. This dress is made of a shimmering golden fabric that
-    catches the light beautifully. This was back when gold was a rare and valuable resource, and
-    the skill needed to weave it into clothing was a closely guarded secret. Nowadays you can't go
-    two steps without tripping over a bunch of gold, and thus this dress is about as expensive as a
-    pack of smokes. It is also very uncomfortable, being made from literal metal.
   components:
   - type: Sprite
     overrideDir: South
@@ -1416,12 +1104,6 @@
   id: CoolCoyoteClothesGoldWrap
   name: golden wrap
   description: |
-    A luxurious golden wrap, designed to exude an air of wealth and opulence that only the richest
-    townsfolk of the Coyote Bayou could afford. This wrap is made of a shimmering golden fabric that
-    catches the light beautifully. This was back when gold was a rare and valuable resource, and
-    the skill needed to weave it into clothing was a closely guarded secret. Nowadays you can't go
-    two steps without tripping over a bunch of gold, and thus this wrap is about as expensive as a
-    pack of smokes. It is also very uncomfortable, being made from literal metal.
   components:
   - type: Sprite
     overrideDir: South
@@ -1440,11 +1122,6 @@
   id: CoolCoyoteClothesGothic
   name: gothic dress
   description: |
-    A dark, gothic dress, styled after the popular fashion of the Coyote Bayou's raccoons. While the
-    raccoons weren't actually goths, the monochrome color scheme and the flowing design of the dress,
-    combined with the heavy use of lace, fringes, and fishnet, made it a popular choice for these folk,
-    as it worked well with their natural fur patterns and colors. It was also sexy as hell, and raccoons
-    loved to be sexy, so this dress was a perfect fit for them.
   components:
   - type: Sprite
     overrideDir: South
@@ -1463,13 +1140,6 @@
   id: CoolCoyoteClothesGothic2
   name: gothic dress 'two'
   description: |
-    A lighter gray Victorian gothic dress, styled after the popular fashion of the Coyote Bayou's raccoons.
-    While the raccoons weren't actually goths, the monochrome color scheme and the flowing design of the dress,
-    combined with the heavy use of lace, fringes, and fishnet, made it a popular choice for these folk,
-    as it worked well with their natural fur patterns and colors. The Great Eastern Hiveblob, which was
-    responsible for the majority of the Coyote Bayou's fashion, made this dress as a lighter alternative to
-    the original gothic dress, upsized to accommodate the growing population of obese raccoons in the bayou.
-    As it was sexy and fit quite well, it soon phased out the original gothic dress.
   components:
   - type: Sprite
     overrideDir: South
@@ -1488,10 +1158,6 @@
   id: CoolCoyoteClothesGreatShendyt
   name: great shendyt
   description: |
-    A great shendyt, a traditional garment worn by the Coyote Bayou's desert-dwelling folk. Consisting of a
-    long, flowing skirt and an ornate shawl, this outfit is designed to be both comfortable and practical,
-    as well as show off the wearer's upper body. The deserts of the West were populated by furred folk, who
-    were naturally resistant to the sun, and thus just needed something to keep the sand out of their butts.
   components:
   - type: Sprite
     overrideDir: South
@@ -1510,11 +1176,6 @@
   id: CoolCoyoteClothesGreekDress
   name: greek dress
   description: |
-    A stiff leather dress, styled after the coastal fashion of the Coyote Bayou's frontiersfolk. This dress is
-    designed to look sharp and strong, with thick leather panels that protect the wearer's body from the
-    harsh coastal winds and the occasional attack from the local wildlife. While uncomfortable, it is a
-    symbol of the Coyote Bayou's rich cultural heritage, a mismash of countless worlds bluespaced into one,
-    and is a popular choice for those who want to show off their strength and resilience.
   components:
   - type: Sprite
     overrideDir: South
@@ -1533,11 +1194,6 @@
   id: CoolCoyoteClothesGreekTunic
   name: greek tunic
   description: |
-    A stiff leather tunic, styled after the coastal fashion of the Coyote Bayou's frontiersfolk. This tunic is
-    designed to look sharp and strong, with thick leather panels that protect the wearer's body from the
-    harsh coastal winds and the occasional attack from the local wildlife. While uncomfortable, it is a
-    symbol of the Coyote Bayou's rich cultural heritage, a mismash of countless worlds bluespaced into one,
-    and is a popular choice for those who want to show off their strength and resilience.
   components:
   - type: Sprite
     overrideDir: South
@@ -1556,12 +1212,6 @@
   id: CoolCoyoteClothesDress7
   name: dress 'seven'
   description: |
-    A demure green utility dress, a common style in the Coyote Bayou's frontier plainsfolk. It was designed
-    to be worn with an equipment harness, and had a skirt to both catch the cooling wind, and allow quick
-    access to the wearer's business end. As the plains were fairly peaceful, the vixens who lived there
-    often passed the time with lewd roleplay, and this dress was designed to be both cute and practical,
-    with a flowing skirt and a fitted bodice that flatters the wearer's figure. The 'seven' in the name has
-    no known connection to the Great Eastern Hiveblob.
   components:
   - type: Sprite
     overrideDir: South
@@ -1580,11 +1230,6 @@
   id: CoolCoyoteClothesGreenHanfu
   name: green hanfu
   description: |
-    A green hanfu, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this hanfu is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The green color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1603,11 +1248,6 @@
   id: CoolCoyoteClothesGreenAsymmetric
   name: green asymmetric dress
   description: |
-    A halter top with a flowing asymmetrical skirt, designed to be cute and not much else. This dress was a
-    joint effort between the Great Eastern Hiveblob and the Coyote Bayou's fashionistas, who wanted to
-    make a revealing dress that looked good on everyone, regardless of their body type, without being too
-    overly sexual. It looks great on obese gray wolves, and is a popular choice for those who want to
-    show off their curves while still looking cute and fashionable.
   components:
   - type: Sprite
     overrideDir: South
@@ -1626,12 +1266,6 @@
   id: CoolCoyoteClothesHalfSkirt
   name: blue half skirt
   description: |
-    A blue shawl with a wide, short skirt, designed to be worn by the Coyote Bayou's frontier Desertfolk.
-    As the residents of the desert were furred, they were naturally resistant to the sun, and thus
-    just needed something to keep the sand out of their butts. This half skirt is designed to be both
-    comfortable and practical, with a flowing design that allows for easy movement and access to the
-    wearer's business end. The blue color scheme is a nod to the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1650,10 +1284,6 @@
   id: CoolCoyoteClothesHalfHuipil
   name: half huipil
   description: |
-    A half huipil, a traditional garment worn by the Coyote Bayou's desert-dwelling folk. Consisting of a
-    long, flowing skirt and an ornate shawl, this outfit is designed to be both comfortable and practical,
-    as well as show off the wearer's upper body. The deserts of the West were populated by furred folk, who
-    were naturally resistant to the sun, and thus just needed something to keep the sand out of their butts.
   components:
   - type: Sprite
     overrideDir: South
@@ -1672,11 +1302,6 @@
   id: CoolCoyoteClothesHaori
   name: haori
   description: |
-    A haori, a traditional Coyote Bayou garment that is often worn over a kimono or yukata. This haori is
-    designed to be both stylish and practical, with a flowing design that allows for easy movement and
-    access to the wearer's business end. The haori is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one, and is a popular choice for those who want to show
-    off their curves while still looking cute and fashionable.
   components:
   - type: Sprite
     overrideDir: South
@@ -1695,11 +1320,6 @@
   id: CoolCoyoteClothesHaoriSamurai
   name: samurai haori
   description: |
-    A samurai haori, a traditional Coyote Bayou garment that is often worn over a kimono or yukata. This
-    haori is designed to be both stylish and practical, with a flowing design that allows for easy movement
-    and access to the wearer's business end. The haori is a symbol of the Coyote Bayou's rich cultural heritage,
-    a mismash of countless worlds bluespaced into one, and is a popular choice for those who want to show off
-    their curves while still looking cute and fashionable.
   components:
   - type: Sprite
     overrideDir: South
@@ -1718,12 +1338,6 @@
   id: CoolCoyoteClothesHuipil
   name: huipil
   description: |
-    A huipil, a traditional garment worn by the Coyote Bayou's desert-dwelling folk. Consisting of a
-    long, flowing skirt and an breezy tunic, this outfit is designed to be both comfortable and practical,
-    in addition to keeping ones upper body covered from the harsh desert sun. The deserts of the West were
-    populated by furred folk, who were naturally resistant to the sun, and thus just needed something to
-    keep the sand out of their butts. Often seen before the onset of the obesity epidemic, after which the
-    tunic was replaced with a halter top to accommodate for larger waists.
   components:
   - type: Sprite
     overrideDir: South
@@ -1742,12 +1356,6 @@
   id: CoolCoyoteClothesHunter
   name: hunter leathers
   description: |
-    A set of tribal hunter leathers, designed to be worn by the Coyote Bayou's Sulphur Bottom tribesfolk.
-    This outfit was traditionally made from layered gecko hides, and protected the typical regions that
-    mudcrabs and mutated pillbugs would attack, while still allowing the wearer to move freely and not be
-    burdened by the oppressive humidity and heat of the Coyote Bayou. Since geckos are not native to the
-    sector, the leather is just some useless plastic that offers no protection at all, but it does show off
-    your chest and hips, so it is still effective at hunting for tail.
   components:
   - type: Sprite
     overrideDir: South
@@ -1766,12 +1374,6 @@
   id: CoolCoyoteClothesHunterBra
   name: hunter garb
   description: |
-    A set of tribal hunter garb, designed to be worn by the Coyote Bayou's Sulphur Bottom tribesfolk.
-    This outfit was traditionally made from layered gecko hides, and protected the typical regions that
-    mudcrabs and mutated pillbugs would attack, while still allowing the wearer to move freely and not be
-    burdened by the oppressive humidity and heat of the Coyote Bayou. Since geckos are not native to the
-    sector, the leather is just some useless plastic that offers no protection at all, but it does show off
-    hips, so it is still effective at hunting for tail.
   components:
   - type: Sprite
     overrideDir: South
@@ -1790,10 +1392,6 @@
   id: CoolCoyoteClothesIrisTribal
   name: iris dress
   description: |
-    A gorgeous blue two-piece dress, consisting of a watery blue loincloth and bikini top. While records
-    indicate an 'Iris' tribe that lived in the Sulphur Bottom region of the Coyote Bayou, this style is
-    entirely unrelated to them, and was instead designed by the Great Eastern Hiveblob as a cute
-    comfortable set of provocative clothing for the growing population of obese vixens in the bayou.
   components:
   - type: Sprite
     overrideDir: South
@@ -1812,12 +1410,6 @@
   id: CoolCoyoteClothesKeyholeSweater
   name: keyhole sweater
   description: |
-    A cute keyhole sweater, designed as both utility and fashion. The sweater is made of a stretchy,
-    internally supportive material that is both comfortable and able to accommodate the wearer's
-    enormous bustline, with or without a bra. The keyhole design provides a sexy peek at the wearer's
-    cleavage, without compromising the sweater's ability to support the wearer's bust. Popularized by
-    a notable figure, who was known for being a husky woman with exceptionally large breasts, even for
-    the Coyote Bayou.
   components:
   - type: Sprite
     overrideDir: South
@@ -1836,11 +1428,6 @@
   id: CoolCoyoteClothesKimonoBlue
   name: blue kimono
   description: |
-    A blue kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The blue color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1859,11 +1446,6 @@
   id: CoolCoyoteClothesKimonoEarth
   name: earth kimono
   description: |
-    A brown kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The brown color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1882,11 +1464,6 @@
   id: CoolCoyoteClothesKimonoGreen
   name: green kimono
   description: |
-    A green kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The green color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1905,11 +1482,6 @@
   id: CoolCoyoteClothesKimonoOrange
   name: orange kimono
   description: |
-    An orange kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The orange color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1928,11 +1500,6 @@
   id: CoolCoyoteClothesKimonoPink
   name: pink kimono
   description: |
-    A pink kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The pink color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1951,11 +1518,6 @@
   id: CoolCoyoteClothesKimonoPurple
   name: purple kimono
   description: |
-    A purple kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The purple color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1974,11 +1536,6 @@
   id: CoolCoyoteClothesKimonoRed
   name: red kimono
   description: |
-    A red kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The red color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -1997,11 +1554,6 @@
   id: CoolCoyoteClothesKimonoViolet
   name: violet kimono
   description: |
-    A violet kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The violet color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2020,11 +1572,6 @@
   id: CoolCoyoteClothesKimonoYellow
   name: yellow kimono
   description: |
-    A yellow kimono, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this kimono is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The yellow color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2043,12 +1590,6 @@
   id: CoolCoyoteClothesLandschneckt
   name: landschneckt
   description: |
-    A forest green landschneckt, a fancy formal outfit that was popular among the early days of the
-    Coyote Bayou's expansion into Nash. While it saw little use in the actual exploration parties,
-    it was popularized by the Boxcar Vixens, who for whatever reason found it to be a sexy outfit
-    and would often seduce wearers of this outfit on the long train rides through the Continental
-    Heap. It became popular travel wear by those who wanted to bed a Boxcar Vixen, and trust me,
-    everyone did, as they were the hottest vixens in the Coyote Bayou.
   components:
   - type: Sprite
     overrideDir: South
@@ -2067,13 +1608,6 @@
   id: CoolCoyoteClothesLatexHalf
   name: latex singlet
   description: |
-    A baudy latex singlet, designed originally as a shameless piece of fetishwear that would show off every
-    curve of the wearer's body, but later repurposed by the Great Eastern Hiveblob as a piece of inexpensive
-    clothing that would fit the growing population of obese furries in the Coyote Bayou. The latex material is
-    stretchy and form-fitting, both containing and reshaping the wearer's fat into something more practical
-    for daily life, while also being modified to be breathable and comfortable in the humid bayou climate.
-    It was common to see the latex singlet worn under a loose-fitting shirt or jacket, along with a pair of
-    compression pants, to prevent excessive jiggling and chafing.
   components:
   - type: Sprite
     overrideDir: South
@@ -2092,12 +1626,6 @@
   id: CoolCoyoteClothesLeavesSkirt
   name: leaves mini skirt
   description: |
-    Its just a mini skirt made of leaves, designed as a joke by the Great Eastern Hiveblob, who wanted to
-    see if it could create a piece of clothing out of synthetic leaves. As it turns out, Coyote Bayou's
-    humid climate is perfect for growing synthetic leaves, and thus this mini skirt was created. While
-    utterly impractical and offering nothing but a pile of leaves to cover your butt, it was a popular
-    choice for those who wanted to highlight the fact that they were basically naked, like you will be
-    when you inevitably take it off.
   components:
   - type: Sprite
     overrideDir: South
@@ -2116,11 +1644,6 @@
   id: CoolCoyoteClothesLeavesSkirtLong
   name: leaves skirt
   description: |
-    A long(er) skirt made of leaves, designed as a joke by the Great Eastern Hiveblob, who wanted to see if it
-    could create a piece of clothing out of synthetic leaves. As it turns out, Coyote Bayou's humid climate
-    is perfect for growing synthetic leaves, and thus this skirt was created. While utterly impractical and
-    offering nothing but a pile of leaves to cover your butt, it was a popular choice for those who wanted to
-    highlight the fact that they were basically naked, like you will be when you inevitably take it off.
   components:
   - type: Sprite
     overrideDir: South
@@ -2139,10 +1662,6 @@
   id: CoolCoyoteClothesLeia
   name: leia
   description: |
-    A white loincloth and halter top, styled after the popular fashion of the Coyote Bayou's fennec vixens.
-    While the fennecs weren't actually princesses, they sure did love to dress like them, and the long flowing
-    design of the loincloth and halter top fitted their desert-dwelling bodies perfectly. Until they all got
-    fat, that is, and then the halter top was replaced with a bikini top to accommodate for larger bustlines.
   components:
   - type: Sprite
     overrideDir: South
@@ -2161,11 +1680,6 @@
   id: CoolCoyoteClothesLightHanfu
   name: hanfu in white
   description: |
-    A light hanfu, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this hanfu is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The white color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2184,11 +1698,6 @@
   id: CoolCoyoteClothesLittleBlackDress
   name: little black dress
   description: |
-    A little black dress, designed more as sexy lingerie than actual clothing. This dress was popularized
-    as a comfortable nightwear outfit for early Coyote Bayou residents that made its way into Heaven's Night,
-    which was a popular nightclub that dominated much of the Nash and New Boston's recreation scene. The
-    dress was designed to be both sexy and comfortable, with a flowing design that allows for easy movement
-    and access to the wearer's business end.
   components:
   - type: Sprite
     overrideDir: South
@@ -2207,13 +1716,6 @@
   id: CoolCoyoteClothesLoincloth
   name: DEATHKILLARZ loincloth
   description: |
-    An itchy loincloth traditionally adorned with a hellpig shawl and human skulls, as was worn by the
-    DEATHKILLARZ, a notorious gang of raider cavepeople who roamed Coyote Bayou valleys and plains.
-    While the DEATHKILLARZ were known for their brutality and violence, they were also known for their
-    distinctive fashion sense, which would go on to inspire the Great Eastern Hiveblob into never making
-    anything like this again. The loincloth is lined with teeth, designed to make accessing ones business end
-    unpleasant for all involved, and the shawl is sure to give anyone a rash. As a modern recreation, the
-    skulls and teeth have been replaced with plastic replicas, though the authentic unpleasantness remains.
   components:
   - type: Sprite
     overrideDir: South
@@ -2232,12 +1734,6 @@
   id: CoolCoyoteClothesSexyMaid
   name: sexy maid
   description: |
-    A sexy low cut maid outfit, as traditionally worn by the numerous femboy maids of the Coyote Bayou.
-    While the eastern half Nash and New Boston were kept clean by the Blue Sun maids, the western half
-    was often left to whoever was willing to clean up all the sexual exudate left behind by the countless
-    orgies that took place in the Coyote Bayou's numerous brothels and nightclubs. The sexy maid outfit
-    was designed to be both sexy and practical, resistant to stains and infused with a scent that counteracts
-    the smell.
   components:
   - type: Sprite
     overrideDir: South
@@ -2256,11 +1752,6 @@
   id: CoolCoyoteClothesMaurader
   name: maurader suit
   description: |
-    A maurader suit, as was worn by the Coyote Bayou's infamous mauraders, who were known for their
-    vicious catgirls who preyed upon hunky travelers and their cargo. The maurader suit is designed to
-    be both sexy and practical, with a downplayed button-up shirt and suspenders that hides their
-    intentions as horny beasts until the last moment, when they pounce on their prey and rub their
-    big stupid butts on them until they pass out from the beaning.
   components:
   - type: Sprite
     overrideDir: South
@@ -2279,9 +1770,6 @@
   id: CoolCoyoteClothesMarlowDuds
   name: marlow duds
   description: |
-    A set of marlow duds, designed by Snowy Marlow, a famous figure in Coyote Bayou folklore. Back in the
-    early exploration days, Snowy Marlow was known for her daring adventures into the tech heaps to map out
-    the railways of the Boxcar Vixens, and her duds were well known for being both practical and stylish.
   components:
   - type: Sprite
     overrideDir: South
@@ -2300,10 +1788,6 @@
   id: CoolCoyoteClothesMayanLoincloth
   name: mayan loincloth
   description: |
-    A simple white loincloth, designed after Coyote Bayou's Mayan vixens, who were known for their
-    intense love of the Mayan culture and their traditional clothing. The loincloth is designed to be
-    both comfortable and practical, with a flowing design that allows for easy movement and access to the
-    wearer's business end.
   components:
   - type: Sprite
     overrideDir: South
@@ -2322,11 +1806,6 @@
   id: CoolCoyoteClothesMikuBikini
   name: miku bikini
   description: |
-    A blue bikini, perfect for the beaches of the Coyote Bayou. While most speculate that this bikini
-    is designed after the mindworm character Miku, it is actually a reference to Segoe 'Mikutsune' Miku, a
-    popular dancer and singer at the Heaven's Night nightclub in Nash in the later ages of the town's
-    history. Miku was known for her blue white fur and blue bikini, alongside her sultry voice and
-    seductive dance moves, which made her a popular figure in the Coyote Bayou's nightlife scene.
   components:
   - type: Sprite
     overrideDir: South
@@ -2345,11 +1824,6 @@
   id: CoolCoyoteClothesOliveCargoPunk
   name: olive cargopunk pants
   description: |
-    A pair of olive cargopunk pants, a typical piece of clothing worn by the Coyote Bayou's resource
-    management division. These pants are designed to be both comfortable and practical for unloading shipments
-    from the numerous trains that pass through Nash and New Boston, while also being stylish enough to
-    be worn in the bustling streets of the Coyote Bayou. The olive color scheme is a nod to the Coyote Bayou's
-    olive exports, which grew in the dimensionally stable region of the Coyote Bayou hellmouth.
   components:
   - type: Sprite
     overrideDir: South
@@ -2368,12 +1842,6 @@
   id: CoolCoyoteClothesPentatop
   name: pentagram tube top
   description: |
-    A dark, sexy skirt and pentagram tube top, popularized by the cute huskies of Coyote Bayou. Originally
-    worn as a cute set of lingerie out in the wilderness, the pentatop was later adopted by the
-    Nash townsfolk as a sexy outfit that would show off the wearer's curves while still being comfortable
-    and practical. It is almost universally agreed that the design is based off a sexy hellhound, who was
-    known for her cute tube top and sexy skirt, and who would go on to become a popular figure in the
-    furry fandom in at least three other realities.
   components:
   - type: Sprite
     overrideDir: South
@@ -2392,13 +1860,6 @@
   id: CoolCoyoteClothesPharaoh
   name: pharaoh trappings
   description: |
-    A set of pharaoh trappings, powerful and regal clothing that was traditionally worn by the
-    Coyote Bayou's short-lived Rifts era. Back in the later days of New Boston's history, before the
-    516, Coyote Bayou made contact with the Rifts, which brought along a wave of new cultures and
-    traditions, ending up with the town being briefly called Wey Nua for some reason. Among these
-    new cultures was a faux-Egyptian culture, amounting to a dozen or so vixens who dressed up in
-    pharaoh trappings and pretended to be royalty. Comes with a skirt that is easy to flip up and
-    bend over in, like any good vixen would do.
   components:
   - type: Sprite
     overrideDir: South
@@ -2417,11 +1878,6 @@
   id: CoolCoyoteClothesPinkDress
   name: dress 'nine'
   description: |
-    A pink utility dress, worn by the Coyote Bayou's frontier plainsfolk. This dress is designed to be
-    both comfortable and practical, with a flowing design that allows for easy movement and access to the
-    wearer's business end. The salmon pink color scheme is designed to be slimming, which was important in
-    the later stages of the Bayou's history, when the obesity epidemic was at its peak. The Great Eastern
-    Hiveblob designed this dress to remain appealing at any size, and boy was it a success!
   components:
   - type: Sprite
     overrideDir: South
@@ -2440,12 +1896,6 @@
   id: CoolCoyoteClothesPinkSun
   name: pink sun dress
   description: |
-    A pink sun dress, perfect for those hot summer days in the Coyote Bayou. This dress is designed to be
-    both comfortable and flattering to the curves, with a flowing design that allows for easy movement
-    and quick removal in case of horny emergencies. The pink color scheme refers to the week-long push
-    through the Corridor of Pink, a dimensionally unstable region that was once a popular tourist trap
-    between Nash and the Oasis of Marr, to establish new trade routes that didn't have to go through
-    hellpig country.
   components:
   - type: Sprite
     overrideDir: South
@@ -2464,13 +1914,6 @@
   id: CoolCoyoteClothesPinkTutu
   name: pink tutu
   description: |
-    An unreasonably cute, short pink tutu, as was originally worn by cutest of catgirls in the Coyote Bayou.
-    As was the fashion of the Nyabbadab catgirls, the shortness and frilliness of one's skirt was a sign of
-    how cute and sexy you were, which in this culture was a very important trait. The pink tutu was
-    later adopted by New Boston as a sexy piece of lingerie that would show off the wearer's curves
-    while still being comfortable and practical. It is also designed to flip up easily with a sharp turn,
-    allowing for easy access to the wearer's business end, which was a common practice among the Nyabbadab
-    catgirls.
   components:
   - type: Sprite
     overrideDir: South
@@ -2489,12 +1932,6 @@
   id: CoolCoyoteClothesPinkwshort
   name: pink athletic shorts
   description: |
-    Sexy pink athletic shorts, designed to be both comfortable and practical for the Coyote Bayou's
-    workout enthusiasts. These shorts are made of a stretchy, breathable material that allows for easy
-    movement, while still showing off the wearer's curves. The stretchiness turned out to be very
-    practical for the numerous orgies that took place in the Coyote Bayou's numerous brothels and nightclubs,
-    as it allowed for easy access to the wearer's business end without having to take off the shorts.
-    It is also universally agreed that large butts look amazing in these shorts, go on, try it out!
   components:
   - type: Sprite
     overrideDir: South
@@ -2513,12 +1950,6 @@
   id: CoolCoyoteClothesPolyPerformer
   name: polyester performer drapery
   description: |
-    A set of polyester performer drapery, discovered in multiple style guides from the Great Eastern Hiveblob.
-    It is best described as a full-body loincloth, integrating a long strip of artificial fabric that wraps
-    around the wearer's body, covering their business end while still allowing for easy access. Curiously,
-    no examples of this drapery have been found to have been made in the Coyote Bayou, and it is speculated
-    that this was just a design that the Great Eastern Hiveblob had in mind for future clothing lines, before
-    the 516 happened and everyone died.
   components:
   - type: Sprite
     overrideDir: South
@@ -2537,10 +1968,6 @@
   id: CoolCoyoteClothesPortugueseSailor1d
   name: portuguese sailor
   description: |
-    A set of portuguese sailor clothing, designed to be worn by those on the high seas of the Coyote Bayou.
-    However there were no high seas in the Coyote Bayou, so this outfit was never actually worn by anyone.
-    It was mainly a design that the Great Eastern Hiveblob had in mind for future clothing lines, before the 516
-    happened and everyone died. Comes with a low cut shirt that is designed to show off big beefy chests.
   components:
   - type: Sprite
     overrideDir: South
@@ -2559,11 +1986,6 @@
   id: CoolCoyoteClothesPromDress
   name: prom dress
   description: |
-    A traditional prom dress, designed to be worn by those who want to look their best for the Coyote Bayou's
-    graduation ceremonies. The university of Nash (later New Boston) was known for its elaborate proms,
-    which often featured weeklong celebrations and parties. The prom dress is designed to be both elegant and
-    comfortable to dance in. While you'd never graduate from any of those schools, you can still wear this
-    dress to feel like a prom queen, or king, or duke, or something.
   components:
   - type: Sprite
     overrideDir: South
@@ -2582,11 +2004,6 @@
   id: CoolCoyoteClothesPuffyDress
   name: puffy dress
   description: |
-    A puffy strawberry red dress with an audacious bow under the bodice, designed to be worn by those
-    who prioritize cute demure sexiness over practicality. This dress was popularized by the
-    Coyote Bayou's fennec vixens, who were known for their love of cute and sexy clothing. The puffy
-    design of the dress is both cute and practical, allowing for easy movement and access to the
-    wearer's business end, while the audacious bow under the bodice adds a touch of playfulness to the outfit.
   components:
   - type: Sprite
     overrideDir: South
@@ -2605,11 +2022,6 @@
   id: CoolCoyoteClothesQipao
   name: qipao
   description: |
-    A qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The qipao is a traditional Chinese dress that has been adapted to the Coyote Bayou's
-    unique culture, with a modern twist that makes it both comfortable and practical.
   components:
   - type: Sprite
     overrideDir: South
@@ -2628,11 +2040,6 @@
   id: CoolCoyoteClothesQipaoNosleeve
   name: qipao sleeveless
   description: |
-    A sleeveless qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The sleeveless design allows for easy movement and access to the wearer's business end,
-    while still being comfortable and practical.
   components:
   - type: Sprite
     overrideDir: South
@@ -2651,11 +2058,6 @@
   id: CoolCoyoteClothesQipaoRed
   name: qipao in red
   description: |
-    A red qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The red color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2674,12 +2076,6 @@
   id: CoolCoyoteClothesQipaoRedNosleeve
   name: qipao sleeveless in red
   description: |
-    A sleeveless red qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The sleeveless design allows for easy movement and access to the wearer's business end,
-    while still being comfortable and practical. The red color scheme is a nod to the Coyote Bayou's rich cultural
-    heritage, a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2698,12 +2094,6 @@
   id: CoolCoyoteClothesQipaoTealNosleeve
   name: qipao sleeveless in teal
   description: |
-    A sleeveless teal qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The sleeveless design allows for easy movement and access to the wearer's business end,
-    while still being comfortable and practical. The teal color scheme is a nod to the Coyote Bayou's rich cultural
-    heritage, a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2722,11 +2112,6 @@
   id: CoolCoyoteClothesQipaoWhite
   name: qipao in white
   description: |
-    A white qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The white color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2745,12 +2130,6 @@
   id: CoolCoyoteClothesQipaoWhiteNosleeve
   name: qipao sleeveless in white
   description: |
-    A sleeveless white qipao, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this qipao is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The sleeveless design allows for easy movement and access to the wearer's business end,
-    while still being comfortable and practical. The white color scheme is a nod to the Coyote Bayou's rich cultural
-    heritage, a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2769,12 +2148,6 @@
   id: CoolCoyoteRedLandschneckt
   name: landschneckt in red
   description: |
-    A red landschneckt, a fancy formal outfit that was popular among the early days of the
-    Coyote Bayou's expansion into Nash. While it saw little use in the actual exploration parties,
-    it was popularized by the Boxcar Vixens, who for whatever reason found it to be a sexy outfit
-    and would often seduce wearers of this outfit on the long train rides through the Continental
-    Heap. It became popular travel wear by those who wanted to bed a Boxcar Vixen, and trust me,
-    everyone did, as they were the hottest vixens in the Coyote Bayou.
   components:
   - type: Sprite
     overrideDir: South
@@ -2793,13 +2166,6 @@
   id: CoolCoyoteClothesRadkini
   name: radkini
   description: |
-    A radkini, which despite the name, refers to the radiation inherent to the beaches of the Coyote Bayou,
-    rather than the bikini itself. While the bikini offers no protection against radiation, it is actually
-    designed to focus the radiation into the sensitive areas of the wearer's body, allowing them to
-    absorb dangerous levels of radiation, likely for sexual purposes. While irradiating your genitals is a
-    very bad idea, it is speculated that since one could recover from any injury through a temporary death,
-    residents were able to find some kind of enjoyment in this practice. Please keep away from radiation,
-    you will die and leave a very unsexy corpse.
   components:
   - type: Sprite
     overrideDir: South
@@ -2818,10 +2184,6 @@
   id: CoolCoyoteClothesRattyCyberpunk
   name: ratty cyberpunk
   description: |
-    A cute miniskirt and a stiff plastic crop top, as was the style of the Plastic Rats, a group of
-    wasteland residents who lived in the Coyote Bayou's tech heaps. The Plastic Rats were known for their
-    love of wearing uncomfortable plastic clothing, which they insisted was both practical and stylish.
-    It fell out of style during the obesity epidemic, as the crop top ended up never being able to fit.
   components:
   - type: Sprite
     overrideDir: South
@@ -2840,11 +2202,6 @@
   id: CoolCoyoteClothesRattySkirtGreen
   name: ratty green skirt
   description: |
-    A cute miniskirt and tank top, charitably referred to as the 'mint ice cream' outfit, topped with a
-    dirt brown crop top hoodie, as was the style of the Mint Girlz, a group of wasteland residents who
-    lived in the Coyote Bayou's tech heaps. The Mint Girlz were known for their love of mint ice cream,
-    as their camp was built around a mint ice cream factory that was abandoned in the tech heaps.
-    They all got fat, but the crop top was always able to fit.
   components:
   - type: Sprite
     overrideDir: South
@@ -2863,11 +2220,6 @@
   id: CoolCoyoteClothesRattySkirtPink
   name: ratty pink skirt
   description: |
-    A cute miniskirt and tank top, charitably referred to as the 'strawberry ice cream' outfit, topped with a
-    black leather crop top hoodie, as was the style of the Bubblegum Rossies, a group of wasteland residents
-    who lived in the Coyote Bayou's tech heaps. The Bubblegum Rossies were known for their love of strawberry
-    ice cream, as their camp was built around a strawberry ice cream factory that was abandoned in the tech heaps.
-    They all got fat, the end.
   components:
   - type: Sprite
     overrideDir: South
@@ -2886,11 +2238,6 @@
   id: CoolCoyoteClothesRattySkirtYellow
   name: ratty yellow skirt
   description: |
-    A cute miniskirt and tank top, charitably referred to as the 'banana ice cream' outfit, topped with a
-    brown crop top hoodie, as was the style of the Banana Bunch, a group of wasteland residents who lived in
-    the Coyote Bayou's tech heaps. The Banana Bunch were known for their love of banana ice cream, as their camp
-    was built around a banana ice cream factory that was abandoned in the tech heaps. They all got fat, but the
-    crop top was always able to fit.
   components:
   - type: Sprite
     overrideDir: South
@@ -2909,11 +2256,6 @@
   id: CoolCoyoteClothesRedEveningDress
   name: red evening dress
   description: |
-    A red evening dress, designed to be worn by those who want to look their best for the Coyote Bayou's
-    formal events. The dress is designed to be both elegant and comfortable, with a flowing design that allows
-    for easy movement and access to the wearer's business end. While the dress may have a formal flair, it is
-    widely known that the Coyote Bayou's formal events often devolved into orgies, and as such, the dress is
-    designed to be quick to remove and easy to flip up. Enjoy!
   components:
   - type: Sprite
     overrideDir: South
@@ -2932,11 +2274,6 @@
   id: CoolCoyoteClothesRedSari
   name: red sari
   description: |
-    A red sari, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this sari is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking
-    fashionable. The red color scheme is a nod to the Coyote Bayou's rich cultural heritage, a
-    mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -2955,12 +2292,6 @@
   id: CoolCoyoteClothesRedWshort
   name: red athletic shorts
   description: |
-    Sexy red athletic shorts, designed to be both comfortable and practical for the Coyote Bayou's
-    workout enthusiasts. These shorts are made of a stretchy, breathable material that allows for easy
-    movement, while still showing off the wearer's curves. The stretchiness turned out to be very
-    practical for the numerous orgies that took place in the Coyote Bayou's numerous brothels and nightclubs,
-    as it allowed for easy access to the wearer's business end without having to take off the shorts.
-    It is also universally agreed that large butts look amazing in these shorts, go on, try it out!
   components:
   - type: Sprite
     overrideDir: South
@@ -2979,11 +2310,6 @@
   id: CoolCoyoteClothesRevealingDress
   name: revealing dress
   description: |
-    A flowing black dress with a neon cyan bodice, designed to draw attention to the wearer's big heaving
-    breasts. This dress was popularized by the Coyote Bayou's nightlife scene, where it was often worn by
-    dancers and performers who wanted to show off their curves while still being comfortable and practical.
-    As with most of the Coyote Bayou's clothing, it is designed to be quick to remove and easy to flip up,
-    allowing for easy access to the wearer's business end.
   components:
   - type: Sprite
     overrideDir: South
@@ -3002,11 +2328,6 @@
   id: CoolCoyoteClothesRippedPunk
   name: ripped punk fishnet pantskini
   description: |
-    A set of leather pants and leather bikini top, worn over some ratty fishnet bodysuit, as was the style
-    of the Coyote Bayou's Fishnet Felines, a group of wasteland residents who lived in the Coyote Bayou's
-    tech heaps. The Fishnet Felines were known for their love of wearing uncomfortable fishnet clothing,
-    which they insisted was both practical and stylish. It fell out of style during the obesity epidemic,
-    as the fishnet bodysuit ended up never being able to fit.
   components:
   - type: Sprite
     overrideDir: South
@@ -3025,12 +2346,6 @@
   id: CoolCoyoteClothesSecslutskirt
   name: sexy redsec skirt
   description: |
-    A sexy redsec skirt, worn as a part of the Coyote Bayou's security uniforms. While most of the law
-    was enforced by Nash's adventurers, the Coyote Bayou's security forces were often understaffed and
-    relied on Heaven's Night's bouncers to keep the peace. As a show of this partnership, the waitresses
-    designed a sexy redsec skirt that would show off the wearer's curves while still being comfortable
-    and practical. The skirt is designed to be quick to remove and easy to flip up, allowing for easy access
-    to the wearer's business end, which was a common practice among the Coyote Bayou's security forces.
   components:
   - type: Sprite
     overrideDir: South
@@ -3049,12 +2364,6 @@
   id: CoolCoyoteClothesSecslutskirtpink
   name: sexy mauvesec skirt
   description: |
-    A sexy mauvesec skirt, worn as a part of the Coyote Bayou's security uniforms. While most of the law
-    was enforced by Nash's adventurers, the Coyote Bayou's security forces were often understaffed and
-    relied on Heaven's Night's bouncers to keep the peace. As a show of this partnership, the waitresses
-    designed a sexy mauvesec skirt that would show off the wearer's curves while still being comfortable
-    and practical. The skirt is designed to be quick to remove and easy to flip up, allowing for easy access
-    to the wearer's business end, which was a common practice among the Coyote Bayou's security forces.
   components:
   - type: Sprite
     overrideDir: South
@@ -3073,13 +2382,6 @@
   id: CoolCoyoteClothesSecstripper
   name: sexy security stripper
   description: |
-    A sexy security stripper outfit, designed to be worn by the Coyote Bayou's security forces. While most of
-    the law was enforced by Nash's adventurers, the Coyote Bayou's security forces were often understaffed and
-    relied on Heaven's Night's bouncers to keep the peace. As a show of this partnership, the waitresses designed
-    a sexy security stripper outfit that would show off the wearer's curves. It was not practical at all, and
-    amounted to a PVC stripper outfit vaguely styled after the Coyote Bayou's security uniforms. It is speculated
-    that it came about as a statement about how Nash's security was more preoccupied with sleeping with vixens
-    than anything else, but one has to imagine what came first, the sexy stripper or the vixens.
   components:
   - type: Sprite
     overrideDir: South
@@ -3098,11 +2400,6 @@
   id: CoolCoyoteClothesSexyclown
   name: sexy clown outfit
   description: |
-    A sexy clown suit, worn by the Coyote Bayou's ClownForce PRO team, a group of traveling clowns who
-    roamed the wastes to keep spirits high and panties wet. The ClownForce PRO team was known for their
-    impressive performances, which never failed to entertain and arouse their audiences. The suit is
-    designed to be both easy to move around in, and enticing to the eye, with a tight-fitting
-    bodice and a short skirt that only a skilled clown would be able to pull off in front of everyone.
   components:
   - type: Sprite
     overrideDir: South
@@ -3121,11 +2418,6 @@
   id: CoolCoyoteClothesSexymime
   name: sexy mime outfit
   description: |
-    A sexy mime suit, worn by the Coyote Bayou's ClownForce PRO team, a group of traveling clowns who
-    roamed the wastes to keep spirits high and panties wet. The ClownForce PRO team was known for their
-    impressive performances, which never failed to entertain and arouse their audiences. The suit is
-    designed to be both easy to move around in, and enticing to the eye, with a tight-fitting bodice and
-    a short skirt that only a skilled mime would be able to pull off in front of everyone.
   components:
   - type: Sprite
     overrideDir: South
@@ -3144,12 +2436,6 @@
   id: CoolCoyoteClothesSexynursesuit
   name: sexy nurse outfit
   description: |
-    A sexy nurse outfit, inspired by an old joke proposal design for the Coyote Bayou's Followers Clinic.
-    It was an old joke that the Nash Followers Clinic did just as much sexual healing as it did actual
-    medicine, and as such, Heaven's Night's waitresses designed a sexy nurse outfit that would show off
-    the wearer's curves while still looking vaguely medical. The design was never used in the clinic,
-    as a nanoskirt is not proper PPE attire, but it was popularized by the Coyote Bayou's nightlife scene,
-    where the only PPE required was a condom.
   components:
   - type: Sprite
     overrideDir: South
@@ -3168,11 +2454,6 @@
   id: CoolCoyoteClothesShamanblue
   name: shaman in blue
   description: |
-    A shaman outfit in blue, designed to be worn by those who want to keep a low profile in the Coyote Bayou's
-    bustling streets. Often worn by skilled artisans and craftsmen, this shaman outfit is an understated yet
-    stylish outfit that is perfect for those who want to blend in with the crowd while still looking fashionable.
-    The blue color scheme is a nod to the Coyote Bayou's rich cultural heritage, a mismash of countless worlds
-    bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -3191,11 +2472,6 @@
   id: CoolCoyoteClothesSheerblue
   name: sheer blue dress
   description: |
-    A transparent blue dress, worn expressly to accentuate whats underneath. It was popularized by the
-    Coyote Bayou's nightlife scene, where it was often worn by dancers and performers who wanted to show off
-    their curves while still being comfortable and practical. As with most of the Coyote Bayou's clothing,
-    it is designed to be quick to remove and easy to flip up, allowing for easy access to the wearer's
-    business end. Enjoy!
   components:
   - type: Sprite
     overrideDir: South
@@ -3214,11 +2490,6 @@
   id: CoolCoyoteClothesShortPink
   name: short pink nightgown
   description: |
-    A short pink nightgown, as was traditionally worn by the Coyote Bayou's residents when they wanted to
-    sleep in style. While like every other piece of clothing in the Coyote Bayou, existing in a state of
-    perpetual easy undress and quick access to the wearer's business end, this nightgown was actually just
-    a comfortable piece of clothing that was designed to be worn while sleeping. Whatever the wearer got
-    up to was purely coincidental, though if you wear it, you're gonna get up to something.
   components:
   - type: Sprite
     overrideDir: South
@@ -3237,12 +2508,6 @@
   id: CoolCoyoteClothesShortsBlue
   name: neon blue flashy shorts
   description: |
-    A pair of blue shorts with bright neon cyan stripes, designed to be as gaudy and hideous as it was
-    comfortable for any manner of rear end. These shorts were popularized by the Coyote Bayou's
-    NoSkirts movement, a group of Nash residents who were tired of the fact that most of the Coyote Bayou's
-    fashion was designed to be quick to remove and easy to flip up, and instead wanted to wear something
-    that required a bit more effort to remove, likely for teasing purposes. As such, these shorts are difficult
-    to remove, but are attractive enough to get people to try anyway.
   components:
   - type: Sprite
     overrideDir: South
@@ -3261,11 +2526,6 @@
   id: CoolCoyoteClothesShortsRed
   name: blood red breeches
   description: |
-    A pair of blood red breeches, designed to be as gaudy and hideous as it was comfortable for any manner of rear end.
-    These shorts were popularized by the Coyote Bayou's NoSkirts movement, a group of Nash residents who were tired of
-    the fact that most of the Coyote Bayou's fashion was designed to be quick to remove and easy to flip up, and instead
-    wanted to wear something that required a bit more effort to remove, likely for teasing purposes. As such, these shorts
-    are difficult to remove, but are attractive enough to get people to try anyway.
   components:
   - type: Sprite
     overrideDir: South
@@ -3284,10 +2544,6 @@
   id: CoolCoyoteClothesSocietyDress
   name: society dress
   description: |
-    A sheer asymmetric lingerie dress, designed to be worn by the Coyote Bayou's society ladies. Designed purely
-    for attractiveness, this dress is built for being sexy and alluring, with a sheer design that allows the
-    wearer's partner(s) to know what they're getting into (you). When you put this on, expect not to be wearing
-    it for long.
   components:
   - type: Sprite
     overrideDir: South
@@ -3306,11 +2562,6 @@
   id: CoolCoyoteClothesSunSkirt
   name: sun skirt in green
   description: |
-    A cute green skirt with a roomy comfortable top, designed to be worn in comfort on the Coyote Bayou's
-    hot nuclear summer days. The skirt is your typical skirt, with a stretchy waistband that allows
-    for easy movement and access to the wearer's business end, while the top is designed to be cooling and
-    supportive to even the most massive of oversized assets. The green symbolizes the Coyote Bayou's lush
-    greenery of the biodome that existed for a couple months before it just disappeared.
   components:
   - type: Sprite
     overrideDir: South
@@ -3329,11 +2580,6 @@
   id: CoolCoyoteClothesSunSkirtGrey
   name: sun skirt in grey
   description: |
-    A cute grey skirt with a roomy comfortable top, designed to be worn in comfort on the Coyote Bayou's
-    hot nuclear summer days. The skirt is your typical skirt, with a stretchy waistband that allows
-    for easy movement and access to the wearer's business end, while the top is designed to be cooling and
-    supportive to even the most massive of oversized assets. The grey symbolizes the Coyote Bayou's
-    concrete jungle that formed from countless ruins of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -3352,12 +2598,6 @@
   id: CoolCoyoteClothesSundressBlue
   name: sundress in blue
   description: |
-    A blue sundress, designed to be worn in comfort on the Coyote Bayou's hot nuclear summer days. The
-    sundress is your typical sundress, with a stretchy waistband that allows for easy movement and access
-    to the wearer's business end, while the top is designed to be cooling and supportive to even the most
-    massive of oversized assets. The blue symbolizes the otherworldly glow that forms in the wastes that
-    pulls in the deceased matter and reshapes it all into those who died, given life that will never truly
-    end.
   components:
   - type: Sprite
     overrideDir: South
@@ -3376,12 +2616,6 @@
   id: CoolCoyoteClothesSundressOrange
   name: sundress in orange
   description: |
-    An orange sundress, designed to be worn in comfort on the Coyote Bayou's hot nuclear summer days. The
-    sundress is your typical sundress, with a stretchy waistband that allows for easy movement and access
-    to the wearer's business end, while the top is designed to be cooling and supportive to even the most
-    massive of oversized assets. The orange symbolizes the hybrid star in the sky, formed from the fused
-    remnants of many other suns that were bluespaced into one, and the heat that it brings to the
-    Coyote Bayou's residents, warming their hearts and bodies under its merciful rays.
   components:
   - type: Sprite
     overrideDir: South
@@ -3400,14 +2634,6 @@
   id: CoolCoyoteClothesSundressPurple
   name: sundress in purple
   description: |
-    A purple sundress, designed to be worn in comfort on the Coyote Bayou's hot nuclear summer days. The
-    sundress is your typical sundress, with a stretchy waistband that allows for easy movement and access
-    to the wearer's business end, while the top is designed to be cooling and supportive to even the most
-    massive of oversized assets. The purple symbolizes strange glow that would be left after Ratley bombed
-    Nash for the zillionth time, a scar in the land where the forces from beyond would repair the damage
-    and return life to the giblets formed from the destruction, a reminder that life will always never
-    truly end, and that the Coyote Bayou will always be a place of rebirth and renewal. Even now, as an abandoned
-    wasteland, the world is never truly dead, simply in a form, waiting for its time to be reborn again.
   components:
   - type: Sprite
     overrideDir: South
@@ -3426,15 +2652,6 @@
   id: CoolCoyoteClothesSundressRed
   name: sundress in red
   description: |
-    A red sundress, designed to be worn in comfort on the Coyote Bayou's hot nuclear summer days. The
-    sundress is your typical sundress, with a stretchy waistband that allows for easy movement and access
-    to the wearer's business end, while the top is designed to be cooling and supportive to even the most
-    massive of oversized assets. The red symbolizes the delicious cherry pie that the Bustiest Vixen in the
-    Coyote Bayou's history, the one and only Sam 'Jigglebigboobsjiggly' Kelly, would bake for her friends and
-    family, a sweet treat that would bring everyone together and remind them of the joys of life, even in the
-    face of adversity. It is said that the cherry pie was so good, that it could make even the most hardened
-    wastelanders weep with joy, and that the recipe was passed down through generations of vixens, a symbol of
-    the Coyote Bayou's rich cultural heritage, a mismash of countless worlds bluespaced into one.
   components:
   - type: Sprite
     overrideDir: South
@@ -3453,14 +2670,6 @@
   id: CoolCoyoteClothesSundressYellow
   name: sundress in yellow
   description: |
-    A yellow sundress, designed to be worn in comfort on the Coyote Bayou's hot nuclear summer days. The
-    sundress is your typical sundress, with a stretchy waistband that allows for easy movement and access
-    to the wearer's business end, while the top is designed to be cooling and supportive to even the most
-    massive of oversized assets. The yellow symbolizes the great sandcrete walls of Castle Nash, the great
-    stronghold of the Coyote Bayou for all of a couple months before everyone hated it and left. It was told
-    that it was a gorgeous place, just that the builders had a disagreement, also the tribal sector was literally
-    under the stairs like some kind of forgotten crawl space, and that the walls were painted yellow to
-    hide all the piss stains.
   components:
   - type: Sprite
     overrideDir: South
@@ -3479,13 +2688,6 @@
   id: CoolCoyoteClothesSwimBlack
   name: one-piece swimsuit in black
   description: |
-    A one-piece swimsuit in black, designed to be hydrodynamic and comfortable for the Coyote Bayou's
-    lakegoers. The swimsuit is made of a stretchy, breathable material that allows for easy movement,
-    and, of course, easy access to the wearer's business end. New Boston was in a watery region, and as
-    such, swimming was a common pastime for the Coyote Bayou's residents, especially the yinglet population,
-    who would swim around and grope for clams in the lake. The black symbolizes the deep, dark waters of the
-    outer reaches of the Bayou, where the intrinsic hostile inhibition fields could not reach, and thus hosted
-    horrors beyond imagination, which people swam in for clams cus those were the tastiest.
   components:
   - type: Sprite
     overrideDir: South
@@ -3504,13 +2706,6 @@
   id: CoolCoyoteClothesSwimBlue
   name: one-piece swimsuit in blue
   description: |
-    A one-piece swimsuit in blue, designed to be hydrodynamic and comfortable for the Coyote Bayou's
-    lakegoers. The swimsuit is made of a stretchy, breathable material that allows for easy movement,
-    and, of course, easy access to the wearer's business end. New Boston was in a watery region, and as
-    such, swimming was a common pastime for the Coyote Bayou's residents, especially the yinglet population,
-    who would swim around and grope for clams in the lake. The blue symbolizes the cool crisp waters of the
-    townside lake, kept clean by the ambient nanoflora, to the point where it was safe to drink and host
-    orgies in, even at the same time.
   components:
   - type: Sprite
     overrideDir: South
@@ -3529,13 +2724,6 @@
   id: CoolCoyoteClothesSwimEarth
   name: one-or-more-piece swimsuit in earth
   description: |
-    A one-or-more-piece swimsuit in earth, designed to be hydrodynamic and comfortable for the Coyote Bayou's
-    lakegoers. The swimsuit is made of a stretchy, breathable material that allows for easy movement,
-    and, of course, easy access to the wearer's business end. New Boston was in a watery region, and as
-    such, swimming was a common pastime for the Coyote Bayou's residents, especially the yinglet population,
-    who would swim around and grope for clams in the lake. The earth symbolizes the rich fertile soil of the
-    Coyote Bayou's lakeside, which grew lush and nutritive crops that fed the town's residents, even as it
-    contributed to the region's obesity epidemic.
   components:
   - type: Sprite
     overrideDir: South
@@ -3554,13 +2742,6 @@
   id: CoolCoyoteClothesSwimGreen
   name: one-or-more-piece swimsuit in green
   description: |
-    A one-or-more-piece swimsuit in green, designed to be hydrodynamic and comfortable for the Coyote Bayou's
-    lakegoers. The swimsuit is made of a stretchy, breathable material that allows for easy movement,
-    and, of course, easy access to the wearer's business end. New Boston was in a watery region, and as
-    such, swimming was a common pastime for the Coyote Bayou's residents, especially the yinglet population,
-    who would swim around and grope for clams in the lake. The green symbolizes the weird green algae that would
-    grow in the lake, which was actually a type of nanoflora that was able to purify the water and keep it clean,
-    and also tasted like mint, which was a popular flavor in the Coyote Bayou's ice cream parlors.
   components:
   - type: Sprite
     overrideDir: South
@@ -3579,14 +2760,6 @@
   id: CoolCoyoteClothesSwimPurp
   name: one-or-more-piece swimsuit in purp
   description: |
-    A one-or-more-piece swimsuit in purp, designed to be hydrodynamic and comfortable for the Coyote Bayou's
-    lakegoers. The swimsuit is made of a stretchy, breathable material that allows for easy movement,
-    and, of course, easy access to the wearer's business end. New Boston was in a watery region, and as
-    such, swimming was a common pastime for the Coyote Bayou's residents, especially the yinglet population,
-    who would swim around and grope for clams in the lake. The purp symbolizes the strange purple glow that would
-    form in the waters after Ratley bombed Nash for the zillionth time, a scar in the land where the intrinsic
-    hostile inhibition fields could not reach, and thus hosted horrors beyond imagination, which people swam in
-    for clams cus those were the tastiest.
   components:
   - type: Sprite
     overrideDir: South
@@ -3605,16 +2778,6 @@
   id: CoolCoyoteClothesSwimRed
   name: one-or-more-piece swimsuit in red
   description: |
-    A one-or-more-piece swimsuit in red, designed to be hydrodynamic and comfortable for the Coyote Bayou's
-    lakegoers. The swimsuit is made of a stretchy, breathable material that allows for easy movement,
-    and, of course, easy access to the wearer's business end. New Boston was in a watery region, and as
-    such, swimming was a common pastime for the Coyote Bayou's residents, especially the yinglet population,
-    who would swim around and grope for clams in the lake. The red symbolizes the cherry pie that the
-    Bustiest Vixen in the Coyote Bayou's history, the one and only Sam 'Jigglebigboobsjiggly' Kelly, would bake
-    for her friends and family, a sweet treat that would bring everyone together and remind them of the joys of life,
-    despite the fact she couldnt actually swim. It is said that the cherry pie was so good, that it could make even the most hardened
-    wastelanders weep with joy, and that the recipe was passed down through generations of vixens, a symbol of the Coyote Bayou's
-    rich cultural heritage, a mismash of countless worlds bluespaced into one. Cept the recipe was lost, so, aw.
   components:
   - type: Sprite
     overrideDir: South
@@ -3633,13 +2796,6 @@
   id: CoolCoyoteClothesSyclothing
   name: sy-bikini
   description: |
-    A sy-bikini, designed to be worn by the Coyote Bayou's residents who wanted to show off their curves
-    while still being comfortable and practical. The bikini is made of a stretchy, breathable material that
-    allows for easy movement, and, of course, easy access to the wearer's business end. The sy-bikini was
-    popularized by the Coyote Bayou's nightlife scene, where it was often worn by dancers and performers who
-    wanted to show off their curves while still being comfortable and practical. As with most of the Coyote Bayou's clothing,
-    it is designed to be quick to remove and easy to flip up, allowing for easy access to the wearer's business end.
-    Enjoy!
   components:
   - type: Sprite
     overrideDir: South
@@ -3658,10 +2814,6 @@
   id: CoolCoyoteClothesTacticoolHawaiianBlue
   name: tacticool hawaiian shirt in blue
   description: |
-    A tacticool hawaiian shirt in blue, as was worn by the tropical operators of the Coyote Bayou's
-    Tacticool Taskforce, a group of elite soldiers who were trained to operate in the harshest of environments.
-    The floral pattern of the shirt is a nod to the Coyote Bayou's tropical heritage, a mismash of countless
-    worlds bluespaced into one. The shirt is designed to be both comfortable and practical.
   components:
   - type: Sprite
     overrideDir: South
@@ -3680,10 +2832,6 @@
   id: CoolCoyoteClothesTacticoolHawaiianOrange
   name: tacticool hawaiian shirt in orange
   description: |
-    A tacticool hawaiian shirt in orange, as was worn by the tropical operators of the Coyote Bayou's
-    Tacticool Taskforce, a group of elite soldiers who were trained to operate in the harshest of environments.
-    The floral pattern of the shirt is a nod to the Coyote Bayou's tropical heritage, a mismash of countless
-    worlds bluespaced into one. The shirt is designed to be both comfortable and practical.
   components:
   - type: Sprite
     overrideDir: South
@@ -3702,10 +2850,6 @@
   id: CoolCoyoteClothesTacticoolHawaiianPurple
   name: tacticool hawaiian shirt in purple
   description: |
-    A tacticool hawaiian shirt in purple, as was worn by the tropical operators of the Coyote Bayou's
-    Tacticool Taskforce, a group of elite soldiers who were trained to operate in the harshest of environments.
-    The floral pattern of the shirt is a nod to the Coyote Bayou's tropical heritage, a mismash of countless
-    worlds bluespaced into one. The shirt is designed to be both comfortable and practical.
   components:
   - type: Sprite
     overrideDir: South
@@ -3724,9 +2868,6 @@
   id: CoolCoyoteClothesTexas
   name: texan scrobsuit
   description: |
-    A texan scrobsuit, designed after the traditional scrobsuits worn by the Coyote Bayou's
-    Textaculated Turbotroupe, a hyperfeat of endomatic sybanomering debantuation that was assential
-    for the Nash Drambulomantine Flenderblasters. Achieves a Gibbl of 2735.
   components:
   - type: Sprite
     overrideDir: South
@@ -3745,10 +2886,6 @@
   id: CoolCoyoteClothesToga
   name: toga
   description: |
-    A loose airy toga, designed to be worn by the Coyote Bayou's residents who wanted something simple and
-    comfortable to wear, even in the hot summer heat. While originally designed with the goal to be easy to
-    remove and quick to flip up, the toga gained popularity during the obesity epidemic that swept the Coyote
-    Bayou, as it was easy to just add more toga to cover up the wearer's business end.
   components:
   - type: Sprite
     overrideDir: South
@@ -3767,12 +2904,6 @@
   id: CoolCoyoteClothesToga2
   name: toga 'two'
   description: |
-    A loose airy toga, designed to be worn by the Coyote Bayou's residents who wanted something simple and
-    comfortable to wear, even in the hot summer heat. While originally designed with the goal to be easy to
-    remove and quick to flip up, the toga gained popularity during the obesity epidemic that swept the Coyote
-    Bayou, as it was easy to just add more toga to cover up the wearer's business end. Features improvements
-    by the Great Eastern Hiveblob, which made it lighter and more accommodating to the wearer's body,
-    allowing for greater freedom of movement and comfort.
   components:
   - type: Sprite
     overrideDir: South
@@ -3791,11 +2922,6 @@
   id: CoolCoyoteClothesTradwifeBlue
   name: housewife in blue
   description: |
-    The 'housewife' dress was a short lived line of clothing designed by the Coyote Bayou's
-    Heaven's Night's waitresses, who were chasing a fad for clothing that did nothing to hide
-    the wearer's business end, coming pre-flipped up in the front and ready to go. While innovative,
-    it was felt to be a little on the nose to have one's business end so out and flapping in the wind,
-    mainly because half the thrill is the journey getting that business end out.
   components:
   - type: Sprite
     overrideDir: South
@@ -3814,11 +2940,6 @@
   id: CoolCoyoteClothesTradwifeOrange
   name: housewife in orange
   description: |
-    The 'housewife' dress was a short lived line of clothing designed by the Coyote Bayou's
-    Heaven's Night's waitresses, who were chasing a fad for clothing that did nothing to hide
-    the wearer's business end, coming pre-flipped up in the front and ready to go. While innovative,
-    it was felt to be a little on the nose to have one's business end so out and flapping in the wind,
-    mainly because half the thrill is the journey getting that business end out.
   components:
   - type: Sprite
     overrideDir: South
@@ -3837,11 +2958,6 @@
   id: CoolCoyoteClothesTradwifePurple
   name: housewife in purple
   description: |
-    The 'housewife' dress was a short lived line of clothing designed by the Coyote Bayou's
-    Heaven's Night's waitresses, who were chasing a fad for clothing that did nothing to hide
-    the wearer's business end, coming pre-flipped up in the front and ready to go. While innovative,
-    it was felt to be a little on the nose to have one's business end so out and flapping in the wind,
-    mainly because half the thrill is the journey getting that business end out.
   components:
   - type: Sprite
     overrideDir: South
@@ -3860,11 +2976,6 @@
   id: CoolCoyoteClothesTradwifeRed
   name: housewife in red
   description: |
-    The 'housewife' dress was a short lived line of clothing designed by the Coyote Bayou's
-    Heaven's Night's waitresses, who were chasing a fad for clothing that did nothing to hide
-    the wearer's business end, coming pre-flipped up in the front and ready to go. While innovative,
-    it was felt to be a little on the nose to have one's business end so out and flapping in the wind,
-    mainly because half the thrill is the journey getting that business end out.
   components:
   - type: Sprite
     overrideDir: South
@@ -3883,11 +2994,6 @@
   id: CoolCoyoteClothesTradwifeYellow
   name: housewife in yellow
   description: |
-    The 'housewife' dress was a short lived line of clothing designed by the Coyote Bayou's
-    Heaven's Night's waitresses, who were chasing a fad for clothing that did nothing to hide
-    the wearer's business end, coming pre-flipped up in the front and ready to go. While innovative,
-    it was felt to be a little on the nose to have one's business end so out and flapping in the wind,
-    mainly because half the thrill is the journey getting that business end out.
   components:
   - type: Sprite
     overrideDir: South
@@ -3906,10 +3012,6 @@
   id: CoolCoyoteClothesTribalColorful
   name: tribal colorful tribalwear
   description: |
-    A colorful tribalwear, designed to be worn by the Coyote Bayou's tribal residents who wanted something
-    simple and comfortable to wear, even in the hot summer heat. The Sulphur Bottom tribal coalition of
-    nature lovers were a major facet of Coyote Bayou's culture, despite only being a couple of people who
-    ever showed up to do anything. And these clothes are colorful, symbolizing something.
   components:
   - type: Sprite
     overrideDir: South
@@ -3928,10 +3030,6 @@
   id: CoolCoyoteClothesTribalColorfulTop
   name: tribal colorful tribalwear top
   description: |
-    A colorful tribalwear top, designed to be worn by the Coyote Bayou's tribal residents who wanted something
-    simple and comfortable to wear, even in the hot summer heat. The Sulphur Bottom tribal coalition of
-    nature lovers were a major facet of Coyote Bayou's culture, despite only being a couple of people who
-    ever showed up to do anything. And these clothes are colorful, symbolizing something.
   components:
   - type: Sprite
     overrideDir: South
@@ -3950,10 +3048,6 @@
   id: CoolCoyoteClothesUNIrish
   name: drab uniform
   description: |
-    A drab uniform, designed from a mashup of old tired military uniforms that were at one point stylish
-    but is now just a sad reminder of the Coyote Bayou's past. The sad part was that of all the uniforms
-    bluespaced into the Coyote Bayou, they all looked very drab and sad, and few were designed to fit with
-    the general fashion of the Coyote Bayou, which is to say, quick to remove and easy to flip up.
   components:
   - type: Sprite
     overrideDir: South
@@ -3972,10 +3066,6 @@
   id: CoolCoyoteClothesUNGreentrousersOG107
   name: drab green trousers
   description: |
-    A pair of drab green trousers, perfect for going shirtless in the Coyote Bayou's snakewaters and
-    showing off your assets. The trousers are made of a stretchy, breathable material that allows for easy
-    movement, and, of course, easy access to the wearer's business end. The suspenders ensure that no matter
-    how awful it gets, this thing will always have your back.
   components:
   - type: Sprite
     overrideDir: South
@@ -3994,11 +3084,6 @@
   id: CoolCoyoteClothesVictorianDress
   name: victorian dress
   description: |
-    A demure, understated marmous dress, designed to be worn by the Coyote Bayou's uptight and prim
-    pseudotraditionalisticists who wanted something both non-showy and unrevealing, yet still
-    able to be flipped up in the back and rutted mercilessly if need be. While it comes from a
-    Victorian inspiration, the light flowing fabric was optimized to be as little of a hindrance
-    to one's hinder as possible, cutely.
   components:
   - type: Sprite
     overrideDir: South
@@ -4017,13 +3102,6 @@
   id: CoolCoyoteClothesVictorianblackdress
   name: victorian black dress
   description: |
-    A demure, understated marmous black dress, designed to be worn by the Coyote Bayou's uptight and prim
-    pseudotraditionalisticists who wanted something both non-showy and unrevealing, yet still
-    able to be flipped up in the back and rutted mercilessly if need be. While it comes from a
-    Victorian inspiration, the light flowing fabric was optimized to be as little of a hindrance
-    to one's hinder as possible, cutely. The black symbolizes the Coyote Bayou's dark nights, where the
-    many moons would occasionally hide behind the clouds, leaving the residents in darkness,
-    which was nice, since most of the monsters were afraid of the dark.
   components:
   - type: Sprite
     overrideDir: South
@@ -4042,14 +3120,6 @@
   id: CoolCoyoteClothesVictorianblred
   name: black and red victorian vestsuit
   description: |
-    A demure, understated marmous black and red vestsuit, designed to be worn by the Coyote Bayou's
-    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
-    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
-    something practical and attractive, though it lacked certain features that would allow for
-    easy access to the wearer's business end. The red shirt symbolizes the crimson red skies that
-    would form from the burning fallout assets that the world once purged into space at some point,
-    as though the world just suddenly rejected a longstanding facet of the world. It was for good
-    reason, since all that stuff was making the world suck and all the people annoying.
   components:
   - type: Sprite
     overrideDir: South
@@ -4068,13 +3138,6 @@
   id: CoolCoyoteClothesHappyVampire
   name: happy vampire vestsuit
   description: |
-    A demure, understated marmous vestsuit, designed to be worn by the Coyote Bayou's
-    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
-    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
-    something practical and attractive, though it lacked certain features that would allow for
-    easy access to the wearer's business end. The happy vampire shirt symbolizes the happy vampires
-    that would roam the Coyote Bayou's streets at night, looking for a good time and a bite to eat,
-    which was usually just a couple of clams or some cherry pie.
   components:
   - type: Sprite
     overrideDir: South
@@ -4093,13 +3156,6 @@
   id: CoolCoyoteClothesVictorianlightfire
   name: light fire victorian vestsuit
   description: |
-    A demure, understated marmous light fire vestsuit, designed to be worn by the Coyote Bayou's
-    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
-    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
-    something practical and attractive, though it lacked certain features that would allow for
-    easy access to the wearer's business end. The light fire shirt symbolizes the light fire that
-    would burn in the hearts of the Coyote Bayou's residents, a reminder that even in the darkest of times,
-    there is always hope and warmth to be found in your nearest vixen.
   components:
   - type: Sprite
     overrideDir: South
@@ -4118,20 +3174,6 @@
   id: CoolCoyoteClothesVictorianRedDress
   name: victorian red dress
   description: |
-    A demure, understated marmous red dress, designed to be worn by the Coyote Bayou's uptight and prim
-    pseudotraditionalisticists who wanted something both non-showy and unrevealing, yet still
-    able to be flipped up in the back and rutted mercilessly if need be. While it comes from a
-    Victorian inspiration, the light flowing fabric was optimized to be as little of a hindrance
-    to one's hinder as possible, cutely. The red is not symbolic, and is in fact a result of a dye
-    accident when someone put an anomalous red hat into the communal laundromat and made all the black
-    dresses red, which was a happy accident, as red is more associated with the Coyote Bayou's
-    cherry pie, a sweet treat that would bring everyone together and remind them of the joys of life,
-    despite the fact that the cherry pie was actually a lie, and was just a cover for
-    the Coyote Bayou's secret pie smuggling operation, which was a major source of
-    income for the town's residents, and also a major source of conflict with the neighboring towns
-    who wanted a piece of the pie, but were never able to get it, because the
-    Coyote Bayou's residents were too clever and resourceful to let anyone else in on
-    their secret pie smuggling operation. [citation needed]
   components:
   - type: Sprite
     overrideDir: South
@@ -4150,14 +3192,6 @@
   id: CoolCoyoteClothesVictorianRedVest
   name: victorian red vestsuit
   description: |
-    A demure, understated marmous red vestsuit, designed to be worn by the Coyote Bayou's
-    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
-    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
-    something practical and attractive, though it lacked certain features that would allow for
-    easy access to the wearer's business end. The red vest was designed to be a nod to the
-    Annoying Dye Incident of Smarch 32nd, where a group of vixens accidentally dyed all their
-    clothes red, and it became a fashion trend that lasted for a couple of weeks before everyone
-    got bored of it and went back to their usual black and white outfits.
   components:
   - type: Sprite
     overrideDir: South
@@ -4176,17 +3210,6 @@
   id: CoolCoyoteClothesVictorianVest
   name: victorian vestsuit
   description: |
-    A demure, understated marmous vestsuit, designed to be worn by the Coyote Bayou's
-    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
-    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
-    something practical and attractive, though it lacked certain features that would allow for
-    easy access to the wearer's business end. The 'rusty eggplant' shirt was made famous by
-    Gary, a notorious citizen who wore this shirt everywhere he went, and some people even
-    started calling it the 'Gary shirt', which was a bit of a misnomer, since the shirt
-    was actually designed by a group of vixens who wanted to create something that was both
-    practical and stylish, and the 'rusty eggplant' color was just a happy accident
-    that happened when they accidentally spilled some dye on the shirt while they were
-    trying to create a new color for the shirt.
   components:
   - type: Sprite
     overrideDir: South
@@ -4205,12 +3228,6 @@
   id: CoolCoyoteClothesWaistcoat
   name: waistcoat
   description: |
-    A dapper waistcoat, designed to be worn by the Coyote Bayou's lesser known subcult of elderly
-    catboys who wanted something both stylish and practical, yet still able to be flipped up in the back
-    and rutted mercilessly if need be. While it comes from a Victorian inspiration, the breakaway trousers
-    were more of a recent innovation, appearing on other such fashions of the time, such as 'vestsuits',
-    later becoming phased out in favor for skirts and dresses, which were more practical for the daily usage
-    of those who wear them.
   components:
   - type: Sprite
     overrideDir: South
@@ -4229,14 +3246,6 @@
   id: CoolCoyoteClothesWestender
   name: westender slingsuit
   description: |
-    A westender slingsuit, as worn by the Coyote Bayou's West Enders, a group of wolves who originally settled the
-    peri-redwater swampranches where much of the wide horses were bred and raised. The slingsuit is designed to be
-    repellent of the swamp's many insects, to the point where its use became so common that several species of
-    furry-feeding insects were driven to extinction, leading to the collapse of the Redwater ecosystem and the
-    eventual rise of the Coyote Bayou's nanoflora, which seeped into the watertable and made it safe to drink.
-    It is called a slingsuit due to a common mutation in the Coyote Bayou's wolves, which caused their
-    genitals to become elongated and slung down between their legs, prompting the use of a special
-    sling to keep them from dragging on the ground and getting dirty. [citation needed]
   components:
   - type: Sprite
     overrideDir: South
@@ -4255,12 +3264,6 @@
   id: CoolCoyoteClothesWesternBustle
   name: western bustle dress
   description: |
-    A western bustle dress, worn by the many cowgirls of the Coyote Bayou's western ranches, who wanted something
-    that would accommodate their naturally enormous assets while still being comfortable and practical.
-    The bustle is named as such because of the daily 'bustle' of the typical cowgirl, which typically involved
-    a lot of bending over and reaching for things, which would cause the bustle to 'bustle' around and
-    make it difficult to walk, which this outfit helps with. It is also designed to connect to various brands of
-    milking machines, some of which still in use to this day, though not currently on this dress.
   components:
   - type: Sprite
     overrideDir: South
@@ -4279,20 +3282,6 @@
   id: CoolCoyoteClothesWhitebunnysuit
   name: white bunnysuit
   description: |
-    A white bunnysuit, designed in stark protest to the Heaven's Night's previous 'bunny suit', which gave an
-    unrealistic and untrue portrayal of the Coyote Bayou's bunnies, depicting them as hypersexualized and
-    objectified, rather than the cute and cuddly creatures they are. While it, like the previous bunnysuit,
-    is designed to be quick to remove and easy to flip up, it is also designed to provide a more accurate
-    caricature of the lagomorphic residents, emphasizing their natural curves and softness, as well as including
-    many hardpoints for armoring and weaponry, as while bunnies are cute and cuddly, they will also insist they
-    are the most dangerous creatures in the Coyote Bayou, and will not hesitate to prove it if you cross them.
-    One such bunny was in charge of the trade depot and wielded a couple laser blasters that the town universally
-    agreed was unfair, which made sense, as she was the only one who could actually use them without accidentally
-    shooting herself in the foot, which was a common problem with the Coyote Bayou's bunny population,
-    since their feet are so large and floppy that they often trip over themselves and accidentally
-    shoot themselves in the foot, which is why the bunnies are so dangerous, because they are always
-    accidentally shooting themselves in the foot, and then they get mad and start shooting at everything else
-    around them. [citation needed]
   components:
   - type: Sprite
     overrideDir: South
@@ -4311,13 +3300,6 @@
   id: CoolCoyoteClothesWhitegown
   name: white gown
   description: |
-    A white gown, designed to be worn by the Coyote Bayou's residents who wanted something simple and
-    comfortable to wear, even in the hot summer heat. The gown is made of a stretchy, breathable material that
-    allows for easy movement, and, of course, easy access to the wearer's business end. The white gown was
-    popularized by the Coyote Bayou's nightlife scene, where it was often worn by dancers and performers who
-    wanted to show off their curves while still being comfortable and practical. As with most of the Coyote Bayou's clothing,
-    it is designed to be quick to remove and easy to flip up, allowing for easy access to the wearer's business end.
-    Enjoy!
   components:
   - type: Sprite
     overrideDir: South
@@ -4336,13 +3318,6 @@
   id: CoolCoyoteClothesWhitesun
   name: white sun dress
   description: |
-    A white sun dress, designed to repel the harsh rays of the Coyote Bayou's sun, which can be quite intense
-    during the nuclear summer months. Though it appears as a simple white dress, it is actually the peak of
-    fashion technology from circa 2nd Era Nash, integrating a special nanoflora that would soak up the gross
-    bodily effluvia from being fluffy furries in a literal swamp, then convert it into a breathable pleasant
-    exudate that would keep the town from smelling like wet dog and swamp gas. While it, too, was designed to be
-    quick to remove and easy to flip up, it was also designed to be comfortable and practical to wear at all times,
-    due to the aforementioned dogstink problem.
   components:
   - type: Sprite
     overrideDir: South
@@ -4361,10 +3336,6 @@
   id: CoolCoyoteClothesYellowwshort
   name: yellow athletic shorts
   description: |
-    A pair of yellow athletic shorts, designed to be worn by the Coyote Bayou's residents who wanted something
-    simple and comfortable to wear, even in the hot summer heat. The shorts are made of a stretchy, breathable
-    material that not only allows for easy movement, but also remains able to be used no matter how large the
-    wearer's business end is, allowing for a cost effective solution to the Coyote Bayou's obesity epidemic.
   components:
   - type: Sprite
     overrideDir: South
@@ -4383,14 +3354,6 @@
   id: CoolCoyoteClothesGearHarness
   name: nudist gear harness
   description: |
-    As the Coyote Bayou's residents were, for the most part, furries, clothes were not strictly necessary for
-    day to day life, and many residents preferred to go without them. While this was fine for most of the
-    residents, daily life required one to carry around various items, such as tools, weapons, and their
-    Guild Questbook, largely for convenience and survival. As such the Great Eastern Hiveblob developed a
-    nigh-invisible harness that would allow the wearer to carry around an ID and a couple of items in their
-    pockets, providing a convenient way to carry around their belongings while still being very much naked.
-    It was the pinnacle of fashion technology from the Coyote Bayou, and even today, nudists will wear this
-    harness to live out their naked dreams, both safely and practically. Go Nude Today!
   components:
   - type: Sprite
     overrideDir: South

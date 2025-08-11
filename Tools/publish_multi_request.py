@@ -15,7 +15,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://ss14-cdn.coyotebayou.com/"
+ROBUST_CDN_URL =  "https://ss14.coyotebayou.com:7163/"
 FORK_ID = "Coyote-Frontier"
 
 def main():

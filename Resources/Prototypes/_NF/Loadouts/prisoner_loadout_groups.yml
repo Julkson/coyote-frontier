@@ -7,6 +7,8 @@
   fallbacks:
   - PrisonerJumpsuit
   - PrisonerJumpskirt
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: PrisonerPDA

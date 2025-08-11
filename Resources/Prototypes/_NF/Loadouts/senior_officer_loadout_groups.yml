@@ -7,6 +7,8 @@
   fallbacks:
   - SeniorOfficerClothingUniformJumpsuitSeniorOfficer
   - SeniorOfficerClothingUniformJumpskirtSeniorOfficer
+  subgroups:
+  - CoyoteJumpsuit
   
 - type: loadoutGroup
   id: SeniorOfficerOuterClothing

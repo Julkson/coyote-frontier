@@ -9,7 +9,9 @@
   fallbacks:
   - NFDetectiveClothingUniformJumpsuitDetective
   - NFDetectiveClothingUniformJumpskirtDetective
-  
+  subgroups:
+  - CoyoteJumpsuit
+
 - type: loadoutGroup
   id: NFDetectiveOuterClothing
   name: loadout-group-contractor-outerclothing
