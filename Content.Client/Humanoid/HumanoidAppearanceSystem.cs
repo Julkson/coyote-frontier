@@ -49,22 +49,50 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     {
         UpdateLayers(component, sprite);
         ApplyMarkingSet(component, sprite);
-        // TODO: make this thing a more versatulate proc
-        var speciesPrototype = _prototypeManager.Index(component.Species);
-
-        var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
-        var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
-        component.Height = height;
-        component.Width = width;
-
-        sprite.Scale = new Vector2(width, height);
+        ResizeRescale(component, sprite);
         UpdateLayersAgain(component, sprite); // cool
+        UpdateGenitals(component, sprite);
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
     }
 
     private static bool IsHidden(HumanoidAppearanceComponent humanoid, HumanoidVisualLayers layer)
         => humanoid.HiddenLayers.ContainsKey(layer) || humanoid.PermanentlyHidden.Contains(layer);
+
+    /// <summary>
+    /// The master weenie handler.
+    /// Decrypts the genital data on the component and turns them into countless sprites.
+    /// </summary>
+    /// <param name="component"></param>
+    /// <param name="sprite"></param>
+    private void UpdateGenitals(HumanoidAppearanceComponent component, SpriteComponent sprite)
+    {
+        // first, clear all the genitals
+        foreach (var layer in component.GenitalSpriteKeys)
+        {
+            if (!sprite.LayerMapTryGet(layer, out var index))
+                continue;
+            sprite.RemoveLayer(index);
+            sprite.LayerMapRemove(layer);
+        }
+        component.GenitalSpriteKeys.Clear();
+        // if there are no genitals, we can stop here
+        if (component.Genitals.Count == 0)
+            return;
+        // now go through all the genitals and process them into their many pieces
+        foreach (var genital in component.Genitals)
+        {
+            _genitalManager.GetGenital(genital.Prototype, out var genShapeProt);
+            if (genShapeProt == null)
+            {
+                Logger.Warning($"Tried to apply genital {genital.Prototype} but it does not exist!");
+                continue;
+            }
+            _genitalManager.GetGenitalSize(genital.Prototype, genital.Size, out var genSizeProt);
+
+        }
+
+    }
 
     private void UpdateLayers(HumanoidAppearanceComponent component, SpriteComponent sprite)
     {
@@ -187,6 +215,21 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 humanoid.PermanentlyHidden.Add(layer);
             }
         }
+    }
+
+    /// <summary>
+    /// Resizes and rescales the sprite layers based on the humanoid's height and width.
+    /// </summary>
+    private void ResizeRescale(HumanoidAppearanceComponent component, SpriteComponent sprite)
+    {
+        var speciesPrototype = _prototypeManager.Index(component.Species);
+
+        var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+        var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        component.Height = height;
+        component.Width = width;
+
+        sprite.Scale = new Vector2(width, height);
     }
 
     /// <summary>

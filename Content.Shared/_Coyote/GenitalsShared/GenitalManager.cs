@@ -48,11 +48,28 @@ public sealed class GenitalManager
             CachePrototypes();
     }
 
-    public void GetGenital(string id, out GenitalShapePrototype? prototype)
+    public void GetGenital(ProtoId<GenitalShapePrototype> id, out GenitalShapePrototype? prototype)
     {
         if (Genitals.TryGetValue(id, out prototype))
             return;
         prototype = null;
+    }
+
+    public void GetGenitalSize(ProtoId<GenitalShapePrototype> id,
+        int saniSize,
+        out GenitalSizeCollection genSizeProt)
+    {
+        if (!Genitals.TryGetValue(id, out var prototype))
+        {
+            saniSize = 0;
+            genSizeProt = null!;
+            return;
+        }
+        saniSize = Math.Clamp(
+            saniSize,
+            0,
+            prototype.Sizes.Count - 1);
+        genSizeProt = prototype.Sizes[saniSize];
     }
 
     public void GetGenitalSlot(string id, out GenitalSlot slot)

@@ -152,6 +152,8 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     public List<GenitalData> Genitals = new();
 
+    public HashSet<string> GenitalSpriteKeys = new();
+
 }
 
 [DataDefinition]
@@ -223,6 +225,12 @@ public sealed class GenitalData(
     public GenitalLayerGroup LayerGroup = layerGroup;
 
     /// <summary>
+    /// The sprites we're currently using for this genital.
+    /// This is a dictionary of sprite keys, with a chunk of metadata.
+    /// </summary>
+    public Dictionary<string, GenitalSpriteMetaData> Sprites = new();
+
+    /// <summary>
     /// Generates a string that can be used to store the genital data in a database.
     /// WELCOME TO SERIALIZE
     /// </summary>
@@ -247,17 +255,18 @@ public sealed class GenitalData(
             GenitalLayerGroup.OverSuit => "OVERSUIT",
             _ => "DEFAULT",
         };
-        var outString = sanitizedProtoId
-                        + "@"
-                        + sizeString
-                        + "@"
-                        + hiddenString
-                        + "@"
-                        + arousedString
-                        + "@"
-                        + layerGroupString
-                        + "@"
-                        + colorString;
+        var outString =
+            sanitizedProtoId
+            + "@"
+            + sizeString
+            + "@"
+            + hiddenString
+            + "@"
+            + arousedString
+            + "@"
+            + layerGroupString
+            + "@"
+            + colorString;
 
         return outString;
     }
@@ -315,4 +324,48 @@ public sealed class GenitalData(
     }
 
 }
+
+/// <summary>
+/// Genital sprite metadata.
+/// Hoooooolds.... sprite RSI path, sprite state, color index, layer group, the key for the sprite
+/// this is for a single sprite, not a size.
+/// </summary>
+public sealed class GenitalSpriteMetaData(
+    string spriteRsiPath,
+    string spriteState,
+    int colorIndex,
+    GenitalLayerSubGroup layerGroup,
+    string key)
+{
+    /// <summary>
+    /// The RSI path of the sprite.
+    /// </summary>
+    public string SpriteRsiPath = spriteRsiPath;
+
+    /// <summary>
+    /// The state of the sprite.
+    /// </summary>
+    public string SpriteState = spriteState;
+
+    /// <summary>
+    /// The color index of the sprite.
+    /// </summary>
+    public int ColorIndex = colorIndex;
+
+    /// <summary>
+    /// The layer group of the sprite.
+    /// </summary>
+    public GenitalLayerSubGroup LayerGroup = layerGroup;
+
+    /// <summary>
+    /// The key for the sprite.
+    /// </summary>
+    public string Key = key;
+}
+
+
+
+
+
+
 
