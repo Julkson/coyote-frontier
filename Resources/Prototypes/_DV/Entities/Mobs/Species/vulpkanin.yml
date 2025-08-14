@@ -32,6 +32,7 @@
     drawdepth: Mobs
     layers:
       - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
+      - map: [ "enum.GenitalLayerGroup.GenitalBehind" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -50,10 +51,13 @@
         sprite: _DV/Mobs/Customization/Vulpkanin/masking_helpers.rsi
         state: female_full
         visible: false
+      - map: [ "enum.GenitalLayerGroup.GenitalUnderUndies" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: [ "enum.HumanoidVisualLayers.UndershirtUnderclothes" ]
+      - map: [ "enum.GenitalLayerGroup.GenitalOverUndies" ]
       - map: [ "jumpsuit" ]
+      - map: [ "enum.GenitalLayerGroup.GenitalOverClothes" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
       - map: [ "enum.HumanoidVisualLayers.LFoot" ]
@@ -71,6 +75,7 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "back" ]
+      - map: [ "enum.GenitalLayerGroup.GenitalOverSuit" ]
       - map: [ "enum.HumanoidVisualLayers.UndershirtOverclothes" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "neck" ]

@@ -42,14 +42,14 @@ public sealed partial class GenitalShapePrototype : IPrototype
     ///               sprite:
     ///                 - sprite: 'path/to/sprite.rsi',
     ///                 - state: 'h-cup-front',
-    ///               layerGroup: GenitalLayerSubGroup.FrontMob
+    ///               layeringMode: GenitalSpritePositioning.FrontMob
     ///             ),
     ///             GenitalSizeSpriteData(
     ///             colorIndex: 0,
     ///             sprite:
     ///                 - sprite: 'path/to/sprite.rsi',
     ///                 - state: 'h-cup-back',
-    ///             layerGroup: GenitalLayerSubGroup.BehindMob
+    ///             layeringMode: GenitalSpritePositioning.BehindMob
     ///           )
     ///       )
     ///  )
@@ -93,6 +93,14 @@ public sealed class GenitalSizeCollection(
     [DataField(required: true)]
     [ViewVariables(VVAccess.ReadWrite)]
     public List<GenitalSizeSpriteData> Sprites = sprites;
+
+    /// <summary>
+    /// The list of aroused sprites for this size.
+    /// Can be null if there are no aroused sprites.
+    /// </summary>
+    [DataField("arousedSprites")]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public List<GenitalSizeSpriteData>? ArousedSprites = null;
 }
 
 
@@ -102,7 +110,7 @@ public sealed class GenitalSizeCollection(
 public sealed class GenitalSizeSpriteData(
     int colorIndex,
     SpriteSpecifier sprite,
-    GenitalLayerSubGroup layerGroup = GenitalLayerSubGroup.BehindMob)
+    GenitalSpritePositioning layerGroup = GenitalSpritePositioning.BehindMob)
 {
     /// <summary>
     /// The color index of the sprite here
@@ -122,7 +130,7 @@ public sealed class GenitalSizeSpriteData(
     /// </summary>
     [DataField(required: true)]
     [ViewVariables(VVAccess.ReadWrite)]
-    public GenitalLayerSubGroup LayerGroup = layerGroup;
+    public GenitalSpritePositioning LayerGroup = layerGroup;
 }
 
 ////////////// ENUMS //////////////
@@ -136,13 +144,13 @@ public sealed class GenitalSizeSpriteData(
 /// </remarks>
 public enum GenitalSlot : byte
 {
-    NoZZZne      = 0,
-    BrZZZeasts   = 1,
-    BeZZZlly     = 2,
-    BuZZZtt      = 3,
-    PeZZZnis     = 4,
-    TeZZZsticles = 5,
-    VaZZZgina    = 6,
+    NoZZZne,
+    BrZZZeasts,
+    BeZZZlly,
+    BuZZZtt,
+    PeZZZnis,
+    TeZZZsticles,
+    VaZZZgina,
 }
 
 /// <summary>
@@ -163,22 +171,36 @@ public enum GenitalSlot : byte
 /// BehindMob: for the back of the mob, behind everything
 /// BetweenHands: for the front of the mob, between the hands
 /// OverHands: for the front of the mob, over the hands
+/// ...
+/// cept none of this is possible, so we just have two sub groups:
+/// BehindMob: for the back of the mob, behind everything
+/// VariableLayer: In front of the mob, layered depending on whats set by the player
 /// </summary>
-public enum GenitalLayerSubGroup : byte
+public enum GenitalSpritePositioning : byte
 {
-    BehindMob    = 0,
-    BetweenHands = 1,
-    OverHands    = 2,
+    BehindMob,
+    VariableLayer, // Between the hands, in front of the mob
 }
 
 /// <summary>
 /// Genital layer groups, used to determine what the genital should be drawn on.
 /// </summary>
-public enum GenitalLayerGroup : byte
+public enum GenitalLayeringMode : byte
 {
-    Default       = 0, // set to UnderClothing by default, idk
-    UnderClothing = 1, // Between markings layers and clothing layers
-    OverClothing  = 2, // Over clothing layers, like you popped your boobs out of your shirt
-    OverSuit      = 3, // Over the suit, show it over everything (cept for like, fire i guess)
+    UnderUnderwear, // set to UnderClothing by default, idk
+    UnderClothing, // Between markings layers and clothing layers
+    OverClothing, // Over clothing layers, like you popped your boobs out of your shirt
+    OverSuit, // Over the suit, show it over everything (cept for like, fire i guess)
 }
 
+/// <summary>
+/// Discrete genital layers, used to determine what the genital should be drawn on.
+/// </summary>
+public enum GenitalLayerGroup : byte
+{
+    GenitalBehind,
+    GenitalUnderUndies,
+    GenitalOverUndies,
+    GenitalOverClothes,
+    GenitalOverSuit,
+}

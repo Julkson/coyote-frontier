@@ -68,14 +68,18 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     private void UpdateGenitals(HumanoidAppearanceComponent component, SpriteComponent sprite)
     {
         // first, clear all the genitals
-        foreach (var layer in component.GenitalSpriteKeys)
+        foreach (var gsm in component.GenitalSpriteMetaDatas)
         {
-            if (!sprite.LayerMapTryGet(layer, out var index))
+            if (!sprite.LayerMapTryGet(gsm.Key, out var index))
                 continue;
             sprite.RemoveLayer(index);
-            sprite.LayerMapRemove(layer);
+            sprite.LayerMapRemove(gsm.Key);
         }
-        component.GenitalSpriteKeys.Clear();
+        component.GenitalSpriteMetaDatas.Clear();
+
+        // okay first, make sure the genital sublayers for the various positions are present
+        EnsureGenitalLayers(component, sprite);
+
         // if there are no genitals, we can stop here
         if (component.Genitals.Count == 0)
             return;
@@ -88,11 +92,157 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 Logger.Warning($"Tried to apply genital {genital.Prototype} but it does not exist!");
                 continue;
             }
-            _genitalManager.GetGenitalSize(genital.Prototype, genital.Size, out var genSizeProt);
 
+            _genitalManager.GetGenitalSize(
+                genital.Prototype,
+                ref genital.Size,
+                out var genSizeProt);
+            if (genSizeProt is null)
+            {
+                Logger.Warning($"Tried to apply genital size {genital.Size} for {genital.Prototype} but it does not exist!");
+                continue;
+            }
+            genital.Sprites.Clear(); // clear the genital sprites, we will be adding them again
+            // sprites in sprites, go through the GenitalSizeSpriteData list and make em
+            var sprites2Use = genital.Aroused
+                ? genSizeProt.ArousedSprites ?? genSizeProt.Sprites
+                : genSizeProt.Sprites;
+            foreach (var spriteData in sprites2Use)
+            {
+                // pass the sprite data off to the genital sprite handler constructormat
+                // sorry, gotta be an RSI
+                ApplyGenitalSprite(
+                    component, // the humanoid component
+                    sprite, // the sprite component
+                    genital, // the genital data
+                    genShapeProt, // the genital shape prototype
+                    spriteData, // the genital size sprite data
+                    out var spriteMetadata,
+                    out var errorRsiState);
+                if (!string.IsNullOrEmpty(errorRsiState)
+                    || spriteMetadata == null)
+                {
+                    // if the sprite data is not valid, we log a warning and continue
+                    Logger.Warning($"Failed to apply genital sprite for {genital.Prototype} size {genital.Size}, state {errorRsiState}!");
+                    continue;
+                }
+                // add the data to the genital sprite keys
+                component.GenitalSpriteMetaDatas.Add(spriteMetadata);
+            }
+        }
+    }
+
+    private void EnsureGenitalLayers(HumanoidAppearanceComponent humanoid, SpriteComponent sprite)
+    {
+        // list of GenitalLayerGroups
+        var genitalGroups = _genitalManager.GetGenitalGroupStrings();
+        // list of every kind of genital in the game
+        var genitalSlots = _genitalManager.GetGenitalSlotStrings();
+        foreach (var geniGroup in genitalGroups)
+        {
+            if (!sprite.LayerMapTryGet(geniGroup, out var index))
+            {
+                continue; // they dont have it :c
+            }
+
+            foreach (var genitalSlot in genitalSlots)
+            {
+                // make sure the genital slot is not already present
+                var layerId = _genitalManager.GenitalLayerId(
+                    geniGroup,
+                    genitalSlot);
+                if (!sprite.LayerMapTryGet(layerId, out _))
+                {
+                    // add it to the sprite component
+                    var layerIndex = sprite.AddBlankLayer(index + 1); // put it under the group layer
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Applies a single genital sprite to the humanoid's sprite component.
+    /// </summary>
+    /// <param name="humanoid"></param>
+    /// <param name="sprite"></param>
+    /// <param name="genital"></param>
+    /// <param name="genitalShape"></param>
+    /// <param name="genitalSprite"></param>
+    /// <param name="layerId"></param>
+    /// <param name="spriteMetadata"></param>
+    /// <param name="errorRsiState"></param>
+    private void ApplyGenitalSprite(
+        HumanoidAppearanceComponent humanoid,
+        SpriteComponent sprite,
+        GenitalData genital,
+        GenitalShapePrototype genitalShape,
+        GenitalSizeSpriteData genitalSprite,
+        out GenitalSpriteMetaData? spriteMetadata,
+        out string? errorRsiState)
+    {
+        // first the pre-checks
+        // is it an RSI?
+        if (genitalSprite.Sprite is not SpriteSpecifier.Rsi rsi)
+        {
+            Logger.Warning($"Tried to apply genital {genital.Prototype} but it is not an RSI!");
+            spriteMetadata = null!;
+            errorRsiState = "NOT AN RSI";
+            return;
         }
 
-    }
+        Color color = Color.White;
+        // is genitalSprite.ColorIndex a valid index?
+        if (genitalSprite.ColorIndex >= 0
+            && genitalShape.ColorCount > genitalSprite.ColorIndex)
+        {
+            color = genital.Colors[genitalSprite.ColorIndex];
+        }
+        // if GenitalSprite.LayerGroup is set to VariableLayer, check genitalData for which slot to apply it to
+        var layerGroup = "";
+        if (genitalSprite.LayerGroup == GenitalSpritePositioning.VariableLayer)
+        {
+            // get the genital slot from the genital data
+            layerGroup = genital.LayeringMode.ToString();
+        }
+        else
+        {
+            layerGroup = genitalSprite.LayerGroup.ToString();
+        }
+        var layerSlot = _genitalManager.GenitalLayerId(
+            layerGroup,
+            genitalShape.Kind.ToString());
+        var visible = !genital.Hidden;
+        var layerId = _genitalManager.GenitalSpriteLayerId(
+            layerGroup,
+            genitalShape.Kind.ToString(),
+            rsi.RsiPath.Filename,
+            rsi.RsiState);
+        // okay now we know where to stick the sprite, lets do it
+        if (!sprite.LayerMapTryGet(layerSlot, out var targetLayer))
+        {
+            var targLayerAdj = targetLayer + 1;
+            var layer = sprite.AddLayer(genitalSprite.Sprite, targLayerAdj);
+            sprite.LayerMapSet(layerId, layer);
+            sprite.LayerSetSprite(layerId, rsi);
+        }
+        sprite.LayerSetVisible(layerId, visible);
+        sprite.LayerSetColor(layerId, color);
+        // spriteRsiPath
+        // spriteState
+        // colorIndex
+        // colorTrue
+        // layerGroup
+        // key
+        spriteMetadata = new GenitalSpriteMetaData(
+            rsi.RsiPath.Filename,
+            rsi.RsiState,
+            genitalSprite.ColorIndex,
+            color,
+            genitalSprite.LayerGroup,
+            layerId);
+        errorRsiState = string.Empty;
+   }
+
 
     private void UpdateLayers(HumanoidAppearanceComponent component, SpriteComponent sprite)
     {
@@ -456,7 +606,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             }
         }
     }
-
+#region Marking Application
+// hi
+#endregion
     private void ApplyMarking(MarkingPrototype markingPrototype,
         IReadOnlyList<Color>? colors,
         bool visible,

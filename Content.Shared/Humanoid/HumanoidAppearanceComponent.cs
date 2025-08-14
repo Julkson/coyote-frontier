@@ -152,7 +152,7 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     public List<GenitalData> Genitals = new();
 
-    public HashSet<string> GenitalSpriteKeys = new();
+    public List<GenitalSpriteMetaData> GenitalSpriteMetaDatas = new();
 
 }
 
@@ -190,7 +190,7 @@ public sealed class GenitalData(
     List<Color> colors = null!,
     bool hidden = false,
     bool aroused = false,
-    GenitalLayerGroup layerGroup = GenitalLayerGroup.UnderClothing)
+    GenitalLayeringMode layeringMode = GenitalLayeringMode.UnderClothing)
 {
     /// <summary>
     /// The genital prototype. Generally doesnt change
@@ -222,13 +222,14 @@ public sealed class GenitalData(
     /// <summary>
     /// What layer group should this genital be drawn on?
     /// </summary>
-    public GenitalLayerGroup LayerGroup = layerGroup;
+    public GenitalLayeringMode LayeringMode = layeringMode;
 
     /// <summary>
     /// The sprites we're currently using for this genital.
     /// This is a dictionary of sprite keys, with a chunk of metadata.
     /// </summary>
     public Dictionary<string, GenitalSpriteMetaData> Sprites = new();
+
 
     /// <summary>
     /// Generates a string that can be used to store the genital data in a database.
@@ -247,12 +248,12 @@ public sealed class GenitalData(
         var sizeString = Size.ToString();
         var hiddenString = Hidden ? "HIDDEN" : "VISIBLE";
         var arousedString = Aroused ? "AROUSED" : "NOTAROUSED";
-        var layerGroupString = LayerGroup switch
+        var layerGroupString = LayeringMode switch
         {
-            GenitalLayerGroup.Default => "DEFAULT",
-            GenitalLayerGroup.UnderClothing => "UNDERCLOTHING",
-            GenitalLayerGroup.OverClothing => "OVERCLOTHING",
-            GenitalLayerGroup.OverSuit => "OVERSUIT",
+            GenitalLayeringMode.UnderUnderwear => "DEFAULT",
+            GenitalLayeringMode.UnderClothing => "UNDERCLOTHING",
+            GenitalLayeringMode.OverClothing => "OVERCLOTHING",
+            GenitalLayeringMode.OverSuit => "OVERSUIT",
             _ => "DEFAULT",
         };
         var outString =
@@ -291,11 +292,11 @@ public sealed class GenitalData(
         var aroused = split[3] == "AROUSED";
         var layerGroup = split[4] switch
         {
-            "DEFAULT" => GenitalLayerGroup.Default,
-            "UNDERCLOTHING" => GenitalLayerGroup.UnderClothing,
-            "OVERCLOTHING" => GenitalLayerGroup.OverClothing,
-            "OVERSUIT" => GenitalLayerGroup.OverSuit,
-            _ => GenitalLayerGroup.Default,
+            "UNDERUNDERWEAR" => GenitalLayeringMode.UnderUnderwear,
+            "UNDERCLOTHING" => GenitalLayeringMode.UnderClothing,
+            "OVERCLOTHING" => GenitalLayeringMode.OverClothing,
+            "OVERSUIT" => GenitalLayeringMode.OverSuit,
+            _ => GenitalLayeringMode.UnderUnderwear,
         };
         var colorString = split[5];
         var splitColor = colorString.Split("&&&");
@@ -334,7 +335,8 @@ public sealed class GenitalSpriteMetaData(
     string spriteRsiPath,
     string spriteState,
     int colorIndex,
-    GenitalLayerSubGroup layerGroup,
+    Color colorTrue,
+    GenitalSpritePositioning layerGroup,
     string key)
 {
     /// <summary>
@@ -353,9 +355,14 @@ public sealed class GenitalSpriteMetaData(
     public int ColorIndex = colorIndex;
 
     /// <summary>
+    /// The actual color of the sprite.
+    /// </summary>
+    public Color Color = colorTrue;
+
+    /// <summary>
     /// The layer group of the sprite.
     /// </summary>
-    public GenitalLayerSubGroup LayerGroup = layerGroup;
+    public GenitalSpritePositioning LayerGroup = layerGroup;
 
     /// <summary>
     /// The key for the sprite.
