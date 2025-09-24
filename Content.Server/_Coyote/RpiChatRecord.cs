@@ -6,8 +6,8 @@ namespace Content.Server._Coyote
     /// <summary>
     /// Structure to hold the action and the time it was taken.
     /// </summary>
-    public sealed class RoleplayAction(
-        RoleplayActs action,
+    public sealed class RpiChatRecord(
+        RpiChatActionCategory action,
         TimeSpan timeTaken,
         string? message = null,
         int peoplePresent = 0,
@@ -17,7 +17,7 @@ namespace Content.Server._Coyote
         /// <summary>
         /// The action that was taken.
         /// </summary>
-        public RoleplayActs Action = action;
+        public RpiChatActionCategory Action = action;
 
         /// <summary>
         /// The time the action was taken.

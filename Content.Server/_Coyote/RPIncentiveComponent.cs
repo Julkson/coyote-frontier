@@ -12,7 +12,7 @@ public sealed partial class RoleplayIncentiveComponent : Component
     /// The actions that have taken place.
     /// </summary>
     [DataField]
-    public List<RoleplayAction> ActionsTaken = new();
+    public List<RpiChatRecord> ChatActionsTaken = new();
 
     /// <summary>
     /// The last time the system checked for actions, for paywards.
@@ -30,7 +30,7 @@ public sealed partial class RoleplayIncentiveComponent : Component
     /// Interval between paywards.
     /// </summary>
     [DataField]
-    public TimeSpan PaywardInterval = TimeSpan.FromMinutes(20); // TimeSpan.FromMinutes(15);
+    public TimeSpan PaywardInterval = TimeSpan.FromMinutes(20);
 
     /// <summary>
     /// Interval between paywards when offline.
@@ -39,17 +39,38 @@ public sealed partial class RoleplayIncentiveComponent : Component
     [DataField]
     public TimeSpan PaywardIntervalOffline = TimeSpan.FromMinutes(30); // TimeSpan.FromMinutes(15);
 
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracket1Payout = 300;
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracket2Payout = 200;
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracket3Payout = 100;
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracketRestPayout = 80;
+    /// <summary>
+    /// The last time they were PUNISHED for DYING like a noob.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan LastDeathPunishment = TimeSpan.Zero;
+
+    /// <summary>
+    /// The last time they were PUNISHED for hopping in the fukcing deep fryer, you LRP frick.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan LastDeepFryerPunishment = TimeSpan.Zero;
+
+    /// <summary>
+    /// Punish dying?
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool PunishDeath = false;
+
+    /// <summary>
+    /// Punish deep frying?
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool PunishDeepFryer = false;
+
     [ViewVariables(VVAccess.ReadWrite)]
     public int TaxBracketPayoutOverride = -1; // -1 means no override, use the default payouts
     [ViewVariables(VVAccess.ReadWrite)]
-    public string TaxZZZCurrentActiveBracket = "TaxBracket1"; // purely for debugging purposes, to see which bracket is active
+    public int TaxBracketDeathPenaltyOverride = -1; // -1 means no override, use the default payouts
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int TaxBracketDeepFryerPenaltyOverride = -1; // -1 means no override, use the default payouts
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float DebugMultiplier = 1.0f;
 
 }

@@ -26,23 +26,23 @@
   ### Perks
   IPCs have the following perks:
   - They are immune to [color=yellow]toxins[/color], [color=yellow]drugs[/color], and [color=yellow]alcohol[/color].
-  - They are unaffected by [color=yellow]cold[/color].
+  - They are also immune to the effects of [color=yellow]space[/color], [color=yellow]low pressure[/color], and [color=yellow]radiation[/color].
   - They do not need to eat, drink, or breathe.
-  - They do not go into crit.
   - They are easy to revive, just repair the damage and hit the "Restart" button in the right-click menu.
   - Their power cell can be swapped out with a self-charging one, to never need to recharge again!
   - They can use [color=yellow]welding tools[/color] to repair brute damage, [color=yellow]cables[/color] to repair burn damage, and [color=yellow]glass sheets[/color] to repair blindness.
   - They have a built-in [color=yellow]headset[/color] and do not need to carry one.
-  - They can withstand about 20% more damage than other crewmates before going down.
 
   ### Drawbacks
   IPCs have the following drawbacks:
   - They are vulnerable to [color=yellow]EMP[/color] damage, which will drain your battery.
   - They are slowed by low battery, by up to 90% at 0 charge.
-  - They are NOT immune to low pressure or space exposure, and will take damage like any other crewmate.
-  - They take [color=yellow]double damage from fire and heat[/color] and can be set on fire more easily.
+  - They are severely affected by the [color=blue]cold[/color], which will damage them rapidly.
+  - They take [color=yellow]double damage from fire, heat, and cold[/color] and can be set on fire more easily.
   - They cannot use chemicals or medicine of any kind to be healed. Welding tools, cables, and glass sheets are their only means of healing!
-  - They die instantly instead of going into crit.
+  - They take [color=yellow]Structural[/color] damage, such as that from pickaxes, drills, and PKAs. However, they resist [color=yellow]50%[/color] of it.
+
+  This means you can survive space wearing nothing but a winter coat, though you'll probably want a suit for the protection.
 
   ## Recharging an IPC
    <Box>
@@ -69,11 +69,11 @@
   ## Repairing
   <Box HorizontalAlignment="Stretch">
     <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Welder"/>
-    Welders can be used to repair [color=yellow]Brute[/color] damage.
+    Welders can be used to repair [color=yellow]Brute[/color] and [color=yellow]Structural[/color] damage.
   </Box>
   <Box HorizontalAlignment="Stretch">
     <GuideEntityEmbed Entity="CableApcStack" Caption="Cables (any type)"/>
-    Cables can be used to repair [color=yellow]Burns[/color].
+    Cables can be used to repair [color=yellow]Burns[/color] and [color=yellow]Structural[/color] damage too.
   </Box>
   <Box HorizontalAlignment="Stretch">
     <GuideEntityEmbed Entity="SheetGlass" Caption="Glass Sheets (any type)"/>

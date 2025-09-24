@@ -3,6 +3,7 @@ using Content.Shared._EinsteinEngines.Silicon.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
+using Content.Shared.Damage;
 
 namespace Content.Shared._EinsteinEngines.Silicon.Components;
 
@@ -111,4 +112,23 @@ public sealed partial class SiliconComponent : Component
     /// </summary>
     [DataField]
     public bool DoSiliconsDreamOfElectricSheep;
+
+    /// <summary>
+    /// What damage happens every whenever seconds the silicon is in crit.
+    /// </summary>
+    [DataField]
+    public DamageSpecifier CritDamage = new();
+
+    /// <summary>
+    /// How often damage is applied while in crit.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan CritDamageInterval = TimeSpan.FromSeconds(5);
+
+    /// <summary>
+    /// The last time crit damage was applied.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan LastCritDamageTime = TimeSpan.Zero;
 }

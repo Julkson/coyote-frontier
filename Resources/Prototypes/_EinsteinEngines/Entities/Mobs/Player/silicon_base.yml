@@ -58,7 +58,7 @@
       specificHeat: 42
       coldDamage:
         types:
-          Cold: 0.1 #per second, scales with temperature & other constants
+          Cold: 0.3 #per second, scales with temperature & other constants
       heatDamage:
         types:
           Heat: 3 #per second, scales with temperature & other constants
@@ -278,6 +278,7 @@
   id: IPC
   coefficients:
     Poison: 0
-    Cold: 0.2
+    Cold: 2
     Heat: 2
     Shock: 2.5
+    Structural: 0.5

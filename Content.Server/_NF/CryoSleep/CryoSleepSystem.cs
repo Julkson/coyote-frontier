@@ -282,18 +282,18 @@ public sealed partial class CryoSleepSystem : EntitySystem
         if (_mind.TryGetMind(bodyId, out var mindEntity, out var mind) && mind.CurrentEntity is { Valid: true } body)
         {
             var argMind = mind;
-            var ev = new CryosleepBeforeMindRemovedEvent(cryopod, argMind?.UserId);
-            RaiseLocalEvent(bodyId, ev, true);
-            deleteEntity = ev.DeleteEntity;
+            // var ev = new CryosleepBeforeMindRemovedEvent(cryopod, argMind?.UserId);
+            // RaiseLocalEvent(bodyId, ev, true);
+            // deleteEntity = ev.DeleteEntity;
 
             // Note: must update stored bodies before ghosting to ensure cryo state is accurate.
             id = mind.UserId;
             if (id != null)
             {
-                if (deleteEntity)
-                    _storedBodies.Remove(id.Value);
-                else
-                    _storedBodies[id.Value] = new StoredBody() { Body = body, Cryopod = cryopod };
+                // if (deleteEntity)
+                //     _storedBodies.Remove(id.Value);
+                // else
+                _storedBodies[id.Value] = new StoredBody() { Body = body, Cryopod = cryopod };
             }
 
             _ghost.OnGhostAttempt(mindEntity, false, true, mind: mind);

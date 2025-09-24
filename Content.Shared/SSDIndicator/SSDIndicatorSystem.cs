@@ -168,7 +168,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
     /// Check if the entity is in that big station thing where everyone spawns.
     /// okay it just checks if the grid has the CryoBraindeadsComponent
     /// </summary>
-    private bool IsInNashStation(EntityUid uid)
+    public bool IsInNashStation(EntityUid uid)
     {
         var myGrit = Transform(uid).GridUid;
         if (myGrit == null)

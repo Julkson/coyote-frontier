@@ -24,7 +24,7 @@
     minAngle: -0 # Set to 0 because GunRequiresWield
     maxAngle: -0
   - type: Gun
-    projectileSpeed: 30
+    projectileSpeed: 50
     minAngle: 1.2
     maxAngle: 6
     angleIncrease: 0.3
@@ -121,3 +121,15 @@
   - type: ProjectileBatteryAmmoProvider
     proto: ProjectileEmp
     fireCost: 500
+
+- type: entity
+  id: NFBaseWeaponEnergyRifleParticle
+  abstract: true
+  components:
+  - type: Gun
+    examineCaliber: gun-examine-particle-stream
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: NFAntiParticlesProjectile
+    fireCost: 120 # 20 shots

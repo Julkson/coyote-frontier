@@ -175,11 +175,11 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 3
+        Blunt: 0
     soundHit:
       path: /Audio/Weapons/Guns/Hits/snap.ogg
   - type: StaminaDamageOnCollide
-    damage: 15
+    damage: 41
   - type: Tracer
     color: "#00b0ffFF"
     length: 1.5
@@ -229,7 +229,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 8
+        Piercing: 22
     ignoreResistances: true
   - type: Tracer
     color: "#666666FF"
@@ -244,7 +244,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 95
         Structural: 200
     penetrationThreshold: 360
     penetrationDamageTypeRequirement:
@@ -261,9 +261,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 10
+        Blunt: 0
   - type: StaminaDamageOnCollide
-    damage: 60
+    damage: 95
   - type: Tracer
     color: "#00b0ffFF"
     length: 3

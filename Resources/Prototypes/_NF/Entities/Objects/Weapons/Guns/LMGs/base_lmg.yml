@@ -12,7 +12,7 @@
     minAngle: -0 # Set to 0 because GunRequiresWield
     maxAngle: -0
   - type: Gun
-    projectileSpeed: 30
+    projectileSpeed: 35
     minAngle: 3.1
     maxAngle: 15.5
     angleIncrease: 0.8

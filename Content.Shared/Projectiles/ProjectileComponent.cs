@@ -1,7 +1,9 @@
+using System.Numerics;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Projectiles;
@@ -98,4 +100,31 @@ public sealed partial class ProjectileComponent : Component
     /// </summary>
     [DataField]
     public FixedPoint2 PenetrationAmount = FixedPoint2.Zero;
+
+    /// <summary>
+    /// The global coords of the projectile when it was fired.
+    /// This is used to calculate range falloff, even if it leaves the grid
+    /// </summary>
+    [DataField]
+    public Vector2 OriginPoint;
+
+    /// <summary>
+    /// The max effective range of the projectile.
+    /// after this length it will start to lose damage.
+    /// </summary>
+    [DataField]
+    public float FalloffStartMeters = 15f;
+
+    /// <summary>
+    /// percent of damage to lose per meter after max effective range
+    /// </summary>
+    [DataField]
+    public float FalloffPercentPerMeter = 0f;
+
+    /// <summary>
+    /// The minimum damage this projectile can do due to range falloff.
+    /// </summary>
+    [DataField]
+    public DamageSpecifier FalloffMinDamage = new();
+
 }

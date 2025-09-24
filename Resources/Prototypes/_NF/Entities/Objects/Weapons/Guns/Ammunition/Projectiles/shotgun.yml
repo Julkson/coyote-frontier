@@ -8,7 +8,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
+        Piercing: 11
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -19,7 +19,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
+        Piercing: 13
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -30,8 +30,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2.4
-        Heat: 1.6
+        Blunt: 7
+        Heat: 4
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -42,7 +42,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 0.1
+        Blunt: 0
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -53,8 +53,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 3.5
-        Radiation: 3.5
+        Piercing: 7
+        Radiation: 7
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -73,8 +73,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2
-        Slash: 2
+        Piercing: 5
+        Slash: 4
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -85,7 +85,7 @@
   - type: Projectile
     damage:
       types:
-        Slash: 3.5
+        Slash: 5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -96,8 +96,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-        Structural: 5
+        Piercing: 11
+        Structural: 14
 
 #region PelletsSpread
 - type: entity
@@ -106,7 +106,7 @@
   components:
   - type: ProjectileSpread
     count: 7 # eight(?) total, includes the spread as a bullet
-    spread: 10
+    spread: 25
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -182,8 +182,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
-        Blunt: 5
+        Piercing: 54
+        Blunt: 14
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -194,9 +194,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 10
+        Blunt: 0
   - type: StaminaDamageOnCollide
-    damage: 30 # 4 hits to stun
+    damage: 68 # 2 hits to stun
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -235,7 +235,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 1
+        Blunt: 0
   - type: SolutionContainerManager
     solutions:
       ammo:

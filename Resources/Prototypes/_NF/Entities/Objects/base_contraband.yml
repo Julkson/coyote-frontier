@@ -33,6 +33,15 @@
     # Security and heads only (finally, shotgun traffic controller)
     allowedDepartments: [ Security, Command ]
 
+# Engineering equipment that's potentially hazardous in use
+- type: entity
+  parent: BaseC2ContrabandUnredeemable
+  id: BaseC2ContrabandEngineeringUnredeemable
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Engineering ]
+
 - type: entity
   parent: BaseC2ContrabandUnredeemable
   id: BaseC2ExpeditionContraband

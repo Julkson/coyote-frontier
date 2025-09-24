@@ -142,7 +142,7 @@
       color: "#a9b6bd"
       shader: unshaded
   - type: BasicEntityAmmoProvider
-    proto: NFCartridgePistol35Overpressure
+    proto: NFCartridgePistol35
     capacity: 4
     count: 4
   - type: Gun
@@ -188,7 +188,7 @@
       color: "#a9b6bd"
       shader: unshaded
   - type: BasicEntityAmmoProvider
-    proto: NFCartridgeRifle20Overpressure
+    proto: NFCartridgeRifle20
     capacity: 10
     count: 10
   - type: Gun
@@ -285,7 +285,7 @@
       color: "#a9b6bd"
       shader: unshaded
   - type: BasicEntityAmmoProvider
-    proto: NFCartridgePistol35Overpressure
+    proto: NFCartridgePistol35
     capacity: 6
     count: 6
   - type: Gun
@@ -337,14 +337,14 @@
     rechargeSound:
       path: /Audio/_NF/Effects/silence.ogg
   - type: BasicEntityAmmoProvider
-    proto: NFShellShotgunBuckshotOverpressure
+    proto: NFShellShotgunBuckshot
     capacity: 1
     count: 1
   - type: Gun
     showExamineText: false
     fireRate: 2
-    minAngle: 10
-    maxAngle: 20
+    minAngle: 25
+    maxAngle: 50
     angleIncrease: 5
     angleDecay: 3
     selectedMode: SemiAuto
@@ -454,7 +454,7 @@
       color: "#a9b6bd"
       shader: unshaded
   - type: BasicEntityAmmoProvider
-    proto: NFCartridgeRifle25Overpressure
+    proto: NFCartridgeRifle25
     capacity: 2
     count: 2
   - type: RechargeBasicEntityAmmo
@@ -511,7 +511,7 @@
       color: "#a9b6bd"
       shader: unshaded
   - type: BasicEntityAmmoProvider
-    proto: NFCartridgeRifle30Overpressure
+    proto: NFCartridgeRifle30
     capacity: 10
     count: 10
   - type: Gun

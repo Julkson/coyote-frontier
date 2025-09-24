@@ -28,9 +28,11 @@
   id: Silicon
   supportedGroups:
     - Brute
+    - Burn
   supportedTypes:
     - Heat
     - Shock
+    - Cold
 
 - type: damageContainer
   id: Shield

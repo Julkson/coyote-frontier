@@ -205,41 +205,41 @@ namespace Content.Server.VendingMachines
         /// <param name="vendComponent"></param>
         public void EjectRandom(EntityUid uid, bool throwItem, bool forceEject = false, VendingMachineComponent? vendComponent = null)
         {
-            if (!Resolve(uid, ref vendComponent))
-                return;
-
-            if (!this.IsPowered(uid, EntityManager))
-                return;
-
-            if (vendComponent.Ejecting)
-                return;
-
-            if (vendComponent.EjectRandomCounter <= 0)
-            {
-                _audioSystem.PlayPvs(_audioSystem.ResolveSound(vendComponent.SoundDeny), uid); // Frontier: ResolveSound, warning suppression
-                _popupSystem.PopupEntity(Loc.GetString("vending-machine-component-try-eject-access-abused"), uid, PopupType.MediumCaution);
-                return;
-            }
-
-            var availableItems = GetAvailableInventory(uid, vendComponent);
-            if (availableItems.Count <= 0)
-                return;
-            var item = _random.Pick(availableItems);
-
-            if (forceEject)
-            {
-                vendComponent.NextItemToEject = item.ID;
-                vendComponent.ThrowNextItem = throwItem;
-                var entry = GetEntry(uid, item.ID, item.Type, vendComponent);
-                if (entry != null)
-                    entry.Amount--;
-                EjectItem(uid, vendComponent, forceEject);
-            }
-            else
-            {
-                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, user: null, vendComponent: vendComponent);
-            }
-            vendComponent.EjectRandomCounter--; // Frontier: finite random ejections
+//            if (!Resolve(uid, ref vendComponent))
+//                return;
+//
+//            if (!this.IsPowered(uid, EntityManager))
+//                return;
+//
+//            if (vendComponent.Ejecting)
+//                return;
+//
+//            if (vendComponent.EjectRandomCounter <= 0)
+//            {
+//                _audioSystem.PlayPvs(_audioSystem.ResolveSound(vendComponent.SoundDeny), uid); // Frontier: ResolveSound, warning suppression
+//                _popupSystem.PopupEntity(Loc.GetString("vending-machine-component-try-eject-access-abused"), uid, PopupType.MediumCaution);
+//                return;
+//            }
+//
+//            var availableItems = GetAvailableInventory(uid, vendComponent);
+//            if (availableItems.Count <= 0)
+//                return;
+//            var item = _random.Pick(availableItems);
+//
+//            if (forceEject)
+//            {
+//                vendComponent.NextItemToEject = item.ID;
+//                vendComponent.ThrowNextItem = throwItem;
+//                var entry = GetEntry(uid, item.ID, item.Type, vendComponent);
+//                if (entry != null)
+//                    entry.Amount--;
+//                EjectItem(uid, vendComponent, forceEject);
+//            }
+//            else
+//            {
+//                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, user: null, vendComponent: vendComponent);
+//            }
+//            vendComponent.EjectRandomCounter--; // Frontier: finite random ejections
         }
 
         // Frontier: finite random ejections

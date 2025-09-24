@@ -43,6 +43,9 @@
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: StructuralMetallic
+    - type: Construction
+      graph: GasUnary
+      node: gayfloordrain
     - type: Destructible
       thresholds:
         - trigger:

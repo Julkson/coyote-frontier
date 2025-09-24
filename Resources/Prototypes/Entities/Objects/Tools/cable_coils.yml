@@ -38,13 +38,15 @@
   #1 Ointment = -50 damage of those types
   #1 Cable ~= -50 (-49.8) damage of those types
   - type: Healing
-    delay: 0.6
+    delay: 2
     damageContainers:
     - Silicon
     damage:
       types: # these are all split across multiple types
-        Heat: -1.66
-        Shock: -1.66
+        Heat: -7
+        Shock: -7
+        Cold: -3
+        Structural: -25
   # EE Change End
   # FIXME: Used isnt actually implemented so its still unlimited.
   # Uncomment this when its implemented, and make sure it handles StackComponent right

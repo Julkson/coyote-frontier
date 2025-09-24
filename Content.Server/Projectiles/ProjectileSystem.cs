@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Server.Destructible;
 using Content.Server.Effects;
@@ -20,7 +21,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-
+    [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
 
     public override void Initialize()
     {
@@ -45,7 +46,10 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             return;
         }
 
-        var ev = new ProjectileHitEvent(component.Damage * _damageableSystem.UniversalProjectileDamageModifier, target, component.Shooter);
+        var ev = new ProjectileHitEvent(
+            component.Damage * _damageableSystem.UniversalProjectileDamageModifier,
+            target,
+            component.Shooter);
         RaiseLocalEvent(uid, ref ev);
 
         var otherName = ToPrettyString(target);
@@ -55,7 +59,18 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             damageRequired -= damageableComponent.TotalDamage;
             damageRequired = FixedPoint2.Max(damageRequired, FixedPoint2.Zero);
         }
-        var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, damageable: damageableComponent, origin: component.Shooter);
+
+        FalloffDamage(
+            uid,
+            component,
+            ref ev);
+
+        var modifiedDamage = _damageableSystem.TryChangeDamage(
+            target,
+            ev.Damage,
+            component.IgnoreResistances,
+            damageable: damageableComponent,
+            origin: component.Shooter);
         var deleted = Deleted(target);
 
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
@@ -125,5 +140,28 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         {
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
         }
+    }
+
+    private void FalloffDamage(EntityUid uid, ProjectileComponent component, ref ProjectileHitEvent ev)
+    {
+        if (component.FalloffStartMeters <= 0f
+            || component.FalloffPercentPerMeter == 0f)
+            return;
+        // Get the distance from the OriginPoint to the hit location (where i am now!)
+        var hitPos = TransformSystem.GetWorldPosition(ev.Target);
+        var origin = component.OriginPoint;
+
+        var distance = Vector2.Distance(origin, hitPos);
+        if (distance <= component.FalloffStartMeters)
+            return;
+        var falloffDistance = distance - component.FalloffStartMeters;
+        // apply a compounding reduction based on the falloff percent per meter.
+        var damageMultiplier = MathF.Pow(1f - component.FalloffPercentPerMeter / 100f, falloffDistance);
+        ev.Damage *= damageMultiplier;
+        //clamp to the component FalloffMinDamage
+        if (ev.Damage.GetTotal() < component.FalloffMinDamage.GetTotal())
+            ev.Damage = component.FalloffMinDamage; // brilliant
+        Log.Debug($"Projectile {ToPrettyString(uid)} applying falloff damage multiplier of {damageMultiplier:0.00} due to distance of {distance:0.00}m (started at {component.FalloffStartMeters}m)");
+        Log.Debug($"Initial damage: {component.Damage.GetTotal()}, new damage: {ev.Damage.GetTotal()}");
     }
 }

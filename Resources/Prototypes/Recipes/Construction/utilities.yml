@@ -369,6 +369,50 @@
   conditions:
   - !type:NoUnstackableInTile
 
+- type: construction
+  id: Sink
+  graph: GasUnary
+  startNode: start
+  targetNode: tinygaysink
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  id: SinkStemlessWater
+  graph: GasUnary
+  startNode: start
+  targetNode: tinygaysinkstemless
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  id: SinkWide
+  graph: GasUnary
+  startNode: start
+  targetNode: tinygaysinkwide
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  id: FloorDrain
+  graph: GasUnary
+  startNode: start
+  targetNode: gayfloordrain
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
 #- type: construction
 #  id: Gaslock
 #  graph: GasUnary

@@ -107,7 +107,7 @@
     attackRate: 1
     damage:
       types:
-        Piercing: 4
+        Piercing: 11
     angle: 0
     animation: WeaponArcThrust
     soundHit:
@@ -166,8 +166,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
-        Slash: 15
+        Piercing: 14
+        Slash: 41
 
 - type: entity
   parent: BaseCrossbowBolt
@@ -189,7 +189,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 50
     deleteOnCollide: true
   - type: SolutionContainerManager
     solutions:
@@ -239,7 +239,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 40
   - type: Construction
     graph: CraftCrossbowBoltGlassShard
     node: CraftCrossbowBoltGlassShard
@@ -270,7 +270,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 47
   - type: Construction
     graph: CraftCrossbowBoltPlasmaGlassShard
     node: CraftCrossbowBoltPlasmaGlassShard
@@ -302,8 +302,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
-        Radiation: 5
+        Piercing: 40
+        Radiation: 10
   - type: Construction
     graph: CraftCrossbowBoltUraniumGlassShard
     node: CraftCrossbowBoltUraniumGlassShard
@@ -369,7 +369,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 18
+        Piercing: 40
     ignoreResistances: true
   - type: Construction
     graph: CraftCrossbowBoltPlasteel
@@ -456,7 +456,7 @@
         Blunt: 10
     deleteOnCollide: true
   - type: StaminaDamageOnCollide
-    damage: 20
+    damage: 105
   - type: EmpOnTrigger
     range: 0.5
     energyConsumption: 2700000
@@ -575,7 +575,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6
+        Piercing: 10
   - type: TimedDespawn
     lifetime: 0.25
 
@@ -603,6 +603,6 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
+        Piercing: 10
         Slash: 5
         Bloodloss: 5

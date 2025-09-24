@@ -120,16 +120,9 @@
   components:
   - type: Flatpack
     entity: GeneratorRTG
-
-- type: entity
-  parent: PortableGeneratorJrPacmanFlatpack
-  id: GeneratorRTGDamagedFlatpack
-  name: RTG generator flatpack
-  description: A flatpack used for constructing a Radioisotope Thermoelectric Generator. The packaging seems to be somewhat damaged.
-  suffix: Damaged
-  components:
-  - type: Flatpack
-    entity: GeneratorRTGDamaged
+  - type: StaticPrice
+    price: 10000
+    vendPrice: 75000
 
 - type: entity
   parent: BaseNFFlatpack
@@ -658,6 +651,7 @@
     entity: ComputerIFF
   - type: StaticPrice
     price: 400
+    vendPrice: 60000 # ehehehehee
   - type: Sprite
     layers:
     - state: supply_gun

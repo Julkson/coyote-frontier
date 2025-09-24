@@ -22,6 +22,7 @@ using Content.Shared.Mind;
 using Content.Shared.Alert;
 using Content.Server._EinsteinEngines.Silicon.Death;
 using Content.Server._EinsteinEngines.Power.Components;
+using Content.Shared.Damage;
 
 namespace Content.Server._EinsteinEngines.Silicon.Charge;
 
@@ -36,6 +37,8 @@ public sealed class SiliconChargeSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly DamageableSystem _damageableSys = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -80,6 +83,8 @@ public sealed class SiliconChargeSystem : EntitySystem
             if (_mobState.IsDead(silicon)
                 || !siliconComp.BatteryPowered)
                 continue;
+
+            HandleCritDamage(silicon, siliconComp); // why is this here? Why not!
 
             // Check if the Silicon is an NPC, and if so, follow the delay as specified in the CVAR.
             if (siliconComp.EntityType.Equals(SiliconType.Npc))
@@ -196,5 +201,27 @@ public sealed class SiliconChargeSystem : EntitySystem
             return 0.5f + temperComp.CurrentTemperature / thermalComp.NormalBodyTemperature * 0.5f;
 
         return 0;
+    }
+
+    /// <summary>
+    ///     If the silicon is critically damaged, it takes damage, simple as that.
+    /// </summary>
+    private void HandleCritDamage(EntityUid silicon, SiliconComponent siliconComp)
+    {
+        if (!_mobState.IsCritical(silicon))
+        {
+            siliconComp.LastCritDamageTime = TimeSpan.Zero;
+            return;
+        }
+
+        if (_timing.CurTime - siliconComp.LastCritDamageTime < siliconComp.CritDamageInterval)
+            return;
+        siliconComp.LastCritDamageTime = _timing.CurTime;
+        if (siliconComp.CritDamage.Empty)
+            return;
+        _damageableSys.TryChangeDamage(
+            silicon,
+            siliconComp.CritDamage,
+            true);
     }
 }

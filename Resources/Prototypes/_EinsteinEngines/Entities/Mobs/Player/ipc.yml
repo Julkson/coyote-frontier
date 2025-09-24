@@ -105,8 +105,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      119.999: Critical # TO make it almost impossible
-      120: Dead
+      100: Critical # TO make it almost impossible
+      200: Dead
     stateAlertDict:
       Alive: BorgHealth
       Critical: BorgCrit
@@ -123,9 +123,9 @@
           - !type:GibBehavior { }
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.7
-      90: 0.5
-      120: 0.3
+      30: 0.7
+      50: 0.5
+      65: 0.3
 #  - type: SiliconDownOnDead
   - type: Inventory
     templateId: ipc
@@ -134,6 +134,10 @@
       - IPC
   - type: Silicon
     entityType: enum.SiliconType.Player
+    critDamage:
+      types:
+        Blunt: 1
+        Shock: 0.5
     batteryPowered: true
     drainPerSecond: 1.5
     chargeThresholdMid: 0.80
@@ -175,11 +179,11 @@
     cosmeticOnly: false
   - type: TallWhitelist
     scale: 1.2
-  - type: Barotrauma
-    damage:
-      types:
-        Blunt: 0.2
-        Heat: 0.25
+#  - type: Barotrauma
+#    damage:
+#      types:
+#        Blunt: 0.05
+#        Heat: 0.025
   - type: ThermalRegulator
     metabolismHeat: 0
     radiatedHeat: 100

@@ -84,6 +84,68 @@
     proto: BulletDebug
 
 - type: entity
+  name: bang, 100dmg, falloff 10%
+  parent: WeaponPistolDebug
+  id: WeaponPistolDebug100Dmg10Falloff
+  description: pro
+  suffix: DEBUG
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolDebug100Dmg10Falloff
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Debug
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeDebug100Dmg10Falloff
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+- type: entity
+  id: MagazinePistolDebug100Dmg10Falloff
+  name: bang, 100dmg, falloff 10% mag
+  parent: MagazinePistolDebug
+  suffix: DEBUG
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeDebug100Dmg10Falloff
+    capacity: 1000
+
+- type: entity
+  id: BulletDebug100Dmg10Falloff
+  name: bang, 100dmg, falloff 10% bullet
+  parent: BulletDebug
+  categories: [ Debug, HideSpawnMenu ]
+  suffix: DEBUG
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 100
+    falloffStartMeters: 2
+    falloffPercentPerMeter: 10
+    falloffMinDamage:
+      types:
+          Blunt: 10
+
+- type: entity
+  id: CartridgeDebug100Dmg10Falloff
+  name: bang, 100dmg, falloff 10% cartridge
+  parent: CartridgeDebug
+  suffix: DEBUG
+  components:
+  - type: CartridgeAmmo
+    proto: BulletDebug100Dmg10Falloff
+
+- type: entity
   name: bang stick gibber
   parent: BaseItem
   id: MeleeDebugGib

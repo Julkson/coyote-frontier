@@ -34,6 +34,30 @@
         amount: 25
         doAfter: 1
 
+    - to: tinygaysink
+      steps:
+      - material: Steel
+        amount: 10
+        doAfter: 1
+
+    - to: tinygaysinkstemless
+      steps:
+      - material: Steel
+        amount: 10
+        doAfter: 1
+
+    - to: tinygaysinkwide
+      steps:
+      - material: Steel
+        amount: 10
+        doAfter: 1
+
+    - to: gayfloordrain
+      steps:
+      - material: Steel
+        amount: 10
+        doAfter: 1
+
 #    - to: asslock
 #      steps:
 #      - material: Steel
@@ -121,6 +145,71 @@
       - !type:SpawnPrototype
         prototype: SheetSteel1
         amount: 25
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: tinygaysink
+    entity: Sink
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 10
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: tinygaysinkstemless
+    entity: SinkStemless
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 10
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: tinygaysinkwide
+    entity: SinkWide
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 10
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+
+  - node: gayfloordrain
+    entity: FloorDrain
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 10
       - !type:DeleteEntity
       steps:
       - tool: Welding

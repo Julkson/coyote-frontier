@@ -445,6 +445,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         var shooter = user ?? gunUid;
         if (shooter != null)
             Projectiles.SetShooter(uid, projectile, shooter.Value);
+        projectile.OriginPoint = TransformSystem.GetWorldPosition(uid);
 
         TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
     }

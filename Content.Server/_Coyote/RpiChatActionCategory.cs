@@ -6,7 +6,7 @@ namespace Content.Server._Coyote;
 /// Enum of possible roleplay actions.
 /// </summary>
 [Serializable]
-public enum RoleplayActs : byte
+public enum RpiChatActionCategory : byte
 {
     /// <summary>
     /// The player has said a thing, normally.
