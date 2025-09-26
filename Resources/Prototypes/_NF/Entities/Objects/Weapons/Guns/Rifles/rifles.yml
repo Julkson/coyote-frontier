@@ -91,3 +91,5 @@
     sprite: _NF/Objects/Weapons/Guns/Rifles/svs42.rsi
   - type: AltFireMelee
     attackType: Light
+  - type: Item
+    size: Large

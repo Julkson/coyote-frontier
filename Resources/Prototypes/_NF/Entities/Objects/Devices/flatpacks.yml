@@ -31,6 +31,7 @@
     entity: EngineeringTechFab
   - type: StaticPrice
     price: 250
+    vendPrice: 85000
 
 - type: entity
   parent: BaseNFFlatpack
@@ -209,6 +210,7 @@
     entity: Protolathe
   - type: StaticPrice
     price: 250
+    vendPrice: 60000
   - type: Sprite
     layers:
     - state: science_lathe
@@ -224,6 +226,8 @@
   - type: Sprite
     layers:
     - state: science_artifact_analyzer
+  - type: StaticPrice
+    vendPrice: 6250
 
 - type: entity
   parent: ProtolatheFlatpack
@@ -284,6 +288,8 @@
   components:
   - type: Flatpack
     entity: BlueprintLithograph
+  - type: StaticPrice
+    vendPrice: 6250
 
 - type: entity
   parent: ExosuitFabricatorFlatpack
@@ -328,6 +334,7 @@
     entity: ServiceTechFab
   - type: StaticPrice
     price: 250
+    vendPrice: 85000
 
 - type: entity
   parent: UniformPrinterFlatpack
@@ -447,6 +454,7 @@
     entity: MedicalTechFab
   - type: StaticPrice
     price: 250
+    vendPrice: 95000
   - type: Sprite
     layers:
     - state: medical_lathe
@@ -558,6 +566,8 @@
   components:
   - type: Flatpack
     entity: SalvageTechfabNF
+  - type: StaticPrice
+    vendPrice: 85000
 
 - type: entity
   parent: OreProcessorFlatpack
@@ -589,6 +599,8 @@
   - type: Sprite
     layers:
     - state: mercenary
+  - type: StaticPrice
+    vendPrice: 70000
 
 - type: entity
   parent: AmmoTechFabFlatpack
@@ -600,6 +612,7 @@
     entity: MercenaryTechFab
   - type: StaticPrice
     price: 600
+    vendPrice: 85000
 
 #region Consoles
 - type: entity
@@ -678,6 +691,7 @@
     entity: ResearchAndDevelopmentServer
   - type: StaticPrice
     price: 250
+    vendPrice: 21250
   - type: Sprite
     layers:
     - state: science_server

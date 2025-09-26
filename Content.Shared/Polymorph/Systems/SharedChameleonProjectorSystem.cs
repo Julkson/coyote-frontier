@@ -157,11 +157,11 @@ public abstract class SharedChameleonProjectorSystem : EntitySystem
         if (ent.Comp.Disguised is not {} uid)
             return;
 
-        var xform = Transform(uid);
-        if (xform.Anchored)
-            _xform.Unanchor(uid, xform);
-        else
-            _xform.AnchorEntity((uid, xform));
+        // var xform = Transform(uid);
+        // if (xform.Anchored) // butt
+        //     _xform.Unanchor(uid, xform);
+        // else
+        //     _xform.AnchorEntity((uid, xform));
 
         args.Handled = true;
     }
@@ -210,7 +210,7 @@ public abstract class SharedChameleonProjectorSystem : EntitySystem
 
         // add actions for controlling transform aspects
         _actions.AddAction(user, ref proj.NoRotActionEntity, proj.NoRotAction, container: ent);
-        _actions.AddAction(user, ref proj.AnchorActionEntity, proj.AnchorAction, container: ent);
+        // _actions.AddAction(user, ref proj.AnchorActionEntity, proj.AnchorAction, container: ent);
 
         proj.Disguised = user;
 

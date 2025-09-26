@@ -1,0 +1,16 @@
+- type: entity
+  name: pole
+  id: Pole
+  parent: StoolBar
+  description: A metal pole to do sexy dances.
+  components:
+    - type: Strap
+      position: Stand
+      buckleOffset: "0, -0.25"
+    - type: Sprite
+      sprite: _CS/Structures/Furniture/pole.rsi
+      layers:
+      - state: pole
+    - type: Construction
+      graph: Pole
+      node: pole
